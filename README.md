@@ -50,6 +50,13 @@ MAIN SECTIONS:
 
 ### LOGIC DESIGN
 
+- Identity
+- Role based security
+- Role based rendering
+- Tracking system for:
+	- requirements
+	- tasks
+	- issues
 
 ### DATA DESIGN
 
