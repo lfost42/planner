@@ -8,7 +8,7 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 
 ![My App](./app.png)
 
-## WALK-THROUGH
+## WALKTHROUGH
 
 - Teams
 - Roles
@@ -24,7 +24,7 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 - Target Dates / Priority
 
 
-## REQUIREMENTS
+## OPEN REQUIREMENTS
 
 - User login / registration
 - Assigned role (assign/unassign for admins)
@@ -68,18 +68,19 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 
 ### DATA DESIGN
 
-- User
-- Team
-- Project
-- Tasks
+- User - str
+- Team - str
+- Project - str
+- Tasks - list<tasks>
 
-- Priority
-- Status
-- Notification
-- History
+- Priority - str
+- Status - str
+- Notification - str
+- History - str
 
 - Notes / Issues
-	- Type
-	- Attachments
-	- Comments / Updates
+	- Type - str
+	- Attachments - file
+	- Comments / Updates - str
+	- Date - datetime
 
