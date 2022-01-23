@@ -37,6 +37,7 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 - Assign notes/issues to teams, roles, users (notification setting?)
 - Project statistics (timeline options)
 - Sort / Search / Filtering
+- Option to export project data to a csv file
 
 
 ## USER INTERFACE
