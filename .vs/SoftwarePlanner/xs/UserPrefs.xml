@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{15D972CB-CACF-499C-B5D6-C00E16A5B2C5}|Default">
+  <MonoDevelop.Ide.ItemProperties.SoftwarePlannerUI FirstBuild="True" PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SoftwarePlanner" expanded="True">
+            <Node name="DataAccessLibrary" expanded="True">
+              <Node name="Models" selected="True" />
+            </Node>
+            <Node name="SoftwarePlannerUI" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.DataAccessLibrary FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
