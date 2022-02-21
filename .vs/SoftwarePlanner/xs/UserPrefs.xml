@@ -6,9 +6,12 @@
         <State name="__root__">
           <Node name="SoftwarePlanner" expanded="True">
             <Node name="DataAccessLibrary" expanded="True">
-              <Node name="Models" selected="True" />
+              <Node name="Models" expanded="True" />
             </Node>
-            <Node name="SoftwarePlannerUI" expanded="True" />
+            <Node name="SoftwarePlannerUI" expanded="True">
+              <Node name="Areas" expanded="True" selected="True" />
+              <Node name="Data" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
