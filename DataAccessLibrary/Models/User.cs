@@ -19,6 +19,6 @@ namespace DataAccessLibrary.Models
 
         [NotMapped]
         [Display(Name = "Name")]
-        public string FullName { get { return $"{FirstName} {LastName}"; } }
+        public string FullName => $"{FirstName} {LastName}";
     }
 }
