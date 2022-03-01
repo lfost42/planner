@@ -69,19 +69,23 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 
 ### DATA DESIGN
 
-- User - str
-- Team - str
-- Project - str
-- Tasks - list<tasks>
+- Roles
+- UserModel
+- ProjectModel
 
-- Priority - str
-- Status - str
-- Notification - str
-- History - str
+- RequirementModel
+- TaskModel
+- TicketModel
+- NoteModel
 
-- Notes / Issues
-	- Type - str
-	- Attachments - file
-	- Comments / Updates - str
-	- Date - datetime
-
+(one-to-many relationships >>)
+- Requirements >> Tasks >> Tickets >> Notes 
+	- int ID
+	- str Name
+	- enum Priority
+	- enum Status
+	- UserModel UserCreated
+	- UserModel UserAssigned
+	- Date DateCreated
+	- Date DateUpdated
+	- Date DateClosed

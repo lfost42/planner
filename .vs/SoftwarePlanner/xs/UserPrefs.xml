@@ -1,9 +1,6 @@
 ﻿<Properties StartupConfiguration="{290D863A-8026-4DC9-8B34-1C1C7251CB7F}|Default">
   <MonoDevelop.Ide.ItemProperties.SoftwarePlannerUI PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SoftwarePlannerLibrary/Models/RequirementModel.cs">
-    <Files>
-      <File FileName="SoftwarePlannerLibrary/Models/RequirementModel.cs" Line="5" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
