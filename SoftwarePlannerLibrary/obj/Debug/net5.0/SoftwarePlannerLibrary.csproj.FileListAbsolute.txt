@@ -1,0 +1,12 @@
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/SoftwarePlannerLibrary.csproj.AssemblyReference.cache
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/SoftwarePlannerLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/SoftwarePlannerLibrary.AssemblyInfoInputs.cache
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/SoftwarePlannerLibrary.AssemblyInfo.cs
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/SoftwarePlannerLibrary.csproj.CoreCompileInputs.cache
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/bin/Debug/net5.0/SoftwarePlannerLibrary.deps.json
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/bin/Debug/net5.0/SoftwarePlannerLibrary.dll
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/bin/Debug/net5.0/ref/SoftwarePlannerLibrary.dll
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/bin/Debug/net5.0/SoftwarePlannerLibrary.pdb
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/SoftwarePlannerLibrary.dll
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/ref/SoftwarePlannerLibrary.dll
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/SoftwarePlannerLibrary.pdb
