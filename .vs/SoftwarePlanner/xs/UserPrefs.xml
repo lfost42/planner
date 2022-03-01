@@ -7,7 +7,7 @@
           <Node name="SoftwarePlanner" expanded="True">
             <Node name="SoftwarePlannerLibrary" expanded="True">
               <Node name="Models" expanded="True">
-                <Node name="RequirementModel.cs" selected="True" />
+                <Node name="Enum.cs" selected="True" />
               </Node>
             </Node>
             <Node name="SoftwarePlannerUI" expanded="True" />

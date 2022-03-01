@@ -64,8 +64,8 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 - Tracking for:
 	- requirements
 	- tasks
-	- issues
-
+	- tickets
+	- notes
 
 ### DATA DESIGN
 
