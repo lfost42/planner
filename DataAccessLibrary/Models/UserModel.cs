@@ -21,11 +21,20 @@ namespace DataAccessLibrary.Models
         [NotMapped]
         [Display(Name = "Name")]
         public string FullName => $"{FirstName} {LastName}";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:DataAccessLibrary/Models/User.cs
+=======
+>>>>>>> models
 
         public ICollection<ProjectModel> Projects { get; set; }
 
         public ICollection<TaskModel> Tasks { get; set; }
 
         public ICollection<TicketModel> Tickets { get; set; }
+<<<<<<< HEAD
+=======
+>>>>>>> 9b964d9 (created models):DataAccessLibrary/Models/UserModel.cs
+>>>>>>> models
     }
 }

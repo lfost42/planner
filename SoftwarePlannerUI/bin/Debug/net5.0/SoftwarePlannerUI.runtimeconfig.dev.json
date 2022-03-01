@@ -1,8 +1,18 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "/Users/lynda/.dotnet/store/|arch|/|tfm|",
       "/Users/lynda/.nuget/packages"
+=======
+<<<<<<< HEAD
+      "C:\\Users\\lynda\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\lynda\\.nuget\\packages"
+=======
+      "/Users/lynda/.dotnet/store/|arch|/|tfm|",
+      "/Users/lynda/.nuget/packages"
+>>>>>>> 9b964d9 (created models)
+>>>>>>> models
     ]
   }
 }
