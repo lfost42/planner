@@ -4,6 +4,7 @@
     "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\SoftwarePlannerUI\\SoftwarePlannerUI.csproj": {}
   },
   "projects": {
+<<<<<<< HEAD
     "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\DataAccessLibrary\\DataAccessLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -81,6 +82,9 @@
       }
     },
     "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\SoftwarePlannerUI\\SoftwarePlannerUI.csproj": {
+=======
+    "/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerUI/SoftwarePlannerUI.csproj": {
+>>>>>>> 9b964d9 (created models)
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\SoftwarePlannerUI\\SoftwarePlannerUI.csproj",
@@ -103,11 +107,15 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
+<<<<<<< HEAD
             "projectReferences": {
               "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\DataAccessLibrary\\DataAccessLibrary.csproj": {
                 "projectPath": "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\DataAccessLibrary\\DataAccessLibrary.csproj"
               }
             }
+=======
+            "projectReferences": {}
+>>>>>>> 9b964d9 (created models)
           }
         },
         "warningProperties": {
@@ -136,10 +144,6 @@
               "target": "Package",
               "version": "[5.0.14, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.14, )"
-            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[5.0.14, )"
@@ -147,6 +151,7 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[5.0.14, )"
+<<<<<<< HEAD
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": {
               "target": "Package",
@@ -163,6 +168,8 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.10, )"
+=======
+>>>>>>> 9b964d9 (created models)
             }
           },
           "imports": [

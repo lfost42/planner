@@ -53,7 +53,7 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 - Profile Management
 - Role Management
 - Project Management
-- Issue Management
+- Ticket Management
 
 
 ### LOGIC DESIGN

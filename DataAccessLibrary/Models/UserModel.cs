@@ -1,11 +1,12 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
 namespace DataAccessLibrary.Models
 {
-    public class Users : IdentityUser
+    public class UserModel : IdentityUser
     {
         public int UserId { get; set; }
 
@@ -20,5 +21,14 @@ namespace DataAccessLibrary.Models
         [NotMapped]
         [Display(Name = "Name")]
         public string FullName => $"{FirstName} {LastName}";
+<<<<<<< HEAD:DataAccessLibrary/Models/User.cs
+=======
+
+        public ICollection<ProjectModel> Projects { get; set; }
+
+        public ICollection<TaskModel> Tasks { get; set; }
+
+        public ICollection<TicketModel> Tickets { get; set; }
+>>>>>>> 9b964d9 (created models):DataAccessLibrary/Models/UserModel.cs
     }
 }

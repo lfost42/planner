@@ -40,12 +40,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.14, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Newtonsoft.Json": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[5.0.14, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": {
@@ -59,6 +60,9 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.10, )"
+=======
+              "version": "[13.0.1, )"
+>>>>>>> 9b964d9 (created models)
             }
           },
           "imports": [
