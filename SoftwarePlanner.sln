@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.19
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwarePlannerUI", "SoftwarePlannerUI\SoftwarePlannerUI.csproj", "{15D972CB-CACF-499C-B5D6-C00E16A5B2C5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{1FC4CA4E-5C91-4FE2-8A9B-6239BC2529C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwarePlannerUI", "SoftwarePlannerUI\SoftwarePlannerUI.csproj", "{79C664F8-7DA4-45E9-9E61-BC8861A939F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{15D972CB-CACF-499C-B5D6-C00E16A5B2C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15D972CB-CACF-499C-B5D6-C00E16A5B2C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15D972CB-CACF-499C-B5D6-C00E16A5B2C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15D972CB-CACF-499C-B5D6-C00E16A5B2C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1FC4CA4E-5C91-4FE2-8A9B-6239BC2529C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1FC4CA4E-5C91-4FE2-8A9B-6239BC2529C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FC4CA4E-5C91-4FE2-8A9B-6239BC2529C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FC4CA4E-5C91-4FE2-8A9B-6239BC2529C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79C664F8-7DA4-45E9-9E61-BC8861A939F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79C664F8-7DA4-45E9-9E61-BC8861A939F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79C664F8-7DA4-45E9-9E61-BC8861A939F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79C664F8-7DA4-45E9-9E61-BC8861A939F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
