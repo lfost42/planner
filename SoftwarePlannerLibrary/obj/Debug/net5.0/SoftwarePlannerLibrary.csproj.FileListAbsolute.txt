@@ -10,3 +10,15 @@
 /Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/SoftwarePlannerLibrary.dll
 /Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/ref/SoftwarePlannerLibrary.dll
 /Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/obj/Debug/net5.0/SoftwarePlannerLibrary.pdb
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\bin\Debug\net5.0\SoftwarePlannerLibrary.deps.json
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\bin\Debug\net5.0\SoftwarePlannerLibrary.dll
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\bin\Debug\net5.0\ref\SoftwarePlannerLibrary.dll
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\bin\Debug\net5.0\SoftwarePlannerLibrary.pdb
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.csproj.AssemblyReference.cache
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.AssemblyInfoInputs.cache
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.AssemblyInfo.cs
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.dll
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\ref\SoftwarePlannerLibrary.dll
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.pdb
