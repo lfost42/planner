@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using SoftwarePlannerLibrary.Models;
 using static SoftwarePlannerLibrary.Models.Enum;
 
@@ -7,6 +8,10 @@ namespace SoftwarePlannerLibrary.Models
 {
     public class RequirementModel : Tracked
     {
-        public ICollection<TaskModel> Tasks { get; set; }
+        [Required]
+        [Display(Name = "Requirement")]
+        public string Name { get; set; }
+        public virtual ICollection<TaskModel> Tasks { get; set; } = new HashSet<TaskModel>();
+
     }
 }

@@ -8,8 +8,6 @@ namespace SoftwarePlannerLibrary.Models
 {
     public class UserModel : IdentityUser
     {
-        public int UserId { get; set; }
-
         [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
@@ -22,12 +20,16 @@ namespace SoftwarePlannerLibrary.Models
         [Display(Name = "Name")]
         public string FullName => $"{FirstName} {LastName}";
 
+        public int FileId { get; set; }
+        public FileModel UserPhoto { get; set; }
 
-        public ICollection<ProjectModel> Projects { get; set; }
 
-        public ICollection<TaskModel> Tasks { get; set; }
+        public virtual ICollection<ProjectModel> Projects { get; set; } = new HashSet<ProjectModel>();
 
-        public ICollection<TicketModel> Tickets { get; set; }
+        public virtual ICollection<TaskModel> Tasks { get; set; } = new HashSet<TaskModel>();
+
+        public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
+        public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();
 
     }
 }

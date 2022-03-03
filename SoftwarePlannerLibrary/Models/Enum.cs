@@ -3,6 +3,14 @@ namespace SoftwarePlannerLibrary.Models
 {
     public class Enum
     {
+        public enum HistoryType
+        {
+            Project,
+            Requirement,
+            Task,
+            Ticket,
+            Note
+        }
         public enum PriorityLevel
         {
             None, 
@@ -18,6 +26,14 @@ namespace SoftwarePlannerLibrary.Models
             Assigned,
             Pending,
             Closed
+        }
+
+        public enum TicketType
+        {
+            Inquiry,
+            Bug,
+            Request,
+            Error
         }
     }
 }
