@@ -1,8 +1,8 @@
 # Software Planner
 
-A tool that enables developers to design software applications, manage requirements, track progress, and meet deadlines. 
+A tool that enables developers and teams to design software applications, manage requirements/tasks, track progress, and meet deadlines. 
 
-Integrated tracking system make projects trackable and allows users to achieve target metrics. Teams and Role features allow groups of developers to collaborate throughout the software development life cycle.
+Integrated tracking system make projects and project components trackable and allows users and teams to achieve target metrics. Teams and Role features allow groups of developers to collaborate throughout the software development life cycle.
 
 Implements identity and role based access/rendering. SOLID principles demonstrated via object and record data structures. 
 
@@ -11,30 +11,28 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 ## WALKTHROUGH
 
 - Teams
-- Roles
-- Project (Name, Summary, Requirements)
-- Scope
+- Projects
+- Requirements
 - Tasks
+- Tickets
+- Notes
 
-- Projected Issues
+- Projected
 - Issues & Notes (once project begins)
 - Attachments
 - History of changes
-- Comments
-- Target Dates / Priority
+- Notes
+- Priority
 
 
 ## OPEN REQUIREMENTS
 
 - User login / registration
 - Assigned role (assign/unassign for admins)
-- Create projects
-- Modify projects
-- Delete projects
-- Propose modifications to projects
-- Create Notes
-- Create Issues
-- Assign notes/issues to teams, roles, users (notification setting?)
+
+- CRUD Projects, Requirements, Tasks
+- Assign projects, requirements, tasks, tickets to teams, roles, users
+- Notifications when items are assigned
 - Project statistics (timeline options)
 - Sort / Search / Filtering
 - Option to export project data to a csv file
@@ -45,16 +43,15 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 - Landing (login/registration)
 - Dashboard
 
-- Profile
+--Profile
+- Image
 - Role
-- Projects
-- Assigned Issues
+- Assigned Projects, Tasks, Tickets
 
 - Profile Management
 - Role Management
 - Project Management
 - Ticket Management
-
 
 ### LOGIC DESIGN
 
@@ -72,6 +69,9 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 - Roles
 - UserModel
 - ProjectModel
+
+- History
+- Types
 
 - RequirementModel
 - TaskModel
