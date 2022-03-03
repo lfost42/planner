@@ -329,6 +329,7 @@
           "SoftwarePlannerUI.dll": {}
         }
       },
+      "Brutal.Dev.StrongNameSigner/3.1.0": {},
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -2303,6 +2304,7 @@
       },
       "SoftwarePlannerLibrary/1.0.0": {
         "dependencies": {
+          "Brutal.Dev.StrongNameSigner": "3.1.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.14",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
@@ -3979,6 +3981,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Brutal.Dev.StrongNameSigner/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mhkUZwouO1lj2SOz36OrHCIcMMgbEXqoCv9UYcGMdFXSmHIie0HMyHhf+3PxpuQk0lj8vX1kP+SV3G02sS6J6w==",
+      "path": "brutal.dev.strongnamesigner/3.1.0",
+      "hashPath": "brutal.dev.strongnamesigner.3.1.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
