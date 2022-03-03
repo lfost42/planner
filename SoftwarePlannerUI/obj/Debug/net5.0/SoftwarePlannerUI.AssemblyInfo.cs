@@ -12,7 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-SoftwarePlannerUI-7EBDC987-E532-4D19-A612-38BA0C23D9D2")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-SoftwarePlannerUI-3875D554-FD58-4787-BDF2-D77C88D79D4A")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("SoftwarePlannerUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
