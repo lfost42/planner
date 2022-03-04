@@ -32,12 +32,6 @@ namespace SoftwarePlannerLibrary.Models
         public virtual ICollection<UserModel> UserModels { get; set; } = new HashSet<UserModel>();
 
 
-        //public int ProjectModelId { get; set; }
-        //public virtual ProjectModel ProjectModel { get; set; }
-        public int RequirementModelId { get; set; }
-        public virtual RequirementModel RequirementModel { get; set; }
-        //public int TaskModelId { get; set; }
-        //public virtual TaskModel TaskModel { get; set; }
         //public int TicketModelId { get; set; }
         //public virtual TicketModel TicketModel { get; set; }
         //public int NoteModelId { get; set; }

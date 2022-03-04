@@ -24,8 +24,8 @@ namespace SoftwarePlannerLibrary.Models
         [Display(Name = "Projects")]
         public virtual ICollection<ProjectModel> ProjectModelss { get; set; } = new HashSet<ProjectModel>();
 
-        //[Display(Name = "Tasks")]
-        //public virtual ICollection<TaskModel> TaskModelss { get; set; } = new HashSet<TaskModel>();
+        [Display(Name = "Tasks")]
+        public virtual ICollection<TaskModel> TaskModelss { get; set; } = new HashSet<TaskModel>();
 
         //[Display(Name = "Tickets")]
         //public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();

@@ -13,8 +13,8 @@ namespace SoftwarePlannerLibrary.Models
         public string Name { get; set; }
         public DateTimeOffset TargetDate { get; set; }
 
-        //[Display(Name = "Tasks")]
-        //public virtual ICollection<TaskModel> TaskModels { get; set; } = new HashSet<TaskModel>();
+        [Display(Name = "Tasks")]
+        public virtual ICollection<TaskModel> TaskModels { get; set; } = new HashSet<TaskModel>();
 
         public int ProjectModelId { get; set; }
         public ProjectModel ProjectModel { get; set; }
