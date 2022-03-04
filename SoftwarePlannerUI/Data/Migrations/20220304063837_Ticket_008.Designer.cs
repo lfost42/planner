@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SoftwarePlannerUI.Data;
@@ -9,9 +10,10 @@ using SoftwarePlannerUI.Data;
 namespace SoftwarePlannerUI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220304063837_Ticket_008")]
+    partial class Ticket_008
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,13 +168,13 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("ProjectModelUserModel", b =>
                 {
-                    b.Property<int>("ProjectModelsId")
+                    b.Property<int>("ProjectModelssId")
                         .HasColumnType("integer");
 
                     b.Property<string>("UserModelsId")
                         .HasColumnType("text");
 
-                    b.HasKey("ProjectModelsId", "UserModelsId");
+                    b.HasKey("ProjectModelssId", "UserModelsId");
 
                     b.HasIndex("UserModelsId");
 
@@ -218,9 +220,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.Property<string>("FileName")
                         .HasColumnType("text");
 
-                    b.Property<int?>("NoteModelId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("ProjectModelId")
                         .HasColumnType("integer");
 
@@ -239,8 +238,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorModelId");
-
-                    b.HasIndex("NoteModelId");
 
                     b.HasIndex("ProjectModelId");
 
@@ -277,9 +274,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
-                    b.Property<int?>("NoteModelId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("PreviousValue")
                         .HasColumnType("text");
 
@@ -305,8 +299,6 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.HasIndex("CreatorModelId1");
 
-                    b.HasIndex("NoteModelId");
-
                     b.HasIndex("ProjectModelId");
 
                     b.HasIndex("RequirementModelId");
@@ -316,55 +308,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.HasIndex("TicketModelId");
 
                     b.ToTable("HistoryModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.NoteModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<int>("CreatorModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTimeOffset>("DateClosed")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTimeOffset>("DateCreated")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTimeOffset>("DateModified")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<int>("HistoryModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("Priority")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TicketId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreatorModelId");
-
-                    b.HasIndex("HistoryModelId");
-
-                    b.HasIndex("TicketId");
-
-                    b.ToTable("NoteModel");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.NotificationModel", b =>
@@ -665,9 +608,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
-                    b.Property<int?>("NoteModelId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("PasswordHash")
                         .HasColumnType("text");
 
@@ -702,8 +642,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.HasIndex("NoteModelId");
-
                     b.HasIndex("RequirementModelId");
 
                     b.HasIndex("TeamModelId");
@@ -713,13 +651,13 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("TaskModelUserModel", b =>
                 {
-                    b.Property<int>("TaskModelsId")
+                    b.Property<int>("TaskModelssId")
                         .HasColumnType("integer");
 
                     b.Property<string>("UserModelsId")
                         .HasColumnType("text");
 
-                    b.HasKey("TaskModelsId", "UserModelsId");
+                    b.HasKey("TaskModelssId", "UserModelsId");
 
                     b.HasIndex("UserModelsId");
 
@@ -811,7 +749,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                 {
                     b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", null)
                         .WithMany()
-                        .HasForeignKey("ProjectModelsId")
+                        .HasForeignKey("ProjectModelssId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -838,10 +776,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .HasForeignKey("CreatorModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.NoteModel", null)
-                        .WithMany("FileModels")
-                        .HasForeignKey("NoteModelId");
 
                     b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
                         .WithMany("FileAttachments")
@@ -878,10 +812,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .WithMany()
                         .HasForeignKey("CreatorModelId1");
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.NoteModel", null)
-                        .WithMany("HistoryModels")
-                        .HasForeignKey("NoteModelId");
-
                     b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
                         .WithMany("HistoryModels")
                         .HasForeignKey("ProjectModelId")
@@ -903,33 +833,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.Navigation("CreatorModel");
 
                     b.Navigation("ProjectModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.NoteModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.CreatorModel", "CreatorModel")
-                        .WithMany()
-                        .HasForeignKey("CreatorModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.HistoryModel", "HistoryModel")
-                        .WithMany()
-                        .HasForeignKey("HistoryModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", "Ticket")
-                        .WithMany("NoteModels")
-                        .HasForeignKey("TicketId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CreatorModel");
-
-                    b.Navigation("HistoryModel");
-
-                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.NotificationModel", b =>
@@ -1064,10 +967,6 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
                 {
-                    b.HasOne("SoftwarePlannerLibrary.Models.NoteModel", null)
-                        .WithMany("UserModels")
-                        .HasForeignKey("NoteModelId");
-
                     b.HasOne("SoftwarePlannerLibrary.Models.RequirementModel", null)
                         .WithMany("UserModels")
                         .HasForeignKey("RequirementModelId");
@@ -1085,7 +984,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                 {
                     b.HasOne("SoftwarePlannerLibrary.Models.TaskModel", null)
                         .WithMany()
-                        .HasForeignKey("TaskModelsId")
+                        .HasForeignKey("TaskModelssId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1109,15 +1008,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .HasForeignKey("UserModelsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.NoteModel", b =>
-                {
-                    b.Navigation("FileModels");
-
-                    b.Navigation("HistoryModels");
-
-                    b.Navigation("UserModels");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.ProjectModel", b =>
@@ -1161,8 +1051,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.Navigation("FileModels");
 
                     b.Navigation("HistoryModels");
-
-                    b.Navigation("NoteModels");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>

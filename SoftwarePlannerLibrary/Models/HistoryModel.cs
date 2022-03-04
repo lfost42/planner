@@ -41,7 +41,7 @@ namespace SoftwarePlannerLibrary.Models
         public DateTimeOffset DateModified { get; set; }
 
         public int ProjectModelId { get; set; }
-        public ProjectModel ProjectModel { get; set; }
+        public virtual ProjectModel ProjectModel { get; set; }
 
     }
 }

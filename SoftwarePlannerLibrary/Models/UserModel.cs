@@ -22,19 +22,19 @@ namespace SoftwarePlannerLibrary.Models
 
 
         [Display(Name = "Projects")]
-        public virtual ICollection<ProjectModel> ProjectModelss { get; set; } = new HashSet<ProjectModel>();
+        public virtual ICollection<ProjectModel> ProjectModels { get; set; } = new HashSet<ProjectModel>();
 
         [Display(Name = "Tasks")]
-        public virtual ICollection<TaskModel> TaskModelss { get; set; } = new HashSet<TaskModel>();
+        public virtual ICollection<TaskModel> TaskModels { get; set; } = new HashSet<TaskModel>();
 
-        //[Display(Name = "Tickets")]
-        //public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();
+        [Display(Name = "Tickets")]
+        public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();
 
         [Display(Name = "Attachments")]
         public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
 
         public int TeamModelId { get; set; }
-        public TeamModel TeamModel { get; set; }
+        public virtual TeamModel TeamModel { get; set; }
 
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SoftwarePlannerUI.Data;
@@ -9,9 +10,10 @@ using SoftwarePlannerUI.Data;
 namespace SoftwarePlannerUI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220304064521_Notes_009")]
+    partial class Notes_009
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,13 +168,13 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("ProjectModelUserModel", b =>
                 {
-                    b.Property<int>("ProjectModelsId")
+                    b.Property<int>("ProjectModelssId")
                         .HasColumnType("integer");
 
                     b.Property<string>("UserModelsId")
                         .HasColumnType("text");
 
-                    b.HasKey("ProjectModelsId", "UserModelsId");
+                    b.HasKey("ProjectModelssId", "UserModelsId");
 
                     b.HasIndex("UserModelsId");
 
@@ -713,13 +715,13 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("TaskModelUserModel", b =>
                 {
-                    b.Property<int>("TaskModelsId")
+                    b.Property<int>("TaskModelssId")
                         .HasColumnType("integer");
 
                     b.Property<string>("UserModelsId")
                         .HasColumnType("text");
 
-                    b.HasKey("TaskModelsId", "UserModelsId");
+                    b.HasKey("TaskModelssId", "UserModelsId");
 
                     b.HasIndex("UserModelsId");
 
@@ -811,7 +813,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                 {
                     b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", null)
                         .WithMany()
-                        .HasForeignKey("ProjectModelsId")
+                        .HasForeignKey("ProjectModelssId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1085,7 +1087,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                 {
                     b.HasOne("SoftwarePlannerLibrary.Models.TaskModel", null)
                         .WithMany()
-                        .HasForeignKey("TaskModelsId")
+                        .HasForeignKey("TaskModelssId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

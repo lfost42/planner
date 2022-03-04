@@ -12,6 +12,7 @@ namespace SoftwarePlannerLibrary.Models
         public int CreatorModelId { get; set; }
         [Display(Name = "Creator")]
         public virtual CreatorModel CreatorModel { get; set; }
+
         public PriorityLevel Priority { get; set; } = PriorityLevel.None;
         public Status Status { get; set; } = Status.Created;
 
@@ -31,13 +32,6 @@ namespace SoftwarePlannerLibrary.Models
         [Display(Name = "Users Assigned")]
         public virtual ICollection<UserModel> UserModels { get; set; } = new HashSet<UserModel>();
 
-
-        //public int TicketModelId { get; set; }
-        //public virtual TicketModel TicketModel { get; set; }
-        //public int NoteModelId { get; set; }
-        //public virtual NoteModel NoteModel { get; set; }
-        //public int FileModelId { get; set; }
-        //public virtual FileModel FileModel { get; set; }
 
         public int HistoryModelId { get; set; }
         public virtual HistoryModel HistoryModel { get; set; }

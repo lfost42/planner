@@ -22,8 +22,8 @@ namespace SoftwarePlannerLibrary.Models
 
 
 
-        //public int TicketId { get; set; }
-        //public virtual TicketModel Ticket { get; set; }
+        public int TicketId { get; set; }
+        public virtual TicketModel Ticket { get; set; }
 
         [Required]
         public string RecipientId { get; set; }

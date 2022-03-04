@@ -17,6 +17,6 @@ namespace SoftwarePlannerLibrary.Models
         public virtual ICollection<TaskModel> TaskModels { get; set; } = new HashSet<TaskModel>();
 
         public int ProjectModelId { get; set; }
-        public ProjectModel ProjectModel { get; set; }
+        public virtual ProjectModel ProjectModel { get; set; }
     }
 }
