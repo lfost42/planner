@@ -33,5 +33,6 @@ namespace SoftwarePlannerLibrary.Models
 
         public int ProjectModelId { get; set; }
         public ProjectModel ProjectModel { get; set; }
+
     }
 }

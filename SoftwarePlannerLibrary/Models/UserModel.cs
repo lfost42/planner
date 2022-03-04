@@ -30,8 +30,8 @@ namespace SoftwarePlannerLibrary.Models
         //[Display(Name = "Tickets")]
         //public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();
 
-        //[Display(Name = "Attachments")]
-        //public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
+        [Display(Name = "Attachments")]
+        public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
 
         public int TeamModelId { get; set; }
         public TeamModel TeamModel { get; set; }

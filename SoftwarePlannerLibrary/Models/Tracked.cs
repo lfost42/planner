@@ -24,18 +24,18 @@ namespace SoftwarePlannerLibrary.Models
 
         [Display(Name = "Changes")]
         public virtual ICollection<HistoryModel> HistoryModels { get; set; } = new HashSet<HistoryModel>();
-  
-        //[Display(Name = "Attachments")]
-        //public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
-        
+
+        [Display(Name = "Attachments")]
+        public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
+
         [Display(Name = "Users Assigned")]
         public virtual ICollection<UserModel> UserModels { get; set; } = new HashSet<UserModel>();
 
 
         //public int ProjectModelId { get; set; }
         //public virtual ProjectModel ProjectModel { get; set; }
-        //public int RequirementModelId { get; set; }
-        //public virtual RequirementModel RequirementModel { get; set; }
+        public int RequirementModelId { get; set; }
+        public virtual RequirementModel RequirementModel { get; set; }
         //public int TaskModelId { get; set; }
         //public virtual TaskModel TaskModel { get; set; }
         //public int TicketModelId { get; set; }

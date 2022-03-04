@@ -21,7 +21,7 @@ namespace SoftwarePlannerLibrary.Models
         public virtual ICollection<UserModel> UserModels { get; set; }
         [Display(Name = "Projects")]
         public virtual ICollection<ProjectModel> ProjectModels { get; set; }
-        //[Display(Name = "Notifications")]
-        //public virtual ICollection<NotificationModel> NotificationModels { get; set; }
+        [Display(Name = "Notifications")]
+        public virtual ICollection<NotificationModel> NotificationModels { get; set; }
     }
 }

@@ -32,8 +32,8 @@ namespace SoftwarePlannerLibrary.Models
         
         [Display(Name = "Users Assigned")]
         public virtual ICollection<UserModel> UserModels { get; set; } = new HashSet<UserModel>();
-        //[Display(Name = "Requirements")]
-        //public virtual ICollection<RequirementModel> RequirementModels { get; set; } = new HashSet<RequirementModel>();
+        [Display(Name = "Requirements")]
+        public virtual ICollection<RequirementModel> RequirementModels { get; set; } = new HashSet<RequirementModel>();
         [Display(Name = "Changes")]
         public virtual ICollection<HistoryModel> HistoryModels { get; set; } = new HashSet<HistoryModel>();
 
