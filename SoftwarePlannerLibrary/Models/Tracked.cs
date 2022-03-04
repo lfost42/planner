@@ -8,6 +8,10 @@ namespace SoftwarePlannerLibrary.Models
     public abstract class Tracked
     {
         public int Id { get; set; }
+
+        public int CreatorModelId { get; set; }
+        [Display(Name = "Creator")]
+        public virtual CreatorModel CreatorModel { get; set; }
         public PriorityLevel Priority { get; set; } = PriorityLevel.None;
         public Status Status { get; set; } = Status.Created;
 
@@ -43,13 +47,6 @@ namespace SoftwarePlannerLibrary.Models
 
         public int HistoryModelId { get; set; }
         public virtual HistoryModel HistoryModel { get; set; }
-
-        [Display(Name = "User Created")]
-        public string UserModelId { get; set; }
-        public virtual UserModel UserModel { get; set; }
-
-
-
 
     }
 }

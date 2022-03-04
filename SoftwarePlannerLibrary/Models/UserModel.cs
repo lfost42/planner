@@ -21,8 +21,8 @@ namespace SoftwarePlannerLibrary.Models
         public string FullName => $"{FirstName} {LastName}";
 
 
-        //[Display(Name = "Projects")]
-        //public virtual ICollection<ProjectModel> ProjectModelss { get; set; } = new HashSet<ProjectModel>();
+        [Display(Name = "Projects")]
+        public virtual ICollection<ProjectModel> ProjectModelss { get; set; } = new HashSet<ProjectModel>();
 
         //[Display(Name = "Tasks")]
         //public virtual ICollection<TaskModel> TaskModelss { get; set; } = new HashSet<TaskModel>();
@@ -33,9 +33,6 @@ namespace SoftwarePlannerLibrary.Models
         //[Display(Name = "Attachments")]
         //public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
 
-
-        //public int ProjectModelId { get; set; }
-        //public ProjectModel ProjectModel { get; set; }
         public int TeamModelId { get; set; }
         public TeamModel TeamModel { get; set; }
 

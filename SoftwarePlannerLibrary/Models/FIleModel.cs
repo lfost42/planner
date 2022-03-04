@@ -13,6 +13,10 @@ namespace SoftwarePlannerLibrary.Models
     {
         public int Id { get; set; }
 
+        public int CreatorModelId { get; set; }
+        [Display(Name = "Creator")]
+        public virtual CreatorModel CreatorModel { get; set; }
+
         [NotMapped]
         [DataType(DataType.Upload)]
         public IFormFile FormFile { get; set; }
@@ -22,11 +26,12 @@ namespace SoftwarePlannerLibrary.Models
 
         public DateTimeOffset DateUploaded { get; set; }
 
-        [Display(Name = "User")]
+
         public string UserModelId { get; set; }
+        [Display(Name = "User")]
         public UserModel UserModel { get; set; }
 
-        //public int ProjectModelId { get; set; }
-        //public ProjectModel ProjectModel { get; set; }
+        public int ProjectModelId { get; set; }
+        public ProjectModel ProjectModel { get; set; }
     }
 }

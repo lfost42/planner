@@ -18,9 +18,10 @@ namespace SoftwarePlannerLibrary.Models
         //method to set model based on Type
         //nullable properties for Project, Requirement, Task, Ticket, Note?
 
-        [Display(Name = "User Created")]
-        public string UserModelId { get; set; }
-        public virtual UserModel UserModel { get; set; }
+        
+        public string CreatorModelId { get; set; }
+        [Display(Name = "Creator")]
+        public virtual CreatorModel CreatorModel { get; set; }
 
 
         [DisplayName("Updated")]
@@ -39,8 +40,8 @@ namespace SoftwarePlannerLibrary.Models
         [DisplayName("Date Modified")]
         public DateTimeOffset DateModified { get; set; }
 
-        //public int ProjectModelId { get; set; }
-        //public ProjectModel ProjectModel { get; set; }
+        public int ProjectModelId { get; set; }
+        public ProjectModel ProjectModel { get; set; }
 
     }
 }
