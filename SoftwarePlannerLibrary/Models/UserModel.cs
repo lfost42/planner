@@ -20,16 +20,24 @@ namespace SoftwarePlannerLibrary.Models
         [Display(Name = "Name")]
         public string FullName => $"{FirstName} {LastName}";
 
-        public int FileId { get; set; }
-        public FileModel UserPhoto { get; set; }
+
+        //[Display(Name = "Projects")]
+        //public virtual ICollection<ProjectModel> ProjectModelss { get; set; } = new HashSet<ProjectModel>();
+
+        //[Display(Name = "Tasks")]
+        //public virtual ICollection<TaskModel> TaskModelss { get; set; } = new HashSet<TaskModel>();
+
+        //[Display(Name = "Tickets")]
+        //public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();
+
+        //[Display(Name = "Attachments")]
+        //public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
 
 
-        public virtual ICollection<ProjectModel> Projects { get; set; } = new HashSet<ProjectModel>();
-
-        public virtual ICollection<TaskModel> Tasks { get; set; } = new HashSet<TaskModel>();
-
-        public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
-        public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();
+        //public int ProjectModelId { get; set; }
+        //public ProjectModel ProjectModel { get; set; }
+        //public int TeamModelId { get; set; }
+        //public ProjectModel TeamModel { get; set; }
 
     }
 }

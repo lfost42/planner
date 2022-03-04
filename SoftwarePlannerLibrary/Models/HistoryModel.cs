@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,9 @@ namespace SoftwarePlannerLibrary.Models
         //method to set model based on Type
         //nullable properties for Project, Requirement, Task, Ticket, Note?
 
-        [DisplayName("User")]
-        public string UserId { get; set; }
-
-        public UserModel User { get; set; }
+        [Display(Name = "User Created")]
+        public string UserModelId { get; set; }
+        public virtual UserModel UserModel { get; set; }
 
 
         [DisplayName("Updated")]
@@ -38,6 +38,9 @@ namespace SoftwarePlannerLibrary.Models
 
         [DisplayName("Date Modified")]
         public DateTimeOffset DateModified { get; set; }
-        
+
+        //public int ProjectModelId { get; set; }
+        //public ProjectModel ProjectModel { get; set; }
+
     }
 }

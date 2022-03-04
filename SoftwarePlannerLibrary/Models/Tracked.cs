@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using static SoftwarePlannerLibrary.Models.Enum;
 
 namespace SoftwarePlannerLibrary.Models
@@ -16,14 +17,40 @@ namespace SoftwarePlannerLibrary.Models
         public DateTimeOffset DateClosed { get; set; }
 
 
-        public virtual ICollection<HistoryModel> ItemHistory { get; set; } = new HashSet<HistoryModel>();
-        public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();
-        public virtual ICollection<UserModel> UsersAssigned { get; set; } = new HashSet<UserModel>();
 
-        public string UserCreatedId { get; set; }
-        public UserModel UserCreated { get; }
+        [Display(Name = "Changes")]
+        public virtual ICollection<HistoryModel> HistoryModels { get; set; } = new HashSet<HistoryModel>();
+  
+        //[Display(Name = "Attachments")]
+        //public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
+        
+        [Display(Name = "Users Assigned")]
+        public virtual ICollection<UserModel> UserModels { get; set; } = new HashSet<UserModel>();
 
-        public int ProjectId { get; set; }
-        public virtual ProjectModel Project { get; set; }
+
+        //public int ProjectModelId { get; set; }
+        //public virtual ProjectModel ProjectModel { get; set; }
+        //public int RequirementModelId { get; set; }
+        //public virtual RequirementModel RequirementModel { get; set; }
+        //public int TaskModelId { get; set; }
+        //public virtual TaskModel TaskModel { get; set; }
+        //public int TicketModelId { get; set; }
+        //public virtual TicketModel TicketModel { get; set; }
+        //public int NoteModelId { get; set; }
+        //public virtual NoteModel NoteModel { get; set; }
+
+        public int HistoryModelId { get; set; }
+        public virtual HistoryModel HistoryModel { get; set; }
+
+        //public int FileModelId { get; set; }
+        //public virtual FileModel FileModel { get; set; }
+
+        [Display(Name = "User Created")]
+        public string UserModelId { get; set; }
+        public virtual UserModel UserModel { get; set; }
+
+
+
+
     }
 }
