@@ -17,5 +17,7 @@ namespace SoftwarePlannerLibrary.Models
         public int RequirementId { get; set; }
         public RequirementModel Requirement { get; set; }
 
+        public DateTimeOffset TargetDate { get; set; }
+
     }
 }

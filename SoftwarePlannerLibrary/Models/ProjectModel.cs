@@ -17,6 +17,8 @@ namespace SoftwarePlannerLibrary.Models
 
         public string Summary { get; set; }
 
+        public DateTimeOffset TargetDate { get; set; }
+
         public DateTime DateCreated { get; set; }
 
         public DateTime DateModified { get; set; }

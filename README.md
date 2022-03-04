@@ -16,14 +16,9 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 - Tasks
 - Tickets
 - Notes
-
-- Projected
-- Issues & Notes (once project begins)
+- Change Management
 - Attachments
-- History of changes
-- Notes
 - Priority
-
 
 ## OPEN REQUIREMENTS
 
@@ -32,11 +27,10 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 
 - CRUD Projects, Requirements, Tasks
 - Assign projects, requirements, tasks, tickets to teams, roles, users
-- Notifications when items are assigned
+- Auto-Notifications when items are assigned
 - Project statistics (timeline options)
 - Sort / Search / Filtering
 - Option to export project data to a csv file
-
 
 ## USER INTERFACE
 
@@ -50,8 +44,9 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 
 - Profile Management
 - Role Management
-- Project Management
-- Ticket Management
+- Project Management/History
+- Task Management/History
+- Ticket Management/History
 
 ### LOGIC DESIGN
 
@@ -70,13 +65,19 @@ Implements identity and role based access/rendering. SOLID principles demonstrat
 - UserModel
 - ProjectModel
 
-- History
-- Types
-
+- ProjectModel
+	- TargetDate
 - RequirementModel
+	- TargetDate
 - TaskModel
+	- TargetDate
 - TicketModel
 - NoteModel
+
+- Type
+- Priority
+- Status
+- History
 
 (one-to-many relationships >>)
 - Requirements >> Tasks >> Tickets >> Notes 

@@ -11,6 +11,7 @@ namespace SoftwarePlannerLibrary.Models
         [Required]
         [Display(Name = "Requirement")]
         public string Name { get; set; }
+        public DateTimeOffset TargetDate { get; set; }
         public virtual ICollection<TaskModel> Tasks { get; set; } = new HashSet<TaskModel>();
 
     }
