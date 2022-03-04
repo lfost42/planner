@@ -36,8 +36,8 @@ namespace SoftwarePlannerLibrary.Models
 
         //public int ProjectModelId { get; set; }
         //public ProjectModel ProjectModel { get; set; }
-        //public int TeamModelId { get; set; }
-        //public ProjectModel TeamModel { get; set; }
+        public int TeamModelId { get; set; }
+        public TeamModel TeamModel { get; set; }
 
     }
 }

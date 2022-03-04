@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SoftwarePlannerUI.Data;
 
-namespace SoftwarePlannerUI.Migrations
+namespace SoftwarePlannerUI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -149,6 +149,24 @@ namespace SoftwarePlannerUI.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.TeamModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Team")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TeamModel");
+                });
+
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
                 {
                     b.Property<string>("Id")
@@ -202,6 +220,9 @@ namespace SoftwarePlannerUI.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
 
+                    b.Property<int>("TeamModelId")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("boolean");
 
@@ -217,6 +238,8 @@ namespace SoftwarePlannerUI.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
+
+                    b.HasIndex("TeamModelId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -270,6 +293,22 @@ namespace SoftwarePlannerUI.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
+                {
+                    b.HasOne("SoftwarePlannerLibrary.Models.TeamModel", "TeamModel")
+                        .WithMany("UserModels")
+                        .HasForeignKey("TeamModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TeamModel");
+                });
+
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.TeamModel", b =>
+                {
+                    b.Navigation("UserModels");
                 });
 #pragma warning restore 612, 618
         }

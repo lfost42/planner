@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SoftwarePlannerUI.Data;
 
-namespace SoftwarePlannerUI.Migrations
+namespace SoftwarePlannerUI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220304051605_Initial_001")]
-    partial class Initial_001
+    [Migration("20220304053429_InitialMigration_001")]
+    partial class InitialMigration_001
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
