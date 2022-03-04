@@ -38,12 +38,11 @@ namespace SoftwarePlannerLibrary.Models
         //public virtual TicketModel TicketModel { get; set; }
         //public int NoteModelId { get; set; }
         //public virtual NoteModel NoteModel { get; set; }
+        //public int FileModelId { get; set; }
+        //public virtual FileModel FileModel { get; set; }
 
         public int HistoryModelId { get; set; }
         public virtual HistoryModel HistoryModel { get; set; }
-
-        //public int FileModelId { get; set; }
-        //public virtual FileModel FileModel { get; set; }
 
         [Display(Name = "User Created")]
         public string UserModelId { get; set; }

@@ -16,6 +16,8 @@
   <ItemGroup>
     <Compile Include="Migrations\20220304051605_Initial_001.cs" />
     <Compile Include="Migrations\20220304051605_Initial_001.Designer.cs" />
+    <Compile Include="Migrations\20220304053201_Files_002.cs" />
+    <Compile Include="Migrations\20220304053201_Files_002.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
