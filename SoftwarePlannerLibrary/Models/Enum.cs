@@ -3,7 +3,7 @@ namespace SoftwarePlannerLibrary.Models
 {
     public class Enum
     {
-        public enum HistoryType
+        public enum ChangeType
         {
             Project,
             Requirement,

@@ -9,11 +9,11 @@ using static SoftwarePlannerLibrary.Models.Enum;
 
 namespace SoftwarePlannerLibrary.Models
 {
-    public class HistoryModel
+    public class ChangeModel
     {
         public int Id { get; set; }
 
-        public HistoryType Type { get; set; }
+        public ChangeType Type { get; set; }
 
         //method to set model based on Type
         //nullable properties for Project, Requirement, Task, Ticket, Note?

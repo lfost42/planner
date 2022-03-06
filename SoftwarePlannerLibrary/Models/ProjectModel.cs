@@ -35,7 +35,7 @@ namespace SoftwarePlannerLibrary.Models
         [Display(Name = "Requirements")]
         public virtual ICollection<RequirementModel> RequirementModels { get; set; } = new HashSet<RequirementModel>();
         [Display(Name = "Changes")]
-        public virtual ICollection<HistoryModel> HistoryModels { get; set; } = new HashSet<HistoryModel>();
+        public virtual ICollection<ChangeModel> HistoryModels { get; set; } = new HashSet<ChangeModel>();
 
         [Display(Name = "Attachments")]
         public virtual ICollection<FileModel> FileAttachments { get; set; } = new HashSet<FileModel>();

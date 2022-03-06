@@ -17,7 +17,7 @@ namespace SoftwarePlannerUI.Data
         public DbSet<CreatorModel> Creators { get; set; }
 
         public DbSet<FileModel> Attachments { get; set; }
-        public DbSet<HistoryModel> Changes { get; set; }
+        public DbSet<ChangeModel> Changes { get; set; }
         public DbSet<NoteModel> Notes { get; set; }
         public DbSet<NotificationModel> Notifications { get; set; }
         public DbSet<ProjectModel> Projects { get; set; }
