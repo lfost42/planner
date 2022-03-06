@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoftwarePlannerLibrary.Data
+namespace SoftwarePlannerLibrary.Databases
 {
     public class TeamControl
     {

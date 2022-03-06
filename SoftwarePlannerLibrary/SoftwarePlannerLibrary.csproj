@@ -16,7 +16,7 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Databases\" />
-    <Folder Include="Data\Services\" />
+    <Folder Include="Databases\Services\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>
