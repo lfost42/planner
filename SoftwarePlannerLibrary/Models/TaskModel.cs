@@ -10,13 +10,14 @@ namespace SoftwarePlannerLibrary.Models
     {
         [Required]
         [Display(Name = "Task")]
+        [StringLength(50, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Name { get; set; }
 
         public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
 
         public DateTimeOffset TargetDate { get; set; }
-        public int RequirementModelId { get; set; }
+        public virtual int RequirementModelId { get; set; }
         public virtual RequirementModel RequirementModel { get; set; }
-
+ 
     }
 }

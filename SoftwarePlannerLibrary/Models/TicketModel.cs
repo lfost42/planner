@@ -10,6 +10,7 @@ namespace SoftwarePlannerLibrary.Models
     {
         [Required]
         [Display(Name = "Ticket")]
+        [StringLength(50, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Name { get; set; }
 
         public TicketType TicketType { get; set; } = TicketType.Inquiry;

@@ -16,15 +16,18 @@ namespace SoftwarePlannerLibrary.Models
         [Display(Name = "User Created")]
         public virtual CreatorModel CreatorModel { get; set; }
 
+        [Required]
+        [StringLength(50, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Summary { get; set; }
 
+        [Required]
         public DateTimeOffset TargetDate { get; set; }
-
+        [Required]
         public DateTime DateCreated { get; set; }
 
-        public DateTime DateModified { get; set; }
+        public DateTime? DateModified { get; set; }
 
-        public DateTime DateCompleted { get; set; }
+        public DateTime? DateCompleted { get; set; }
 
 
         [Display(Name = "Teams Assigned")]
@@ -35,7 +38,7 @@ namespace SoftwarePlannerLibrary.Models
         [Display(Name = "Requirements")]
         public virtual ICollection<RequirementModel> RequirementModels { get; set; } = new HashSet<RequirementModel>();
         [Display(Name = "Changes")]
-        public virtual ICollection<ChangeModel> HistoryModels { get; set; } = new HashSet<ChangeModel>();
+        public virtual ICollection<ChangeModel> ChangeModels { get; set; } = new HashSet<ChangeModel>();
 
         [Display(Name = "Attachments")]
         public virtual ICollection<FileModel> FileAttachments { get; set; } = new HashSet<FileModel>();

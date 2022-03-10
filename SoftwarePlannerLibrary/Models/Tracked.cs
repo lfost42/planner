@@ -24,7 +24,7 @@ namespace SoftwarePlannerLibrary.Models
 
 
         [Display(Name = "Changes")]
-        public virtual ICollection<ChangeModel> HistoryModels { get; set; } = new HashSet<ChangeModel>();
+        public virtual ICollection<ChangeModel> ChangesModels { get; set; } = new HashSet<ChangeModel>();
 
         [Display(Name = "Attachments")]
         public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();

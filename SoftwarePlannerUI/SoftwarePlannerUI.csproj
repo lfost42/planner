@@ -27,4 +27,8 @@
     <ProjectReference Include="..\SoftwarePlannerLibrary\SoftwarePlannerLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
+  </ItemGroup>
+
 </Project>

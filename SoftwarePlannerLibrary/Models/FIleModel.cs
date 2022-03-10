@@ -31,8 +31,8 @@ namespace SoftwarePlannerLibrary.Models
         [Display(Name = "User")]
         public UserModel UserModel { get; set; }
 
-        public int ProjectModelId { get; set; }
-        public ProjectModel ProjectModel { get; set; }
+        public virtual int ProjectModelId { get; set; }
+        public virtual ProjectModel ProjectModel { get; set; }
 
     }
 }

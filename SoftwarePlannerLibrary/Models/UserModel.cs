@@ -36,5 +36,8 @@ namespace SoftwarePlannerLibrary.Models
         public int TeamModelId { get; set; }
         public virtual TeamModel TeamModel { get; set; }
 
+        [Display(Name = "Changes")]
+        public virtual ICollection<ChangeModel> ChangeModels { get; set; } = new HashSet<ChangeModel>();
+
     }
 }

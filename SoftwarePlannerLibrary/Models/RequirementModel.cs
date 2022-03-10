@@ -11,6 +11,7 @@ namespace SoftwarePlannerLibrary.Models
         [Required]
         [Display(Name = "Requirement")]
         public string Name { get; set; }
+        [StringLength(50, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public DateTimeOffset TargetDate { get; set; }
 
         [Display(Name = "Tasks")]
@@ -18,5 +19,6 @@ namespace SoftwarePlannerLibrary.Models
 
         public int ProjectModelId { get; set; }
         public virtual ProjectModel ProjectModel { get; set; }
-    }
+
+     }
 }

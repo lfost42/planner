@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SoftwarePlannerUI.Data;
 
-namespace SoftwarePlannerUI.Data.Migrations
+namespace SoftwarePlannerUI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220304055458_Creator_004")]
-    partial class Creator_004
+    [Migration("20220310064939_start_001")]
+    partial class start_001
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -151,157 +151,64 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ProjectModelTeamModel", b =>
-                {
-                    b.Property<int>("ProjectModelsId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TeamModelsId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ProjectModelsId", "TeamModelsId");
-
-                    b.HasIndex("TeamModelsId");
-
-                    b.ToTable("ProjectModelTeamModel");
-                });
-
-            modelBuilder.Entity("ProjectModelUserModel", b =>
-                {
-                    b.Property<int>("ProjectModelssId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("UserModelsId")
-                        .HasColumnType("text");
-
-                    b.HasKey("ProjectModelssId", "UserModelsId");
-
-                    b.HasIndex("UserModelsId");
-
-                    b.ToTable("ProjectModelUserModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.FileModel", b =>
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.ChangeModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<DateTimeOffset>("DateUploaded")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<byte[]>("FileData")
-                        .HasColumnType("bytea");
-
-                    b.Property<string>("FileExtension")
+                    b.Property<string>("CreatorModelId")
                         .HasColumnType("text");
 
-                    b.Property<string>("FileName")
-                        .HasColumnType("text");
-
-                    b.Property<int>("ProjectModelId")
+                    b.Property<int?>("CreatorModelId1")
                         .HasColumnType("integer");
-
-                    b.Property<string>("UserModelId")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProjectModelId");
-
-                    b.HasIndex("UserModelId");
-
-                    b.ToTable("FileModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.HistoryModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("CurrentValue")
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<DateTimeOffset>("DateModified")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
-                        .HasColumnType("text");
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
 
                     b.Property<string>("PreviousValue")
-                        .HasColumnType("text");
-
-                    b.Property<int>("ProjectModelId")
-                        .HasColumnType("integer");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<int>("Type")
                         .HasColumnType("integer");
 
                     b.Property<string>("UpdatedItem")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatorModelId1");
+
+                    b.ToTable("Changes");
+                });
+
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.CreatorModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("UserModelId")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProjectModelId");
-
                     b.HasIndex("UserModelId");
 
-                    b.ToTable("HistoryModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.ProjectModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<DateTime>("DateCompleted")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime>("DateModified")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("ProjectName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Summary")
-                        .HasColumnType("text");
-
-                    b.Property<DateTimeOffset>("TargetDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProjectModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.TeamModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Team")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TeamModel");
+                    b.ToTable("Creators");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
@@ -357,9 +264,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
 
-                    b.Property<int>("TeamModelId")
-                        .HasColumnType("integer");
-
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("boolean");
 
@@ -375,8 +279,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
-
-                    b.HasIndex("TeamModelId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -432,91 +334,22 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProjectModelTeamModel", b =>
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.ChangeModel", b =>
                 {
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", null)
+                    b.HasOne("SoftwarePlannerLibrary.Models.CreatorModel", "CreatorModel")
                         .WithMany()
-                        .HasForeignKey("ProjectModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CreatorModelId1");
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.TeamModel", null)
-                        .WithMany()
-                        .HasForeignKey("TeamModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("CreatorModel");
                 });
 
-            modelBuilder.Entity("ProjectModelUserModel", b =>
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.CreatorModel", b =>
                 {
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", null)
-                        .WithMany()
-                        .HasForeignKey("ProjectModelssId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", null)
-                        .WithMany()
-                        .HasForeignKey("UserModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.FileModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
-                        .WithMany("FileAttachments")
-                        .HasForeignKey("ProjectModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("SoftwarePlannerLibrary.Models.UserModel", "UserModel")
                         .WithMany()
                         .HasForeignKey("UserModelId");
 
-                    b.Navigation("ProjectModel");
-
                     b.Navigation("UserModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.HistoryModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
-                        .WithMany("HistoryModels")
-                        .HasForeignKey("ProjectModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", "UserModel")
-                        .WithMany()
-                        .HasForeignKey("UserModelId");
-
-                    b.Navigation("ProjectModel");
-
-                    b.Navigation("UserModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.TeamModel", "TeamModel")
-                        .WithMany("UserModels")
-                        .HasForeignKey("TeamModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TeamModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.ProjectModel", b =>
-                {
-                    b.Navigation("FileAttachments");
-
-                    b.Navigation("HistoryModels");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.TeamModel", b =>
-                {
-                    b.Navigation("UserModels");
                 });
 #pragma warning restore 612, 618
         }

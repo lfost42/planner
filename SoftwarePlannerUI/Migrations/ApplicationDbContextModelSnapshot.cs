@@ -2,18 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SoftwarePlannerUI.Data;
 
-namespace SoftwarePlannerUI.Data.Migrations
+namespace SoftwarePlannerUI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220304063837_Ticket_008")]
-    partial class Ticket_008
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,17 +166,90 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("ProjectModelUserModel", b =>
                 {
-                    b.Property<int>("ProjectModelssId")
+                    b.Property<int>("ProjectModelsId")
                         .HasColumnType("integer");
 
                     b.Property<string>("UserModelsId")
                         .HasColumnType("text");
 
-                    b.HasKey("ProjectModelssId", "UserModelsId");
+                    b.HasKey("ProjectModelsId", "UserModelsId");
 
                     b.HasIndex("UserModelsId");
 
                     b.ToTable("ProjectModelUserModel");
+                });
+
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.ChangeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("CreatorModelId")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("CreatorModelId1")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("CurrentValue")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<DateTimeOffset>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<int?>("NoteModelId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("PreviousValue")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<int>("ProjectModelId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("RequirementModelId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("TaskModelId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("TicketModelId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UpdatedItem")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("UserModelId")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatorModelId1");
+
+                    b.HasIndex("NoteModelId");
+
+                    b.HasIndex("ProjectModelId");
+
+                    b.HasIndex("RequirementModelId");
+
+                    b.HasIndex("TaskModelId");
+
+                    b.HasIndex("TicketModelId");
+
+                    b.HasIndex("UserModelId");
+
+                    b.ToTable("Changes");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.CreatorModel", b =>
@@ -195,7 +266,7 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.HasIndex("UserModelId");
 
-                    b.ToTable("CreatorModel");
+                    b.ToTable("Creators");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.FileModel", b =>
@@ -220,6 +291,9 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.Property<string>("FileName")
                         .HasColumnType("text");
 
+                    b.Property<int?>("NoteModelId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("ProjectModelId")
                         .HasColumnType("integer");
 
@@ -239,6 +313,8 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.HasIndex("CreatorModelId");
 
+                    b.HasIndex("NoteModelId");
+
                     b.HasIndex("ProjectModelId");
 
                     b.HasIndex("RequirementModelId");
@@ -249,65 +325,59 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.HasIndex("UserModelId");
 
-                    b.ToTable("FileModel");
+                    b.ToTable("Attachments");
                 });
 
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.HistoryModel", b =>
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.NoteModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("CreatorModelId")
-                        .HasColumnType("text");
-
-                    b.Property<int?>("CreatorModelId1")
+                    b.Property<int>("CreatorModelId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("CurrentValue")
-                        .HasColumnType("text");
+                    b.Property<DateTimeOffset>("DateClosed")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTimeOffset>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTimeOffset>("DateModified")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
 
-                    b.Property<string>("PreviousValue")
-                        .HasColumnType("text");
-
-                    b.Property<int>("ProjectModelId")
+                    b.Property<int>("HistoryModelId")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("RequirementModelId")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<int>("Priority")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("TaskModelId")
+                    b.Property<int>("Status")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("TicketModelId")
+                    b.Property<int>("TicketId")
                         .HasColumnType("integer");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("UpdatedItem")
-                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatorModelId1");
+                    b.HasIndex("CreatorModelId");
 
-                    b.HasIndex("ProjectModelId");
+                    b.HasIndex("HistoryModelId");
 
-                    b.HasIndex("RequirementModelId");
+                    b.HasIndex("TicketId");
 
-                    b.HasIndex("TaskModelId");
-
-                    b.HasIndex("TicketModelId");
-
-                    b.ToTable("HistoryModel");
+                    b.ToTable("Notes");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.NotificationModel", b =>
@@ -322,7 +392,8 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
 
                     b.Property<string>("RecipientId")
                         .IsRequired()
@@ -337,7 +408,8 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.Property<string>("Subject")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<int?>("TeamModelId")
                         .HasColumnType("integer");
@@ -355,7 +427,7 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.HasIndex("TicketId");
 
-                    b.ToTable("NotificationModel");
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.ProjectModel", b =>
@@ -371,13 +443,13 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.Property<int?>("CreatorModelId1")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("DateCompleted")
+                    b.Property<DateTime?>("DateCompleted")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<DateTime?>("DateModified")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("ProjectName")
@@ -385,7 +457,9 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Summary")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<DateTimeOffset>("TargetDate")
                         .HasColumnType("timestamp with time zone");
@@ -394,7 +468,7 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.HasIndex("CreatorModelId1");
 
-                    b.ToTable("ProjectModel");
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.RequirementModel", b =>
@@ -433,6 +507,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<DateTimeOffset>("TargetDate")
+                        .HasMaxLength(50)
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -443,7 +518,7 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.HasIndex("ProjectModelId");
 
-                    b.ToTable("RequirementModel");
+                    b.ToTable("Requirements");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.TaskModel", b =>
@@ -470,7 +545,8 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<int>("Priority")
                         .HasColumnType("integer");
@@ -492,7 +568,7 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.HasIndex("RequirementModelId");
 
-                    b.ToTable("TaskModel");
+                    b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.TeamModel", b =>
@@ -506,16 +582,19 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("Description")
-                        .HasColumnType("text");
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
 
                     b.Property<string>("Team")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorModelId");
 
-                    b.ToTable("TeamModel");
+                    b.ToTable("Teams");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.TicketModel", b =>
@@ -542,7 +621,8 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<int>("Priority")
                         .HasColumnType("integer");
@@ -564,7 +644,7 @@ namespace SoftwarePlannerUI.Data.Migrations
 
                     b.HasIndex("TaskModelId");
 
-                    b.ToTable("TicketModel");
+                    b.ToTable("Tickets");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
@@ -608,6 +688,9 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
+                    b.Property<int?>("NoteModelId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("PasswordHash")
                         .HasColumnType("text");
 
@@ -642,6 +725,8 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
+                    b.HasIndex("NoteModelId");
+
                     b.HasIndex("RequirementModelId");
 
                     b.HasIndex("TeamModelId");
@@ -651,13 +736,13 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("TaskModelUserModel", b =>
                 {
-                    b.Property<int>("TaskModelssId")
+                    b.Property<int>("TaskModelsId")
                         .HasColumnType("integer");
 
                     b.Property<string>("UserModelsId")
                         .HasColumnType("text");
 
-                    b.HasKey("TaskModelssId", "UserModelsId");
+                    b.HasKey("TaskModelsId", "UserModelsId");
 
                     b.HasIndex("UserModelsId");
 
@@ -749,7 +834,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                 {
                     b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", null)
                         .WithMany()
-                        .HasForeignKey("ProjectModelssId")
+                        .HasForeignKey("ProjectModelsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -758,6 +843,43 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .HasForeignKey("UserModelsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.ChangeModel", b =>
+                {
+                    b.HasOne("SoftwarePlannerLibrary.Models.CreatorModel", "CreatorModel")
+                        .WithMany()
+                        .HasForeignKey("CreatorModelId1");
+
+                    b.HasOne("SoftwarePlannerLibrary.Models.NoteModel", null)
+                        .WithMany("ChangesModels")
+                        .HasForeignKey("NoteModelId");
+
+                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
+                        .WithMany("ChangeModels")
+                        .HasForeignKey("ProjectModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SoftwarePlannerLibrary.Models.RequirementModel", null)
+                        .WithMany("ChangesModels")
+                        .HasForeignKey("RequirementModelId");
+
+                    b.HasOne("SoftwarePlannerLibrary.Models.TaskModel", null)
+                        .WithMany("ChangesModels")
+                        .HasForeignKey("TaskModelId");
+
+                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", null)
+                        .WithMany("ChangesModels")
+                        .HasForeignKey("TicketModelId");
+
+                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", null)
+                        .WithMany("ChangeModels")
+                        .HasForeignKey("UserModelId");
+
+                    b.Navigation("CreatorModel");
+
+                    b.Navigation("ProjectModel");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.CreatorModel", b =>
@@ -776,6 +898,10 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .HasForeignKey("CreatorModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("SoftwarePlannerLibrary.Models.NoteModel", null)
+                        .WithMany("FileModels")
+                        .HasForeignKey("NoteModelId");
 
                     b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
                         .WithMany("FileAttachments")
@@ -806,33 +932,31 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.Navigation("UserModel");
                 });
 
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.HistoryModel", b =>
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.NoteModel", b =>
                 {
                     b.HasOne("SoftwarePlannerLibrary.Models.CreatorModel", "CreatorModel")
                         .WithMany()
-                        .HasForeignKey("CreatorModelId1");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
-                        .WithMany("HistoryModels")
-                        .HasForeignKey("ProjectModelId")
+                        .HasForeignKey("CreatorModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.RequirementModel", null)
-                        .WithMany("HistoryModels")
-                        .HasForeignKey("RequirementModelId");
+                    b.HasOne("SoftwarePlannerLibrary.Models.ChangeModel", "HistoryModel")
+                        .WithMany()
+                        .HasForeignKey("HistoryModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.TaskModel", null)
-                        .WithMany("HistoryModels")
-                        .HasForeignKey("TaskModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", null)
-                        .WithMany("HistoryModels")
-                        .HasForeignKey("TicketModelId");
+                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", "Ticket")
+                        .WithMany("NoteModels")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CreatorModel");
 
-                    b.Navigation("ProjectModel");
+                    b.Navigation("HistoryModel");
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.NotificationModel", b =>
@@ -881,7 +1005,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.HistoryModel", "HistoryModel")
+                    b.HasOne("SoftwarePlannerLibrary.Models.ChangeModel", "HistoryModel")
                         .WithMany()
                         .HasForeignKey("HistoryModelId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -908,7 +1032,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.HistoryModel", "HistoryModel")
+                    b.HasOne("SoftwarePlannerLibrary.Models.ChangeModel", "HistoryModel")
                         .WithMany()
                         .HasForeignKey("HistoryModelId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -946,7 +1070,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.HistoryModel", "HistoryModel")
+                    b.HasOne("SoftwarePlannerLibrary.Models.ChangeModel", "HistoryModel")
                         .WithMany()
                         .HasForeignKey("HistoryModelId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -967,6 +1091,10 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
                 {
+                    b.HasOne("SoftwarePlannerLibrary.Models.NoteModel", null)
+                        .WithMany("UserModels")
+                        .HasForeignKey("NoteModelId");
+
                     b.HasOne("SoftwarePlannerLibrary.Models.RequirementModel", null)
                         .WithMany("UserModels")
                         .HasForeignKey("RequirementModelId");
@@ -984,7 +1112,7 @@ namespace SoftwarePlannerUI.Data.Migrations
                 {
                     b.HasOne("SoftwarePlannerLibrary.Models.TaskModel", null)
                         .WithMany()
-                        .HasForeignKey("TaskModelssId")
+                        .HasForeignKey("TaskModelsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1010,20 +1138,29 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SoftwarePlannerLibrary.Models.NoteModel", b =>
+                {
+                    b.Navigation("ChangesModels");
+
+                    b.Navigation("FileModels");
+
+                    b.Navigation("UserModels");
+                });
+
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.ProjectModel", b =>
                 {
-                    b.Navigation("FileAttachments");
+                    b.Navigation("ChangeModels");
 
-                    b.Navigation("HistoryModels");
+                    b.Navigation("FileAttachments");
 
                     b.Navigation("RequirementModels");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.RequirementModel", b =>
                 {
-                    b.Navigation("FileModels");
+                    b.Navigation("ChangesModels");
 
-                    b.Navigation("HistoryModels");
+                    b.Navigation("FileModels");
 
                     b.Navigation("TaskModels");
 
@@ -1032,9 +1169,9 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.TaskModel", b =>
                 {
-                    b.Navigation("FileModels");
+                    b.Navigation("ChangesModels");
 
-                    b.Navigation("HistoryModels");
+                    b.Navigation("FileModels");
 
                     b.Navigation("Tickets");
                 });
@@ -1048,13 +1185,17 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.TicketModel", b =>
                 {
+                    b.Navigation("ChangesModels");
+
                     b.Navigation("FileModels");
 
-                    b.Navigation("HistoryModels");
+                    b.Navigation("NoteModels");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
                 {
+                    b.Navigation("ChangeModels");
+
                     b.Navigation("FileModels");
                 });
 #pragma warning restore 612, 618

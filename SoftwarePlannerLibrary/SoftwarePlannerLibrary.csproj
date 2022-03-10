@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Databases\Services\**" />
+    <EmbeddedResource Remove="Databases\Services\**" />
+    <None Remove="Databases\Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -16,7 +22,6 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Databases\Services\" />
     <Folder Include="Data\" />
   </ItemGroup>
 </Project>
