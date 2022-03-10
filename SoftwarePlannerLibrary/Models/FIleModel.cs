@@ -26,13 +26,13 @@ namespace SoftwarePlannerLibrary.Models
 
         public DateTimeOffset DateUploaded { get; set; }
 
+        //Navigation
+        //public string UserModelId { get; set; }
+        //[Display(Name = "User")]
+        //public UserModel UserModel { get; set; }
 
-        public string UserModelId { get; set; }
-        [Display(Name = "User")]
-        public UserModel UserModel { get; set; }
-
-        public virtual int ProjectModelId { get; set; }
-        public virtual ProjectModel ProjectModel { get; set; }
+        //public virtual int ProjectModelId { get; set; }
+        //public virtual ProjectModel ProjectModel { get; set; }
 
     }
 }

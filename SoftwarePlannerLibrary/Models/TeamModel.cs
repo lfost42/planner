@@ -19,12 +19,19 @@ namespace SoftwarePlannerLibrary.Models
         public int CreatorModelId { get; set; }
         [Display(Name = "Creator")]
         public virtual CreatorModel CreatorModel { get; set; }
-        
-        [Display(Name = "Members")]
-        public virtual ICollection<UserModel> UserModels { get; set; }
-        [Display(Name = "Projects")]
-        public virtual ICollection<ProjectModel> ProjectModels { get; set; }
-        [Display(Name = "Notifications")]
-        public virtual ICollection<NotificationModel> NotificationModels { get; set; }
+
+        //Navigation
+        //[Display(Name = "Members")]
+        //public virtual ICollection<UserModel> UserModels { get; set; }
+        //[Display(Name = "Projects")]
+        //public virtual ICollection<ProjectModel> ProjectModels { get; set; }
+
+        //[Display(Name = "Attachments")]
+        //public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
+        //[Display(Name = "Tickets")]
+        //public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();
+        //[Display(Name = "Changes")]
+        //public virtual ICollection<ChangeModel> ChangeModels { get; set; } = new HashSet<ChangeModel>();
+
     }
 }

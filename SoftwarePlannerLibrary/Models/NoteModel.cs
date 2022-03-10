@@ -18,7 +18,8 @@ namespace SoftwarePlannerLibrary.Models
         public string Description { get; set; }
 
 
-        public virtual int TicketId { get; set; }
-        public virtual TicketModel Ticket { get; set; }
+        //Navigation
+        //public virtual int TicketId { get; set; }
+        //public virtual TicketModel Ticket { get; set; }
     }
 }

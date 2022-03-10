@@ -2,21 +2,23 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SoftwarePlannerUI.Data;
 
-namespace SoftwarePlannerUI.Migrations
+namespace SoftwarePlannerUI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220310203018_start_001")]
+    partial class start_001
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
-                .HasAnnotation("ProductVersion", "5.0.14")
+                .HasAnnotation("ProductVersion", "5.0.15")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -149,36 +151,6 @@ namespace SoftwarePlannerUI.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ProjectModelTeamModel", b =>
-                {
-                    b.Property<int>("ProjectModelsId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TeamModelsId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ProjectModelsId", "TeamModelsId");
-
-                    b.HasIndex("TeamModelsId");
-
-                    b.ToTable("ProjectModelTeamModel");
-                });
-
-            modelBuilder.Entity("ProjectModelUserModel", b =>
-                {
-                    b.Property<int>("ProjectModelsId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("UserModelsId")
-                        .HasColumnType("text");
-
-                    b.HasKey("ProjectModelsId", "UserModelsId");
-
-                    b.HasIndex("UserModelsId");
-
-                    b.ToTable("ProjectModelUserModel");
-                });
-
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.ChangeModel", b =>
                 {
                     b.Property<int>("Id")
@@ -203,24 +175,9 @@ namespace SoftwarePlannerUI.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
 
-                    b.Property<int?>("NoteModelId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("PreviousValue")
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
-
-                    b.Property<int>("ProjectModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("RequirementModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("TaskModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("TicketModelId")
-                        .HasColumnType("integer");
 
                     b.Property<int>("Type")
                         .HasColumnType("integer");
@@ -230,24 +187,9 @@ namespace SoftwarePlannerUI.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<string>("UserModelId")
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorModelId1");
-
-                    b.HasIndex("NoteModelId");
-
-                    b.HasIndex("ProjectModelId");
-
-                    b.HasIndex("RequirementModelId");
-
-                    b.HasIndex("TaskModelId");
-
-                    b.HasIndex("TicketModelId");
-
-                    b.HasIndex("UserModelId");
 
                     b.ToTable("Changes");
                 });
@@ -291,39 +233,9 @@ namespace SoftwarePlannerUI.Migrations
                     b.Property<string>("FileName")
                         .HasColumnType("text");
 
-                    b.Property<int?>("NoteModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ProjectModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("RequirementModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("TaskModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("TicketModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("UserModelId")
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorModelId");
-
-                    b.HasIndex("NoteModelId");
-
-                    b.HasIndex("ProjectModelId");
-
-                    b.HasIndex("RequirementModelId");
-
-                    b.HasIndex("TaskModelId");
-
-                    b.HasIndex("TicketModelId");
-
-                    b.HasIndex("UserModelId");
 
                     b.ToTable("Attachments");
                 });
@@ -352,9 +264,6 @@ namespace SoftwarePlannerUI.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
 
-                    b.Property<int>("HistoryModelId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -366,16 +275,14 @@ namespace SoftwarePlannerUI.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TicketId")
+                    b.Property<int?>("TicketModelId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorModelId");
 
-                    b.HasIndex("HistoryModelId");
-
-                    b.HasIndex("TicketId");
+                    b.HasIndex("TicketModelId");
 
                     b.ToTable("Notes");
                 });
@@ -395,14 +302,11 @@ namespace SoftwarePlannerUI.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
 
-                    b.Property<string>("RecipientId")
+                    b.Property<string>("RecipientEmail")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ReciptientId")
-                        .HasColumnType("text");
-
-                    b.Property<string>("SenderId")
+                    b.Property<string>("SenderEmail")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -411,21 +315,7 @@ namespace SoftwarePlannerUI.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<int?>("TeamModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TicketId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ReciptientId");
-
-                    b.HasIndex("SenderId");
-
-                    b.HasIndex("TeamModelId");
-
-                    b.HasIndex("TicketId");
 
                     b.ToTable("Notifications");
                 });
@@ -490,17 +380,11 @@ namespace SoftwarePlannerUI.Migrations
                     b.Property<DateTimeOffset>("DateModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("HistoryModelId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Priority")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ProjectModelId")
                         .HasColumnType("integer");
 
                     b.Property<int>("Status")
@@ -513,10 +397,6 @@ namespace SoftwarePlannerUI.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorModelId");
-
-                    b.HasIndex("HistoryModelId");
-
-                    b.HasIndex("ProjectModelId");
 
                     b.ToTable("Requirements");
                 });
@@ -540,18 +420,12 @@ namespace SoftwarePlannerUI.Migrations
                     b.Property<DateTimeOffset>("DateModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("HistoryModelId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
                     b.Property<int>("Priority")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("RequirementModelId")
                         .HasColumnType("integer");
 
                     b.Property<int>("Status")
@@ -563,10 +437,6 @@ namespace SoftwarePlannerUI.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorModelId");
-
-                    b.HasIndex("HistoryModelId");
-
-                    b.HasIndex("RequirementModelId");
 
                     b.ToTable("Tasks");
                 });
@@ -616,9 +486,6 @@ namespace SoftwarePlannerUI.Migrations
                     b.Property<DateTimeOffset>("DateModified")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("HistoryModelId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -630,19 +497,12 @@ namespace SoftwarePlannerUI.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TaskModelId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("TicketType")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorModelId");
-
-                    b.HasIndex("HistoryModelId");
-
-                    b.HasIndex("TaskModelId");
 
                     b.ToTable("Tickets");
                 });
@@ -688,9 +548,6 @@ namespace SoftwarePlannerUI.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
-                    b.Property<int?>("NoteModelId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("PasswordHash")
                         .HasColumnType("text");
 
@@ -700,14 +557,8 @@ namespace SoftwarePlannerUI.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("boolean");
 
-                    b.Property<int?>("RequirementModelId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
-
-                    b.Property<int>("TeamModelId")
-                        .HasColumnType("integer");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("boolean");
@@ -725,43 +576,7 @@ namespace SoftwarePlannerUI.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.HasIndex("NoteModelId");
-
-                    b.HasIndex("RequirementModelId");
-
-                    b.HasIndex("TeamModelId");
-
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("TaskModelUserModel", b =>
-                {
-                    b.Property<int>("TaskModelsId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("UserModelsId")
-                        .HasColumnType("text");
-
-                    b.HasKey("TaskModelsId", "UserModelsId");
-
-                    b.HasIndex("UserModelsId");
-
-                    b.ToTable("TaskModelUserModel");
-                });
-
-            modelBuilder.Entity("TicketModelUserModel", b =>
-                {
-                    b.Property<int>("TicketModelsId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("UserModelsId")
-                        .HasColumnType("text");
-
-                    b.HasKey("TicketModelsId", "UserModelsId");
-
-                    b.HasIndex("UserModelsId");
-
-                    b.ToTable("TicketModelUserModel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -815,71 +630,13 @@ namespace SoftwarePlannerUI.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProjectModelTeamModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", null)
-                        .WithMany()
-                        .HasForeignKey("ProjectModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TeamModel", null)
-                        .WithMany()
-                        .HasForeignKey("TeamModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ProjectModelUserModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", null)
-                        .WithMany()
-                        .HasForeignKey("ProjectModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", null)
-                        .WithMany()
-                        .HasForeignKey("UserModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.ChangeModel", b =>
                 {
                     b.HasOne("SoftwarePlannerLibrary.Models.CreatorModel", "CreatorModel")
                         .WithMany()
                         .HasForeignKey("CreatorModelId1");
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.NoteModel", null)
-                        .WithMany("ChangesModels")
-                        .HasForeignKey("NoteModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
-                        .WithMany("ChangeModels")
-                        .HasForeignKey("ProjectModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.RequirementModel", null)
-                        .WithMany("ChangesModels")
-                        .HasForeignKey("RequirementModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TaskModel", null)
-                        .WithMany("ChangesModels")
-                        .HasForeignKey("TaskModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", null)
-                        .WithMany("ChangesModels")
-                        .HasForeignKey("TicketModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", null)
-                        .WithMany("ChangeModels")
-                        .HasForeignKey("UserModelId");
-
                     b.Navigation("CreatorModel");
-
-                    b.Navigation("ProjectModel");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.CreatorModel", b =>
@@ -899,37 +656,7 @@ namespace SoftwarePlannerUI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.NoteModel", null)
-                        .WithMany("FileModels")
-                        .HasForeignKey("NoteModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
-                        .WithMany("FileAttachments")
-                        .HasForeignKey("ProjectModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.RequirementModel", null)
-                        .WithMany("FileModels")
-                        .HasForeignKey("RequirementModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TaskModel", null)
-                        .WithMany("FileModels")
-                        .HasForeignKey("TaskModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", null)
-                        .WithMany("FileModels")
-                        .HasForeignKey("TicketModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", "UserModel")
-                        .WithMany("FileModels")
-                        .HasForeignKey("UserModelId");
-
                     b.Navigation("CreatorModel");
-
-                    b.Navigation("ProjectModel");
-
-                    b.Navigation("UserModel");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.NoteModel", b =>
@@ -940,52 +667,11 @@ namespace SoftwarePlannerUI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.ChangeModel", "HistoryModel")
-                        .WithMany()
-                        .HasForeignKey("HistoryModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", "Ticket")
+                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", null)
                         .WithMany("NoteModels")
-                        .HasForeignKey("TicketId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TicketModelId");
 
                     b.Navigation("CreatorModel");
-
-                    b.Navigation("HistoryModel");
-
-                    b.Navigation("Ticket");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.NotificationModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", "Reciptient")
-                        .WithMany()
-                        .HasForeignKey("ReciptientId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", "Sender")
-                        .WithMany()
-                        .HasForeignKey("SenderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TeamModel", null)
-                        .WithMany("NotificationModels")
-                        .HasForeignKey("TeamModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", "Ticket")
-                        .WithMany()
-                        .HasForeignKey("TicketId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Reciptient");
-
-                    b.Navigation("Sender");
-
-                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.ProjectModel", b =>
@@ -1005,23 +691,7 @@ namespace SoftwarePlannerUI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.ChangeModel", "HistoryModel")
-                        .WithMany()
-                        .HasForeignKey("HistoryModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.ProjectModel", "ProjectModel")
-                        .WithMany("RequirementModels")
-                        .HasForeignKey("ProjectModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("CreatorModel");
-
-                    b.Navigation("HistoryModel");
-
-                    b.Navigation("ProjectModel");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.TaskModel", b =>
@@ -1032,23 +702,7 @@ namespace SoftwarePlannerUI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.ChangeModel", "HistoryModel")
-                        .WithMany()
-                        .HasForeignKey("HistoryModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.RequirementModel", "RequirementModel")
-                        .WithMany("TaskModels")
-                        .HasForeignKey("RequirementModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("CreatorModel");
-
-                    b.Navigation("HistoryModel");
-
-                    b.Navigation("RequirementModel");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.TeamModel", b =>
@@ -1070,133 +724,12 @@ namespace SoftwarePlannerUI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SoftwarePlannerLibrary.Models.ChangeModel", "HistoryModel")
-                        .WithMany()
-                        .HasForeignKey("HistoryModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TaskModel", "TaskModel")
-                        .WithMany("Tickets")
-                        .HasForeignKey("TaskModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("CreatorModel");
-
-                    b.Navigation("HistoryModel");
-
-                    b.Navigation("TaskModel");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.NoteModel", null)
-                        .WithMany("UserModels")
-                        .HasForeignKey("NoteModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.RequirementModel", null)
-                        .WithMany("UserModels")
-                        .HasForeignKey("RequirementModelId");
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.TeamModel", "TeamModel")
-                        .WithMany("UserModels")
-                        .HasForeignKey("TeamModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TeamModel");
-                });
-
-            modelBuilder.Entity("TaskModelUserModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.TaskModel", null)
-                        .WithMany()
-                        .HasForeignKey("TaskModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", null)
-                        .WithMany()
-                        .HasForeignKey("UserModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("TicketModelUserModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerLibrary.Models.TicketModel", null)
-                        .WithMany()
-                        .HasForeignKey("TicketModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerLibrary.Models.UserModel", null)
-                        .WithMany()
-                        .HasForeignKey("UserModelsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.NoteModel", b =>
-                {
-                    b.Navigation("ChangesModels");
-
-                    b.Navigation("FileModels");
-
-                    b.Navigation("UserModels");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.ProjectModel", b =>
-                {
-                    b.Navigation("ChangeModels");
-
-                    b.Navigation("FileAttachments");
-
-                    b.Navigation("RequirementModels");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.RequirementModel", b =>
-                {
-                    b.Navigation("ChangesModels");
-
-                    b.Navigation("FileModels");
-
-                    b.Navigation("TaskModels");
-
-                    b.Navigation("UserModels");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.TaskModel", b =>
-                {
-                    b.Navigation("ChangesModels");
-
-                    b.Navigation("FileModels");
-
-                    b.Navigation("Tickets");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.TeamModel", b =>
-                {
-                    b.Navigation("NotificationModels");
-
-                    b.Navigation("UserModels");
                 });
 
             modelBuilder.Entity("SoftwarePlannerLibrary.Models.TicketModel", b =>
                 {
-                    b.Navigation("ChangesModels");
-
-                    b.Navigation("FileModels");
-
                     b.Navigation("NoteModels");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerLibrary.Models.UserModel", b =>
-                {
-                    b.Navigation("ChangeModels");
-
-                    b.Navigation("FileModels");
                 });
 #pragma warning restore 612, 618
         }

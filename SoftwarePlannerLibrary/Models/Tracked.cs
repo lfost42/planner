@@ -22,19 +22,15 @@ namespace SoftwarePlannerLibrary.Models
         public DateTimeOffset DateClosed { get; set; }
 
 
+        //Navigation
+        //[Display(Name = "Changes")]
+        //public virtual ICollection<ChangeModel> ChangesModels { get; set; } = new HashSet<ChangeModel>();
 
-        [Display(Name = "Changes")]
-        public virtual ICollection<ChangeModel> ChangesModels { get; set; } = new HashSet<ChangeModel>();
+        //[Display(Name = "Attachments")]
+        //public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
 
-        [Display(Name = "Attachments")]
-        public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
-
-        [Display(Name = "Users Assigned")]
-        public virtual ICollection<UserModel> UserModels { get; set; } = new HashSet<UserModel>();
-
-
-        public int HistoryModelId { get; set; }
-        public virtual ChangeModel HistoryModel { get; set; }
+        //[Display(Name = "Tickets")]
+        //public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();
 
     }
 }

@@ -22,3 +22,6 @@ C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.dll
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\ref\SoftwarePlannerLibrary.dll
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.pdb
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\bin\Debug\net5.0\SoftwarePlannerLibrary.runtimeconfig.json
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\bin\Debug\net5.0\SoftwarePlannerLibrary.runtimeconfig.dev.json
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.genruntimeconfig.cache

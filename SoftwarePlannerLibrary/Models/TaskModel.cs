@@ -13,11 +13,21 @@ namespace SoftwarePlannerLibrary.Models
         [StringLength(50, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Name { get; set; }
 
-        public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
-
         public DateTimeOffset TargetDate { get; set; }
-        public virtual int RequirementModelId { get; set; }
-        public virtual RequirementModel RequirementModel { get; set; }
- 
+
+
+        //Navigation
+        //public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
+
+        //public virtual int RequirementModelId { get; set; }
+        //public virtual RequirementModel RequirementModel { get; set; }
+
+        //[Display(Name = "Attachments")]
+        //public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
+        //[Display(Name = "Tickets")]
+        //public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();
+        //[Display(Name = "Changes")]
+        //public virtual ICollection<ChangeModel> ChangeModels { get; set; } = new HashSet<ChangeModel>();
+
     }
 }

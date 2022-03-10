@@ -20,24 +20,23 @@ namespace SoftwarePlannerLibrary.Models
         [Display(Name = "Name")]
         public string FullName => $"{FirstName} {LastName}";
 
+        //Navigation
 
-        [Display(Name = "Projects")]
-        public virtual ICollection<ProjectModel> ProjectModels { get; set; } = new HashSet<ProjectModel>();
+        //[Display(Name = "Projects")]
+        //public virtual ICollection<ProjectModel> ProjectModels { get; set; } = new HashSet<ProjectModel>();
 
-        [Display(Name = "Tasks")]
-        public virtual ICollection<TaskModel> TaskModels { get; set; } = new HashSet<TaskModel>();
+        //[Display(Name = "Tasks")]
+        //public virtual ICollection<TaskModel> TaskModels { get; set; } = new HashSet<TaskModel>();
 
-        [Display(Name = "Tickets")]
-        public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();
+        //[Display(Name = "Teams")]
+        //public virtual ICollection<TeamModel> TeamModels { get; set; } = new HashSet<TeamModel>();
 
-        [Display(Name = "Attachments")]
-        public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
-
-        public int TeamModelId { get; set; }
-        public virtual TeamModel TeamModel { get; set; }
-
-        [Display(Name = "Changes")]
-        public virtual ICollection<ChangeModel> ChangeModels { get; set; } = new HashSet<ChangeModel>();
+        //[Display(Name = "Attachments")]
+        //public virtual ICollection<FileModel> FileModels { get; set; } = new HashSet<FileModel>();
+        //[Display(Name = "Tickets")]
+        //public virtual ICollection<TicketModel> TicketModels { get; set; } = new HashSet<TicketModel>();
+        //[Display(Name = "Changes")]
+        //public virtual ICollection<ChangeModel> ChangeModels { get; set; } = new HashSet<ChangeModel>();
 
     }
 }

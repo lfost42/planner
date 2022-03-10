@@ -17,8 +17,6 @@ namespace SoftwarePlannerLibrary.Models
 
         [Display(Name = "Notes")]
         public virtual ICollection<NoteModel> NoteModels { get; set; } = new HashSet<NoteModel>();
-        public int TaskModelId { get; set; }
-        public virtual TaskModel TaskModel { get; set; }
 
     }
 }
