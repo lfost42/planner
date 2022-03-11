@@ -11,6 +11,7 @@ namespace SoftwarePlannerLibrary.Models
     {
         public int Id { get; set; }
         public string UserModelId { get; set; }
+
         [Display(Name = "Creator")]
         public UserModel UserModel { get; set; }
     }
