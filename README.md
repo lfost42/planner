@@ -81,8 +81,8 @@ NOTE
 - Description
 - Creator
 - Date Created
->> option to upload/attach a file
->> option to change due date of ticket or close ticket
+> > option to upload/attach a file
+> > option to change due date of ticket or close ticket
 
 TICKET (Inquiry, Issue, Request, Update, Note)
 - Title
@@ -94,7 +94,7 @@ TICKET (Inquiry, Issue, Request, Update, Note)
 - Assigned User (limit to users in system)
 - Status (New, Pending, Stale Closed)
 - Priority (None, Low, Important, Serious, Urgent)
-- List<Notes>
+- List-Notes>
 
 TASK
 - Title
@@ -103,7 +103,7 @@ TASK
 - Date Created
 - Date Closed
 - Status (New, Active, Stale, Closed)
-- List<Tickets>
+- List-Tickets>
 
 PROJECT
 - Title
@@ -112,5 +112,5 @@ PROJECT
 - Date Created
 - Date Closed
 - Status (New, Active, Stale, Closed)
-- List<Tasks>
-- List<Tickets>
+- List-Tasks>
+- List-Tickets>
