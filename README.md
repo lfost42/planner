@@ -81,8 +81,8 @@ NOTE
 - Description
 - Creator
 - Date Created
-> > option to upload/attach a file
-> > option to change due date of ticket or close ticket
+- > option to upload/attach a file
+- > option to change due date of ticket or close ticket
 
 TICKET (Inquiry, Issue, Request, Update, Note)
 - Title
