@@ -21,7 +21,6 @@ namespace SoftwarePlannerLibrary.Models
         public string FullName => $"{FirstName} {LastName}";
 
         //Navigation
-
         //[Display(Name = "Projects")]
         //public virtual ICollection<ProjectModel> ProjectModels { get; set; } = new HashSet<ProjectModel>();
 

@@ -13,9 +13,9 @@ namespace SoftwarePlannerLibrary.Models
     {
         public int Id { get; set; }
 
-        public int CreatorModelId { get; set; }
-        [Display(Name = "Creator")]
-        public virtual CreatorModel CreatorModel { get; set; }
+        //public int CreatorModelId { get; set; }
+        //[Display(Name = "Creator")]
+        //public virtual CreatorModel CreatorModel { get; set; }
 
         [NotMapped]
         [DataType(DataType.Upload)]

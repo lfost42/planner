@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using Dapper;
+=======
+>>>>>>> 4be4c1640f496c59e24882d0fd6015ab93722ebf
 using Npgsql;
 using System.Data;
 using System.Data.SqlClient;
@@ -33,7 +36,11 @@ namespace SoftwarePlannerLibrary.Data
                 commandType = CommandType.StoredProcedure;
             }
 
+<<<<<<< HEAD
             using (IDbConnection connection = new NpgsqlConnection(connectionString))
+=======
+            using (IDbConnection connection = new SqlConnection(connectionString))
+>>>>>>> 4be4c1640f496c59e24882d0fd6015ab93722ebf
             {
                 List<T> rows = connection.Query<T>(sqlStatement, parameters, commandType: commandType).ToList();
                 return rows;
@@ -54,7 +61,11 @@ namespace SoftwarePlannerLibrary.Data
                 commandType = CommandType.StoredProcedure;
             }
 
+<<<<<<< HEAD
             using (IDbConnection connection = new NpgsqlConnection(connectionString))
+=======
+            using (IDbConnection connection = new SqlConnection(connectionString))
+>>>>>>> 4be4c1640f496c59e24882d0fd6015ab93722ebf
             {
                 connection.Execute(sqlStatement, parameters, commandType: commandType);
             }

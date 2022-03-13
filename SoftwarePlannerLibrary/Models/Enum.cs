@@ -1,16 +1,9 @@
 ﻿using System;
+
 namespace SoftwarePlannerLibrary.Models
 {
     public class Enum
     {
-        public enum ChangeType
-        {
-            Project,
-            Requirement,
-            Task,
-            Ticket,
-            Note
-        }
         public enum PriorityLevel
         {
             None, 
@@ -22,18 +15,19 @@ namespace SoftwarePlannerLibrary.Models
 
         public enum Status
         {
-            Created,
-            Assigned,
+            New,
             Pending,
+            Stale,
             Closed
         }
 
         public enum TicketType
         {
             Inquiry,
-            Bug,
+            Issue,
             Request,
-            Error
+            Update,
+            Note
         }
     }
 }
