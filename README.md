@@ -10,12 +10,34 @@ Identity and role based access/rendering. Ticket system for tracking progress, r
 
 ## WALKTHROUGH
 
-- Teams
-- Projects
-- Tasks
-- Tickets
-- Notes
-- Attachments
+Minimal Viable Product
+- Single project/user app
+- User create TASKs
+- User attach NOTEs to TASKs or PROJECT and assign to self
+
+Other planned features
+- PROJECT - allows users to create projects and assign tasks under the project, users may view all tasks and notes by PROJECT. Create TEAMs for PROJECT. 
+	-- each PROJECT VIEW >> option to see list of TASKS or list of NOTEs
+	-- each TASK VIEW >> list of NOTEs
+
+- User access - allows users to assign notes and tasks to other users
+- PROJECTs and TASKs assignments: assign to TEAM/TEAM or TEAM/USER (default is SELF). 
+- Roles - project creators can delete or rename their project, other users can append notes and tickets to them
+- CRUD Projects, Task, User
+- Tickets - may be attached under PROJECT or TASK, NOTEs assigned to Tickets. Each Ticket contains a list of NOTEs
+- Attachments - may be attached to PROJECT, TASK, and TICKETs
+- Change history for PROJECT and TASK CRUD history
+- Notification/Alerts when items are ASSIGNED and DUE
+- Sort, Search, Filter projects, tasks, notes
+
+DASHBOARD STATISTICS
+- How many TASKs/NOTEs in PROJECT are
+	-- complete 
+	-- past due
+	-- on time
+	-- outstanding
+
+Project Export - csv file
 
 ## OPEN REQUIREMENTS
 
