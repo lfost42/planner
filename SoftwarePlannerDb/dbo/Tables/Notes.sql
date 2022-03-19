@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Notes]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+	[Note] VARCHAR(500) NOT NULL, 
+	[NoteCreated] DATETIME2 NOT NULL
+)
