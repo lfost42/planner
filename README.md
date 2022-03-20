@@ -90,9 +90,6 @@ USER
 - FirstName
 - LastName
 
-CREATOR
-- User
-
 FILE
 - FormFile
 - FileName
@@ -114,7 +111,7 @@ TICKET (Inquiry, Issue, Request, Update, Note)
 - Date Due (or Closed)
 - Assigned Team (limit to teams available)
 - Assigned User (limit to users in system)
-- Status (New, Pending, Stale Closed)
+- Status (New, Pending, Stale, Due, Closed)
 - Priority (None, Low, Important, Serious, Urgent)
 - List-Notes>
 
@@ -124,7 +121,7 @@ TASK
 - Creator
 - Date Created
 - Date Closed
-- Status (New, Active, Stale, Closed)
+- Status (New, Pending, Stale, Due, Closed)
 - List-Tickets>
 
 PROJECT

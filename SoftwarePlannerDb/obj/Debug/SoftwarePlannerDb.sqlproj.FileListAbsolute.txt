@@ -4,3 +4,7 @@ C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerDb\bin\Debug\Software
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerDb\obj\Debug\SoftwarePlannerDb.dll
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerDb\obj\Debug\SoftwarePlannerDb.pdb
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerDb\obj\Debug\SoftwarePlannerDb.sqlproj.AssemblyReference.cache
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerDb\obj\Debug\Model.xml
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerDb\obj\Debug\refactor.xml
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerDb\obj\Debug\postdeploy.sql
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerDb\obj\Debug\predeploy.sql
