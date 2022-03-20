@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[TicketTypes]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[TypeName] VARCHAR(20) NULL
+)

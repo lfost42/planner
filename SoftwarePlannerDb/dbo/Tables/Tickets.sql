@@ -2,10 +2,12 @@
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
 	[TicketName] VARCHAR(50) NOT NULL, 
-	[StatusClosed] BIT NOT NULL DEFAULT 0, 
+	[TicketDescription] VARCHAR(500) NOT NULL,
+	[TicketTypeId] int NOT NULL,
 	[TicketCreated] DATETIME2 NOT NULL, 
 	[TicketUpdated] DATETIME2 NOT NULL, 
-    [ChangeId] INT NULL, 
-    CONSTRAINT [FK_Tickets_Changes] FOREIGN KEY (ChangeId) REFERENCES Changes([Id])
+	[ChangeId] INT NULL, 
+	CONSTRAINT [FK_Tickets_Changes] FOREIGN KEY (ChangeId) REFERENCES Changes([Id]), 
+	CONSTRAINT [FK_Tickets_TicketType] FOREIGN KEY (TicketTypeId) REFERENCES TicketTypes(Id)
 
 )

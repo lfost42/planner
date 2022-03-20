@@ -1,0 +1,19 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[TeamNotes] (Table)
+       [dbo].[FK_TeamNotes_TeamId] (Foreign Key)
+       [dbo].[FK_TeamNotes_Notes] (Foreign Key)
+       [dbo].[FK_TeamNotes_Assigned] (Foreign Key)
+       [dbo].[FK_TeamNotes_Changes] (Foreign Key)
+
+** Supporting actions
