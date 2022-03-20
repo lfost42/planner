@@ -66,7 +66,6 @@
     <Build Include="dbo\Tables\Tickets.sql" />
     <Build Include="dbo\Tables\Notes.sql" />
     <Build Include="dbo\Tables\TicketNotes.sql" />
-    <Build Include="dbo\Tables\Creators.sql" />
     <Build Include="dbo\Tables\Assigned.sql" />
     <Build Include="dbo\Tables\AspNetUserTokens.sql" />
     <Build Include="dbo\Tables\AspNetRoleClaims.sql" />
@@ -75,8 +74,18 @@
     <Build Include="dbo\Tables\AspNetUserLogins.sql" />
     <Build Include="dbo\Tables\AspNetUserRoles.sql" />
     <Build Include="dbo\Tables\AspNetUsers.sql" />
+    <Build Include="dbo\Tables\Projects.sql" />
+    <Build Include="dbo\Tables\ProjectNotes.sql" />
+    <Build Include="dbo\Tables\Status.sql" />
+    <Build Include="dbo\Tables\Priority.sql" />
+    <Build Include="dbo\Tables\Tasks.sql" />
+    <Build Include="dbo\Tables\Teams.sql" />
+    <Build Include="dbo\TaskNotes.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="published\SoftwarePlannerDb.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SoftwarePlannerDb.refactorlog" />
   </ItemGroup>
 </Project>

@@ -4,25 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SoftwarePlannerLibrary.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace SoftwarePlannerUI.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<UserModel>
+    public class ApplicationDbContext : IdentityDbContext<UserModel, IdentityRole, string>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-
-        //public DbSet<CreatorModel> Creators { get; set; }
-        //public DbSet<FileModel> Attachments { get; set; }
-        //public DbSet<ChangeModel> Changes { get; set; }
-        //public DbSet<NoteModel> Notes { get; set; }
-        //public DbSet<NotificationModel> Notifications { get; set; }
-        //public DbSet<ProjectModel> Projects { get; set; }
-        //public DbSet<TaskModel> Tasks { get; set; }
-        //public DbSet<TeamModel> Teams { get; set; }
-        //public DbSet<TicketModel> Tickets { get; set; }
 
     }
 }
