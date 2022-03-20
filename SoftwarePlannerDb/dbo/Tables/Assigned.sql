@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Assigned]
 (
 	[Id] INT NOT NULL PRIMARY KEY, 
-	[UserId] INT NOT NULL, 
-	CONSTRAINT [FK_Assigned_Users] FOREIGN KEY (UserId) REFERENCES Users(Id)
+	[UserId] NVARCHAR(450) NOT NULL, CONSTRAINT [FK_Assigned_AspNetUsers] FOREIGN KEY (UserId) REFERENCES AspNetUsers(Id)
+	
 )

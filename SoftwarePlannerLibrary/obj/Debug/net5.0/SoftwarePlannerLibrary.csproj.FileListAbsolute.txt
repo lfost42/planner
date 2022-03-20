@@ -24,3 +24,4 @@ C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\bin\Debug\net5.0\SoftwarePlannerLibrary.runtimeconfig.json
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\bin\Debug\net5.0\SoftwarePlannerLibrary.runtimeconfig.dev.json
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.genruntimeconfig.cache
+C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.csproj.AssemblyReference.cache

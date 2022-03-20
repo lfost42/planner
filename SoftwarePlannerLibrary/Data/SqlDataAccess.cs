@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
-using Npgsql;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
@@ -33,7 +32,7 @@ namespace SoftwarePlannerLibrary.Data
                 commandType = CommandType.StoredProcedure;
             }
 
-            using (IDbConnection connection = new NpgsqlConnection(connectionString))
+            using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 List<T> rows = connection.Query<T>(sqlStatement, parameters, commandType: commandType).ToList();
                 return rows;
@@ -54,7 +53,7 @@ namespace SoftwarePlannerLibrary.Data
                 commandType = CommandType.StoredProcedure;
             }
 
-            using (IDbConnection connection = new NpgsqlConnection(connectionString))
+            using (IDbConnection connection = new SqlConnection(connectionString))
             {
                 connection.Execute(sqlStatement, parameters, commandType: commandType);
             }
