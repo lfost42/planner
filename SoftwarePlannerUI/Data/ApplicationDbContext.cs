@@ -3,8 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SoftwarePlannerLibrary.Models;
 using Microsoft.AspNetCore.Identity;
+using SoftwarePlannerUI.Models;
 
 namespace SoftwarePlannerUI.Data
 {
