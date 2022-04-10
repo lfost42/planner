@@ -1,17 +1,13 @@
-﻿<Properties StartupConfiguration="{290D863A-8026-4DC9-8B34-1C1C7251CB7F}|Default">
+﻿<Properties StartupConfiguration="{FC2BD92D-188F-41D5-B9C6-5D2D94A445A5}|Default">
   <MonoDevelop.Ide.ItemProperties.SoftwarePlannerUI PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="SoftwarePlannerUI/appsettings.json">
+    <Files>
+      <File FileName="SoftwarePlannerUI/appsettings.json" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="SoftwarePlanner" expanded="True">
-            <Node name="SoftwarePlannerLibrary" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="Enum.cs" selected="True" />
-              </Node>
-            </Node>
-            <Node name="SoftwarePlannerUI" expanded="True" />
-          </Node>
+          <Node name="SoftwarePlanner" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
