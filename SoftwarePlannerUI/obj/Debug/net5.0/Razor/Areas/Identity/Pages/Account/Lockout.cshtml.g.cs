@@ -35,7 +35,7 @@ using SoftwarePlannerUI.Areas.Identity.Pages;
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerUI\Areas\Identity\Pages\_ViewImports.cshtml"
-using SoftwarePlannerLibrary.Models;
+using SoftwarePlannerUI.Models;
 
 #line default
 #line hidden
@@ -48,7 +48,7 @@ using SoftwarePlannerUI.Areas.Identity.Pages.Account;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7064dbe9c7a090abaa629473e22aee0f0f0637d2", @"/Areas/Identity/Pages/Account/Lockout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cdfe1876a75d78f94062da94e577995be56b7a53", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"86fb8bb56489d7b3e9f372bca8d16426448cf96b", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"57a0cf478829624ebb2d85fdafd32168c6bf2ca6", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Account_Lockout : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {

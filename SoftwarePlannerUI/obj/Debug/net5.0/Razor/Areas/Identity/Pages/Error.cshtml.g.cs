@@ -35,13 +35,13 @@ using SoftwarePlannerUI.Areas.Identity.Pages;
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerUI\Areas\Identity\Pages\_ViewImports.cshtml"
-using SoftwarePlannerLibrary.Models;
+using SoftwarePlannerUI.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f6ebae86d40004d00768c35aea29f9fd0820dc4a", @"/Areas/Identity/Pages/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cdfe1876a75d78f94062da94e577995be56b7a53", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"86fb8bb56489d7b3e9f372bca8d16426448cf96b", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Error : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         #pragma warning disable 1998

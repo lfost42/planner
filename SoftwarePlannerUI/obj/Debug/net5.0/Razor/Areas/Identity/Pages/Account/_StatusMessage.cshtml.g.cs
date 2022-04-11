@@ -35,7 +35,7 @@ using SoftwarePlannerUI.Areas.Identity.Pages;
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerUI\Areas\Identity\Pages\_ViewImports.cshtml"
-using SoftwarePlannerLibrary.Models;
+using SoftwarePlannerUI.Models;
 
 #line default
 #line hidden
@@ -48,7 +48,7 @@ using SoftwarePlannerUI.Areas.Identity.Pages.Account;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0723a602e84d5a261d35f2702dcc54883c69cad5", @"/Areas/Identity/Pages/Account/_StatusMessage.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cdfe1876a75d78f94062da94e577995be56b7a53", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"86fb8bb56489d7b3e9f372bca8d16426448cf96b", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"57a0cf478829624ebb2d85fdafd32168c6bf2ca6", @"/Areas/Identity/Pages/Account/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Account__StatusMessage : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<string>
     {
