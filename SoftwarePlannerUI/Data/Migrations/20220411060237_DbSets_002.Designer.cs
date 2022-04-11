@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SoftwarePlannerUI.Data;
@@ -9,9 +10,10 @@ using SoftwarePlannerUI.Data;
 namespace SoftwarePlannerUI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220411060237_DbSets_002")]
+    partial class DbSets_002
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -147,47 +149,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("SoftwarePlannerUI.Models.AlertModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<int>("CreatorModelId")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("character varying(500)");
-
-                    b.Property<int>("NoteId")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("Read")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("RecipientId")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Subject")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreatorModelId");
-
-                    b.HasIndex("NoteId");
-
-                    b.HasIndex("RecipientId");
-
-                    b.ToTable("Alerts");
                 });
 
             modelBuilder.Entity("SoftwarePlannerUI.Models.ChangeModel", b =>
@@ -819,31 +780,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SoftwarePlannerUI.Models.AlertModel", b =>
-                {
-                    b.HasOne("SoftwarePlannerUI.Models.CreatorModel", "CreatorModel")
-                        .WithMany()
-                        .HasForeignKey("CreatorModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerUI.Models.NoteModel", "Note")
-                        .WithMany("Alerts")
-                        .HasForeignKey("NoteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SoftwarePlannerUI.Models.UserModel", "Recipient")
-                        .WithMany("Alerts")
-                        .HasForeignKey("RecipientId");
-
-                    b.Navigation("CreatorModel");
-
-                    b.Navigation("Note");
-
-                    b.Navigation("Recipient");
-                });
-
             modelBuilder.Entity("SoftwarePlannerUI.Models.ChangeModel", b =>
                 {
                     b.HasOne("SoftwarePlannerUI.Models.CreatorModel", "CreatorModel")
@@ -1191,11 +1127,6 @@ namespace SoftwarePlannerUI.Data.Migrations
                     b.Navigation("Photo");
                 });
 
-            modelBuilder.Entity("SoftwarePlannerUI.Models.NoteModel", b =>
-                {
-                    b.Navigation("Alerts");
-                });
-
             modelBuilder.Entity("SoftwarePlannerUI.Models.ProjectModel", b =>
                 {
                     b.Navigation("Attachments");
@@ -1242,8 +1173,6 @@ namespace SoftwarePlannerUI.Data.Migrations
 
             modelBuilder.Entity("SoftwarePlannerUI.Models.UserModel", b =>
                 {
-                    b.Navigation("Alerts");
-
                     b.Navigation("Notes");
 
                     b.Navigation("Projects");

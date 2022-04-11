@@ -37,6 +37,10 @@
   <ItemGroup>
     <Compile Include="Data\Migrations\20220411015518_UserModel_001.cs" />
     <Compile Include="Data\Migrations\20220411015518_UserModel_001.Designer.cs" />
+    <Compile Include="Data\Migrations\20220411060237_DbSets_002.cs" />
+    <Compile Include="Data\Migrations\20220411060237_DbSets_002.Designer.cs" />
+    <Compile Include="Data\Migrations\20220411060849_AlertModel_003.cs" />
+    <Compile Include="Data\Migrations\20220411060849_AlertModel_003.Designer.cs" />
     <Compile Include="Data\Migrations\ApplicationDbContextModelSnapshot.cs" />
   </ItemGroup>
 </Project>

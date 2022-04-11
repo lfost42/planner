@@ -14,6 +14,18 @@ namespace SoftwarePlannerUI.Data
             : base(options)
         {
         }
+        public DbSet<AlertModel> Alerts { get; set; }
+        public DbSet<ChangeModel> Changes { get; set; }
+        public DbSet<FileModel> Files { get; set; }
+        public DbSet<NoteModel> Notes { get; set; }
+        public DbSet<PriorityModel> Priorities { get; set; }
+        public DbSet<ProjectModel> Projects { get; set; }
+        public DbSet<StatusModel> Status { get; set; }
+        public DbSet<TaskModel> Tasks { get; set; }
+        public DbSet<TeamModel> Teams { get; set; }
+        public DbSet<TicketModel> Tickets { get; set; }
+        public DbSet<TypeModel> Types { get; set; }
+
 
     }
 }
