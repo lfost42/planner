@@ -41,6 +41,8 @@ namespace SoftwarePlannerUI
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
             services.AddScoped<IRolesService, RolesService>();
+            services.AddScoped<ITeamsService, TeamsService>();
+
             services.AddControllersWithViews();
         }
 

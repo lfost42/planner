@@ -39,7 +39,7 @@ namespace SoftwarePlannerUI.Models
         public string AssignedUserlId { get; set; }
 
         [Required, Display(Name = "Assigned Team")]
-        public string TeamModelId { get; set; }
+        public int TeamModelId { get; set; }
 
         [Display(Name = "Photo")]
         public int PhotoId { get; set; }
