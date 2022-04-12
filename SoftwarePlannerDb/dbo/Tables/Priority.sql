@@ -1,5 +1,0 @@
-﻿CREATE TABLE [dbo].[Priority]
-(
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
-	[Priority] VARCHAR(20) NOT NULL
-)
