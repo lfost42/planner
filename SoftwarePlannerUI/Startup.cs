@@ -14,6 +14,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Npgsql;
 using SoftwarePlannerUI.Models;
+using SoftwarePlannerUI.Services;
+using SoftwarePlannerUI.Services.Interfaces;
 
 namespace SoftwarePlannerUI
 {
@@ -33,12 +35,12 @@ namespace SoftwarePlannerUI
                 options.UseNpgsql(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
-
+            
             services.AddIdentity<UserModel, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
-
+            services.AddScoped<IRolesService, RolesService>();
             services.AddControllersWithViews();
         }
 

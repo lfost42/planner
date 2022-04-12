@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace SoftwarePlannerUI.Services
 {
-    public class RoleService : IRolesService
+    public class RolesService : IRolesService
     {
         private readonly ApplicationDbContext _context;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<UserModel> _userManager;
-        public RoleService(ApplicationDbContext context,
+        public RolesService(ApplicationDbContext context,
                             RoleManager<IdentityRole> roleManager,
                             UserManager<UserModel> userManager)
         {
