@@ -14,6 +14,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Npgsql;
 using SoftwarePlannerLibrary.Models;
+using SoftwarePlannerUI.Services.Interfaces;
+using SoftwarePlannerUI.Services;
+using SoftwarePlannerLibrary.DataAccess;
 
 namespace SoftwarePlannerUI
 {
@@ -29,15 +32,17 @@ namespace SoftwarePlannerUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+            services.AddDbContext<PlannerContext>(options =>
+                options.UseNpgsql(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddIdentity<UserModel, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<PlannerContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
+            services.AddScoped<IRolesService, RolesService>();
+            services.AddScoped<ITeamsService, TeamsService>();
 
             services.AddControllersWithViews();
         }

@@ -8,6 +8,8 @@
     <Compile Remove="Databases\Services\**" />
     <EmbeddedResource Remove="Databases\Services\**" />
     <None Remove="Databases\Services\**" />
+    <None Remove="Services\" />
+    <None Remove="Services\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +33,8 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
+    <Folder Include="DataAccess\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
 </Project>

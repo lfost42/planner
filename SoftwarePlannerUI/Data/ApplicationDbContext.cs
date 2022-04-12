@@ -8,12 +8,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace SoftwarePlannerUI.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<UserModel, IdentityRole, string>
+    public class ApplicationDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
-
     }
 }
