@@ -41,6 +41,8 @@
     <Compile Include="Data\Migrations\20220411060237_DbSets_002.Designer.cs" />
     <Compile Include="Data\Migrations\20220411060849_AlertModel_003.cs" />
     <Compile Include="Data\Migrations\20220411060849_AlertModel_003.Designer.cs" />
+    <Compile Include="Data\Migrations\20220412024040_RequirementModel_004.cs" />
+    <Compile Include="Data\Migrations\20220412024040_RequirementModel_004.Designer.cs" />
     <Compile Include="Data\Migrations\ApplicationDbContextModelSnapshot.cs" />
   </ItemGroup>
 </Project>
