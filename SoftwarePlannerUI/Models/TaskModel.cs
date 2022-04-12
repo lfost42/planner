@@ -28,9 +28,6 @@ namespace SoftwarePlannerUI.Models
         [Display(Name = "Closed Date")]
         public DateTimeOffset? ClosedDate { get; set; }
 
-        [Required, Display(Name = "Project")]
-        public int ProjectModelId { get; set; }
-
         [Required, Display(Name = "Priority")]
         public int PriorityModelId { get; set; }
 
@@ -51,13 +48,13 @@ namespace SoftwarePlannerUI.Models
 
         //Navigation Properties
         public virtual CreatorModel Creator { get; set; }
-        public virtual ProjectModel ProjectModel { get; set; }
         public virtual TypeModel TypeModel { get; set; }
         public virtual PriorityModel PriorityModel { get; set; }
         public virtual StatusModel StatusModel { get; set; }
         public virtual UserModel AssignedUser { get; set; }
         public virtual TeamModel TeamModel { get; set; }
         public virtual FileModel Photo { get; set; }
+
         public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
         public virtual ICollection<NoteModel> Notes { get; set; } = new HashSet<NoteModel>();
         public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();

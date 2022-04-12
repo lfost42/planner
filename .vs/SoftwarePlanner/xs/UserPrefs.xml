@@ -7,7 +7,11 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="SoftwarePlanner" expanded="True" selected="True" />
+          <Node name="SoftwarePlanner" expanded="True">
+            <Node name="SoftwarePlannerUI" expanded="True">
+              <Node name="Models" selected="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>

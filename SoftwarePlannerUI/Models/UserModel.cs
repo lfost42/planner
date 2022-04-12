@@ -31,6 +31,7 @@ namespace SoftwarePlannerUI.Models
         public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
         public virtual ICollection<NoteModel> Notes { get; set; } = new HashSet<NoteModel>();
         public virtual ICollection<TaskModel> Tasks { get; set; } = new HashSet<TaskModel>();
+        public virtual ICollection<RequirementModel> Requirements { get; set; } = new HashSet<RequirementModel>();
         public virtual ICollection<ProjectModel> Projects { get; set; } = new HashSet<ProjectModel>();
         public virtual ICollection<AlertModel> Alerts { get; set; } = new HashSet<AlertModel>();
 

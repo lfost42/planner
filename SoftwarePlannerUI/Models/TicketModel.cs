@@ -11,8 +11,12 @@ namespace SoftwarePlannerUI.Models
         public int Id { get; set; }
 
         [Display(Name = "Ticket")]
-        [Required, StringLength(50, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
+        [Required, StringLength(20, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string TicketName { get; set; }
+
+        [Display(Name = "Description")]
+        [Required, StringLength(500, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
+        public string TicketDescription { get; set; }
 
         [Required, Display(Name = "Date Created")]
         public DateTime DateCreated { get; set; }
@@ -40,6 +44,7 @@ namespace SoftwarePlannerUI.Models
 
         [Required, Display(Name = "Status")]
         public int StatusModelId { get; set; }
+
         public bool Archived { get; set; }
 
         [Required, Display(Name = "Assigned User")]
@@ -60,6 +65,8 @@ namespace SoftwarePlannerUI.Models
         public virtual TeamModel TeamModel { get; set; }
         public virtual ICollection<NoteModel> Notes { get; set; } = new HashSet<NoteModel>();
         public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();
-        public virtual ICollection<ChangeModel> Changes { get; set; } = new HashSet<ChangeModel>();
+
+
+
     }
 }

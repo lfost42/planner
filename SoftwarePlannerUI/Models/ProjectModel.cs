@@ -55,7 +55,8 @@ namespace SoftwarePlannerUI.Models
         public virtual ChangeModel ChangeModel { get; set; }
         public virtual FileModel Photo { get; set; }
 
-        public virtual ICollection<TaskModel> Tasks { get; set; } = new HashSet<TaskModel>();
+        public virtual ICollection<RequirementModel> Requirements { get; set; } = new HashSet<RequirementModel>();
+
         public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
         public virtual ICollection<NoteModel> Notes { get; set; } = new HashSet<NoteModel>();
         public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();
