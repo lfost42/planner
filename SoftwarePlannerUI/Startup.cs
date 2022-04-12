@@ -33,9 +33,13 @@ namespace SoftwarePlannerUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PlannerContext>(options =>
+            {
                 options.UseNpgsql(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                        Configuration.GetConnectionString("DefaultConnection"));
+
+            });
             services.AddDatabaseDeveloperPageExceptionFilter();
+
 
             services.AddIdentity<UserModel, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<PlannerContext>()

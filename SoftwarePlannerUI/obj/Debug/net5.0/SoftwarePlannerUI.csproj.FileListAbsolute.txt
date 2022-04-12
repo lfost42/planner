@@ -973,3 +973,4 @@ C:/Users/lynda/source/repos/SoftwarePlanner/SoftwarePlannerUI/bin/Debug/net5.0/r
 /Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerUI/obj/Debug/net5.0/ref/SoftwarePlannerUI.dll
 /Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerUI/obj/Debug/net5.0/SoftwarePlannerUI.pdb
 /Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerUI/obj/Debug/net5.0/SoftwarePlannerUI.genruntimeconfig.cache
+/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerUI/bin/Debug/net5.0/SoftwarePlannerUI
