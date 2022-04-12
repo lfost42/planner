@@ -38,8 +38,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.15",
           "Microsoft.AspNetCore.Identity.UI": "5.0.14",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.14",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.14",
-          "Microsoft.EntityFrameworkCore.Tools": "5.0.14",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.15",
+          "Microsoft.EntityFrameworkCore.Tools": "5.0.15",
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "Npgsql": "5.0.10",
@@ -954,7 +954,7 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/5.0.15": {},
-      "Microsoft.EntityFrameworkCore.Design/5.0.14": {
+      "Microsoft.EntityFrameworkCore.Design/5.0.15": {
         "dependencies": {
           "Humanizer.Core": "2.8.26",
           "Microsoft.CSharp": "4.7.0",
@@ -962,8 +962,8 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "5.0.14.0",
-            "fileVersion": "5.0.1421.61504"
+            "assemblyVersion": "5.0.15.0",
+            "fileVersion": "5.0.1522.10812"
           }
         }
       },
@@ -982,24 +982,24 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/5.0.14": {
+      "Microsoft.EntityFrameworkCore.SqlServer/5.0.15": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.0.1",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.15"
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {
-            "assemblyVersion": "5.0.14.0",
-            "fileVersion": "5.0.1421.61504"
+            "assemblyVersion": "5.0.15.0",
+            "fileVersion": "5.0.1522.10812"
           }
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/5.0.14": {
+      "Microsoft.EntityFrameworkCore.Tools/5.0.15": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "5.0.14"
+          "Microsoft.EntityFrameworkCore.Design": "5.0.15"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
@@ -2225,7 +2225,7 @@
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.15",
           "Microsoft.AspNetCore.Identity.UI": "5.0.14",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.14",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.15",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "Npgsql": "5.0.10",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10",
@@ -4189,12 +4189,12 @@
       "path": "microsoft.entityframeworkcore.analyzers/5.0.15",
       "hashPath": "microsoft.entityframeworkcore.analyzers.5.0.15.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/5.0.14": {
+    "Microsoft.EntityFrameworkCore.Design/5.0.15": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QwlcXhv3NPdU9WQnA0K7i31CLV4dJMEtdhNPNGfSdxVxPzu9sOfqr6/MOjJEey5LFsuy1a8zay+Ina3GRuFO7Q==",
-      "path": "microsoft.entityframeworkcore.design/5.0.14",
-      "hashPath": "microsoft.entityframeworkcore.design.5.0.14.nupkg.sha512"
+      "sha512": "sha512-L89wVW5GSavWZV+j3+ydvEczziHBYMOX3dIHBIsHguuAhSBxIBWGwKtXvdb2JvoM2eJU396ZVIcg+DCObebcrA==",
+      "path": "microsoft.entityframeworkcore.design/5.0.15",
+      "hashPath": "microsoft.entityframeworkcore.design.5.0.15.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/5.0.15": {
       "type": "package",
@@ -4203,19 +4203,19 @@
       "path": "microsoft.entityframeworkcore.relational/5.0.15",
       "hashPath": "microsoft.entityframeworkcore.relational.5.0.15.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/5.0.14": {
+    "Microsoft.EntityFrameworkCore.SqlServer/5.0.15": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JTw4oJ7fa//hVaETu9UuUBH4DLngWV99Rbf1SOOtB+toLKQltfsLHnUu6CiSwH+MmnYd4rT+HMoxYEGov2sOHA==",
-      "path": "microsoft.entityframeworkcore.sqlserver/5.0.14",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.5.0.14.nupkg.sha512"
+      "sha512": "sha512-lFnEMvLufq3xIuhk3efmMUJvRNxOLlAKl8NNYqvbbtDZtzVdgZR/dZJAGcwZT6AxSGNM29LMDXYY+ydADWcggg==",
+      "path": "microsoft.entityframeworkcore.sqlserver/5.0.15",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.5.0.15.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Tools/5.0.14": {
+    "Microsoft.EntityFrameworkCore.Tools/5.0.15": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6oa1d8+MhLK9NQSLbr5nd7oBlAQnpdcbW+X6ekFfFDOV59+8MbGfOdRpZmAHl5DkPNDzap5wua6gpovv2JjbnQ==",
-      "path": "microsoft.entityframeworkcore.tools/5.0.14",
-      "hashPath": "microsoft.entityframeworkcore.tools.5.0.14.nupkg.sha512"
+      "sha512": "sha512-BDJ/l69JeZNJtd+dqfnD6UxC5CXnqsZ4Da0Uw5fKQ4iqvoqnYsTbviA/OvP+sOsNJhZdVzS/wGqrER4bgyfDSg==",
+      "path": "microsoft.entityframeworkcore.tools/5.0.15",
+      "hashPath": "microsoft.entityframeworkcore.tools.5.0.15.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
       "type": "package",

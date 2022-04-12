@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4OWHmtwQLJIM5m4pQXBX6BJkaW11TXILH6zmiyE2Oy78CtTrTqF/32kXdqnVQkNsVlyLbK/8OMIFGlbKZxkW1A==",
+  "dgSpecHash": "4Uz2w4JKsq6pVbN/Hvujfn00KAp3IcxNylkAMVDRf4RpkKlwjHkYXledkVHF9EMmYv7NHAUQeu5BpDFzhnHh9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\SoftwarePlannerUI\\SoftwarePlannerUI.csproj",
   "expectedPackageFiles": [
@@ -45,10 +45,10 @@
     "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.15\\microsoft.entityframeworkcore.5.0.15.nupkg.sha512",
     "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.15\\microsoft.entityframeworkcore.abstractions.5.0.15.nupkg.sha512",
     "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.15\\microsoft.entityframeworkcore.analyzers.5.0.15.nupkg.sha512",
-    "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.14\\microsoft.entityframeworkcore.design.5.0.14.nupkg.sha512",
+    "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.15\\microsoft.entityframeworkcore.design.5.0.15.nupkg.sha512",
     "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.15\\microsoft.entityframeworkcore.relational.5.0.15.nupkg.sha512",
-    "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.14\\microsoft.entityframeworkcore.sqlserver.5.0.14.nupkg.sha512",
-    "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.14\\microsoft.entityframeworkcore.tools.5.0.14.nupkg.sha512",
+    "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.15\\microsoft.entityframeworkcore.sqlserver.5.0.15.nupkg.sha512",
+    "C:\\Users\\lynda\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.15\\microsoft.entityframeworkcore.tools.5.0.15.nupkg.sha512",
     "C:\\Users\\lynda\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\lynda\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\lynda\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
