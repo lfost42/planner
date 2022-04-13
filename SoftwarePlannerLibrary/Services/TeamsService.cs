@@ -23,7 +23,8 @@ namespace SoftwarePlannerUI.Services
         public async Task<List<ProjectModel>> GetAllProjectsAsync(int teamId)
         {
             List<ProjectModel> projects = new();
-            projects = await _context.Projects.Where(p => p.TeamModelId == teamId)
+            projects = await _context.Projects.Where(p => p.TeamModel.Id == teamId && p.Archived == false)
+                        .Include(p => p.Users)
                         .Include(p => p.Changes)
                         .Include(p => p.Tickets).ThenInclude(p => p.CreatorModel)
                         .Include(p => p.Tickets).ThenInclude(p => p.Notes)

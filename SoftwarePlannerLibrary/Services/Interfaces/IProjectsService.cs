@@ -1,55 +1,28 @@
-﻿using SoftwarePlannerLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using SoftwarePlannerLibrary.Models;
 
 namespace SoftwarePlannerLibrary.Services.Interfaces
 {
     public interface IProjectsService
     {
-        public Task AddNewProjectAsync(ProjectModel project);
-
-        public Task<bool> AddProjectManagerAsync(string userId, int projectId);
-
-        public Task<bool> AddUserToProjectAsync(string userId, int projectId);
-
-        public Task ArchiveProjectAsync(ProjectModel project);
-
-        public Task<List<ProjectModel>> GetAllProjectsByCompany(int companyId);
-
-        public Task<List<ProjectModel>> GetAllProjectsByPriority(int companyId, string priorityName);
-
-        public Task<List<UserModel>> GetAllProjectMembersExceptPMAsync(int projectId);
-
-        public Task<List<ProjectModel>> GetArchivedProjectsByCompany(int companyId);
-
-        public Task<List<UserModel>> GetDevelopersOnProjectAsync(int projectId);
-
-        public Task<UserModel> GetProjectManagerAsync(int projectId);
-
-        public Task<List<UserModel>> GetProjectMembersByRoleAsync(int projectId, string role);
-
-        public Task<ProjectModel> GetProjectByIdAsync(int projectId, int companyId);
-
-        public Task<List<UserModel>> GetSubmittersOnProjectAsync(int projectId);
-
-        public Task<List<UserModel>> GetUsersNotOnProjectAsync(int projectId, int companyId);
-
-        public Task<List<ProjectModel>> GetUserProjectsAsync(string userId);
-
-        public Task<bool> IsUserOnProject(string userId, int projectId);
-
-        public Task<int> LookupProjectPriorityId(string priorityName);
-
-        public Task RemoveProjectManagerAsync(int projectId);
-
-        public Task RemoveUsersFromProjectByRoleAsync(string role, int projectId);
-
-        public Task RemoveUserFromProjectAsync(string userId, int projectId);
-
-        public Task UpdateProjectAsync(ProjectModel project);
-
+        Task AddNewProjectAsync(ProjectModel project);
+        Task<bool> AddUserToProjectAsync(string userId, int projectId);
+        Task ArchiveProjectAsync(ProjectModel project);
+        Task<bool> CheckUserOnProjectAsync(string userId, int projectId);
+        Task<List<ProjectModel>> GetAllProjectsByPriority(string priorityLevel);
+        Task<List<ProjectModel>> GetAllProjectsByUser(string userId);
+        Task<List<UserModel>> GetAllProjectUsersExceptOwnerAsync(int projectId);
+        Task<List<UserModel>> GetContributorsOnProjectAsync(int projectId);
+        Task<List<UserModel>> GetDevelopersOnProjectAsync(int projectId);
+        Task<ProjectModel> GetProjectByIdAsync(int projectId);
+        Task<CreatorModel> GetProjectCreatorAsync(int projectId);
+        Task<List<UserModel>> GetProjectUsersByRoleAsync(int projectId, string role);
+        Task<List<ProjectModel>> GetUserProjectsAsync(string userId);
+        Task<List<UserModel>> GetUsersNotOnProjectAsync(int projectId);
+        Task<int> LookupProjectPriorityId(string priorityLevel);
+        Task RemoveUserFromProjectAsync(string userId, int projectId);
+        Task RemoveUsersFromProjectByRoleAsync(string role, int projectId);
+        Task UpdateProjectAsync(ProjectModel project);
     }
 }

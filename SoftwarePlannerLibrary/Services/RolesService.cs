@@ -22,7 +22,7 @@ namespace SoftwarePlannerUI.Services
             _roleManager = roleManager;
             _userManager = userManager;
         }
-        
+
         public async Task<bool> AddUserToRoleAsync(UserModel user, string roleName)
         {
             return (await _userManager.AddToRoleAsync(user, roleName)).Succeeded;

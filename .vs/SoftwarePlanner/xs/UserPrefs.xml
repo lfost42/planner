@@ -1,17 +1,19 @@
 ﻿<Properties StartupConfiguration="{FC2BD92D-188F-41D5-B9C6-5D2D94A445A5}|Default">
   <MonoDevelop.Ide.ItemProperties.SoftwarePlannerUI PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SoftwarePlannerLibrary/Data/PlannerContext.cs">
-    <Files>
-      <File FileName="SoftwarePlannerUI/Startup.cs" Line="39" Column="1" />
-      <File FileName="SoftwarePlannerLibrary/Data/PlannerContext.cs" Line="10" Column="84" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SoftwarePlanner" expanded="True">
             <Node name="SoftwarePlannerLibrary" expanded="True">
-              <Node name="Data" expanded="True">
-                <Node name="PlannerContext.cs" selected="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Enum" expanded="True" />
+              </Node>
+              <Node name="Services" expanded="True">
+                <Node name="Interfaces" expanded="True">
+                  <Node name="IRolesService.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
             <Node name="SoftwarePlannerUI" expanded="True" />

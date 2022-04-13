@@ -35,12 +35,6 @@ namespace SoftwarePlannerLibrary.Models
         public int StatusModelId { get; set; }
         public bool Archived { get; set; }
 
-        [Required, Display(Name = "Assigned User")]
-        public string AssignedUserlId { get; set; }
-
-        [Required, Display(Name = "Assigned Team")]
-        public int TeamModelId { get; set; }
-
         [Display(Name = "Photo")]
         public int PhotoId { get; set; }
 
@@ -56,7 +50,8 @@ namespace SoftwarePlannerLibrary.Models
         public virtual FileModel Photo { get; set; }
 
         public virtual ICollection<RequirementModel> Requirements { get; set; } = new HashSet<RequirementModel>();
-
+        public virtual ICollection<TaskModel> Tasks { get; set; } = new HashSet<TaskModel>();
+        public virtual ICollection<UserModel> Users { get; set; } = new HashSet<UserModel>();
         public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
         public virtual ICollection<NoteModel> Notes { get; set; } = new HashSet<NoteModel>();
         public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();
