@@ -51,6 +51,7 @@ namespace SoftwarePlannerLibrary.Models
         public virtual ICollection<RequirementModel> Requirements { get; set; } = new HashSet<RequirementModel>();
         public virtual ICollection<TaskModel> Tasks { get; set; } = new HashSet<TaskModel>();
         public virtual ICollection<UserModel> Users { get; set; } = new HashSet<UserModel>();
+        public virtual ICollection<TeamModel> Teams { get; set; } = new HashSet<TeamModel>();
         public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
         public virtual ICollection<NoteModel> Notes { get; set; } = new HashSet<NoteModel>();
         public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();

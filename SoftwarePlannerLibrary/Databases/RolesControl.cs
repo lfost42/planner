@@ -23,18 +23,20 @@ namespace SoftwarePlannerLibrary.Datases
             _userManager = userManager;
         }
 
+        //CREATE
         public async Task<bool> AddUserToRoleAsync(UserModel user, string roleName)
         {
             return (await _userManager.AddToRoleAsync(user, roleName)).Succeeded;
 
         }
 
-        public async Task<string> GetRoleNameById(string roleId)
+        //READ
+        public async Task<string> GetRoleById(string roleId)
         {
             return await _roleManager.GetRoleNameAsync(_context.Roles.Find(roleId));
         }
 
-        public async Task<IEnumerable<string>> GetUserRolesAsync(UserModel user)
+        public async Task<IEnumerable<string>> GetRolesbyUserAsync(UserModel user)
         {
             return await _userManager.GetRolesAsync(user);
 
@@ -45,6 +47,7 @@ namespace SoftwarePlannerLibrary.Datases
             return await _userManager.IsInRoleAsync(user, roleName);
         }
 
+        //DELETE
         public async Task<bool> RemoveUserFromRoleAsync(UserModel user, string roleName)
         {
             return (await _userManager.RemoveFromRoleAsync(user, roleName)).Succeeded;
