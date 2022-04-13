@@ -8,7 +8,7 @@ namespace SoftwarePlannerLibrary.Models
 {
     public class TeamModel
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
 
         [Display(Name = "Team")]
         public string TeamName { get; set; }

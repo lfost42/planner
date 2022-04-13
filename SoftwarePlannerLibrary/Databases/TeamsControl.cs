@@ -55,9 +55,9 @@ namespace SoftwarePlannerLibrary.Datases
         //    .ThenInclude(t => t.Notes).ThenInclude(n => n.StatusModel)
         //.FirstOrDefaultAsync(u => u.Id == userId)).ProjectModels.ToList();
 
-        public async Task<List<ProjectModel>> GetAllTeamProjectsAsync(int teamId)
-        {
-            List<ProjectModel> projects = new();
+        //public async Task<List<ProjectModel>> GetAllTeamProjectsAsync(int teamId)
+        //{
+        //    List<ProjectModel> projects = new();
 
             //Projects have a list of teams. Need to get many-to-many relationship working. 
             //projects = await _context.Projects.Where(p => p.Teams.FirstOrDefault(t => t.Id == teamId);
@@ -69,18 +69,18 @@ namespace SoftwarePlannerLibrary.Datases
             //            .Include(p => p.Tickets).ThenInclude(p => p.PriorityModel)
             //            .Include(p => p.Tickets).ThenInclude(p => p.StatusModel)
             //            .ToListAsync();
-            return projects;
+        //    return projects;
 
-        }
+        //}
 
-        public async Task<List<TicketModel>> GetAllTeamTicketsAsync(int teamId)
-        {
-            List<TicketModel> result = new();
-            List<ProjectModel> projects = new();
-            projects = await GetAllTeamProjectsAsync(teamId);
-            return projects.SelectMany(p => p.Tickets).ToList();
+        //public async Task<List<TicketModel>> GetAllTeamTicketsAsync(int teamId)
+        //{
+        //    List<TicketModel> result = new();
+        //    List<ProjectModel> projects = new();
+        //    projects = await GetAllTeamProjectsAsync(teamId);
+        //    return projects.SelectMany(p => p.Tickets).ToList();
 
-        }
+        //}
 
     }
 }

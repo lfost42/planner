@@ -8586,32 +8586,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/lynda/.nuget/packages/": {}
+    "C:\\Users\\lynda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerUI/SoftwarePlannerUI.csproj",
+      "projectUniqueName": "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\SoftwarePlannerUI\\SoftwarePlannerUI.csproj",
       "projectName": "SoftwarePlannerUI",
-      "projectPath": "/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerUI/SoftwarePlannerUI.csproj",
-      "packagesPath": "/Users/lynda/.nuget/packages/",
-      "outputPath": "/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerUI/obj/",
+      "projectPath": "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\SoftwarePlannerUI\\SoftwarePlannerUI.csproj",
+      "packagesPath": "C:\\Users\\lynda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\SoftwarePlannerUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/lynda/.config/NuGet/NuGet.Config"
+        "C:\\Users\\lynda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/SoftwarePlannerLibrary.csproj": {
-              "projectPath": "/Users/lynda/Desktop/repo/SoftwarePlanner/SoftwarePlannerLibrary/SoftwarePlannerLibrary.csproj"
+            "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\SoftwarePlannerLibrary\\SoftwarePlannerLibrary.csproj": {
+              "projectPath": "C:\\Users\\lynda\\source\\repos\\SoftwarePlanner\\SoftwarePlannerLibrary\\SoftwarePlannerLibrary.csproj"
             }
           }
         }
@@ -8691,7 +8693,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.103/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }
