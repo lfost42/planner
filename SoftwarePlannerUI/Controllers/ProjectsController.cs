@@ -22,7 +22,7 @@ namespace SoftwarePlannerUI.Controllers
         // GET: Projects
         public async Task<IActionResult> Index()
         {
-            var plannerContext = _context.Projects.Include(p => p.CreatorModel).Include(p => p.Photo).Include(p => p.PriorityModel).Include(p => p.StatusModel).Include(p => p.TeamModel);
+            var plannerContext = _context.Projects.Include(p => p.CreatorModel);
             return View(await plannerContext.ToListAsync());
         }
 
@@ -39,7 +39,6 @@ namespace SoftwarePlannerUI.Controllers
                 .Include(p => p.Photo)
                 .Include(p => p.PriorityModel)
                 .Include(p => p.StatusModel)
-                .Include(p => p.TeamModel)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (projectModel == null)
             {
@@ -77,7 +76,6 @@ namespace SoftwarePlannerUI.Controllers
             ViewData["PhotoId"] = new SelectList(_context.Files, "Id", "Id", projectModel.PhotoId);
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id", projectModel.PriorityModelId);
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id", projectModel.StatusModelId);
-            ViewData["TeamModelId"] = new SelectList(_context.Teams, "Id", "Id", projectModel.TeamModelId);
             return View(projectModel);
         }
 
@@ -98,7 +96,6 @@ namespace SoftwarePlannerUI.Controllers
             ViewData["PhotoId"] = new SelectList(_context.Files, "Id", "Id", projectModel.PhotoId);
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id", projectModel.PriorityModelId);
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id", projectModel.StatusModelId);
-            ViewData["TeamModelId"] = new SelectList(_context.Teams, "Id", "Id", projectModel.TeamModelId);
             return View(projectModel);
         }
 
@@ -138,7 +135,6 @@ namespace SoftwarePlannerUI.Controllers
             ViewData["PhotoId"] = new SelectList(_context.Files, "Id", "Id", projectModel.PhotoId);
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id", projectModel.PriorityModelId);
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id", projectModel.StatusModelId);
-            ViewData["TeamModelId"] = new SelectList(_context.Teams, "Id", "Id", projectModel.TeamModelId);
             return View(projectModel);
         }
 
@@ -155,7 +151,6 @@ namespace SoftwarePlannerUI.Controllers
                 .Include(p => p.Photo)
                 .Include(p => p.PriorityModel)
                 .Include(p => p.StatusModel)
-                .Include(p => p.TeamModel)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (projectModel == null)
             {

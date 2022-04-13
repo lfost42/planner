@@ -14,6 +14,7 @@
     <None Remove="Services\" />
     <None Remove="Services\Interfaces\" />
     <None Remove="Models\Enum\" />
+    <None Remove="Databases\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,5 +40,6 @@
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
     <Folder Include="Models\Enum\" />
+    <Folder Include="Databases\Interfaces\" />
   </ItemGroup>
 </Project>

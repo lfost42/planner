@@ -14,9 +14,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Npgsql;
 using SoftwarePlannerLibrary.Models;
-using SoftwarePlannerUI.Services.Interfaces;
-using SoftwarePlannerUI.Services;
 using SoftwarePlannerLibrary.DataAccess;
+using SoftwarePlannerLibrary.Datases;
+using SoftwarePlannerLibrary.Datases.Interfaces;
 
 namespace SoftwarePlannerUI
 {
@@ -45,8 +45,9 @@ namespace SoftwarePlannerUI
                 .AddEntityFrameworkStores<PlannerContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
-            services.AddScoped<IRolesService, RolesService>();
-            services.AddScoped<ITeamsService, TeamsService>();
+            services.AddScoped<IProjectsControl, ProjectsControl>();
+            services.AddScoped<IRolesControl, RolesControl>();
+            services.AddScoped<ITeamsControl, TeamsControl>();
 
             services.AddControllersWithViews();
         }
