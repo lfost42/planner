@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SoftwarePlannerLibrary.Models;
-using SoftwarePlannerUI.Models;
 
 namespace SoftwarePlannerLibrary.DataAccess
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SoftwarePlannerLibrary.DataAccess;
-using SoftwarePlannerUI.Models;
+using SoftwarePlannerLibrary.Models;
 using SoftwarePlannerUI.Services.Interfaces;
 using System;
 using System.Collections.Generic;

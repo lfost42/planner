@@ -27,4 +27,3 @@ C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\ref\SoftwarePlannerLibrary.dll
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.pdb
 C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.genruntimeconfig.cache
-C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerLibrary\obj\Debug\net5.0\SoftwarePlannerLibrary.csproj.AssemblyReference.cache

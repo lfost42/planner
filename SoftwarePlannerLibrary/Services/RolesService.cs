@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using SoftwarePlannerLibrary.DataAccess;
 using SoftwarePlannerLibrary.Models;
-using SoftwarePlannerUI.Models;
 using SoftwarePlannerUI.Services.Interfaces;
 using System;
 using System.Collections.Generic;

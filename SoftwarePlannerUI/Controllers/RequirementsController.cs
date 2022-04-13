@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SoftwarePlannerLibrary.DataAccess;
-using SoftwarePlannerUI.Models;
+using SoftwarePlannerLibrary.Models;
+using SoftwarePlannerLibrary.Models;
 
 namespace SoftwarePlannerUI.Controllers
 {

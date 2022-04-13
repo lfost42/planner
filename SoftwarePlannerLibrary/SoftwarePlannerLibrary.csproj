@@ -36,7 +36,6 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 </Project>

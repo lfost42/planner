@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SoftwarePlannerUI.Models
+namespace SoftwarePlannerLibrary.Models
 {
     public class FileModel
     {

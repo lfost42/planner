@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SoftwarePlannerLibrary.Models;
 
-namespace SoftwarePlannerUI.Models
+namespace SoftwarePlannerLibrary.Models
 {
     public class RequirementModel
     {

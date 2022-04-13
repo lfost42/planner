@@ -1,6 +1,6 @@
 using System;
 
-namespace SoftwarePlannerUI.Models
+namespace SoftwarePlannerLibrary.Models
 {
     public class ErrorViewModel
     {

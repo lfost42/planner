@@ -21,13 +21,13 @@ using SoftwarePlannerUI;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\lynda\source\repos\SoftwarePlanner\SoftwarePlannerUI\Views\_ViewImports.cshtml"
-using SoftwarePlannerUI.Models;
+using SoftwarePlannerLibrary.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99464617055fdb505bb0bb7fd91f9b14f7b0d030", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51df4ba74141d3e5dbc19c86597f3a3b7171d123", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fa1fb8399b3bf367e73b2b88fcf7682bd9d1c046", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

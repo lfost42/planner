@@ -1,5 +1,4 @@
 ﻿using SoftwarePlannerLibrary.Models;
-using SoftwarePlannerUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
