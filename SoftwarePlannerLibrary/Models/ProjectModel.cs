@@ -44,7 +44,6 @@ namespace SoftwarePlannerLibrary.Models
         public virtual CreatorModel CreatorModel { get; set; }
         public virtual PriorityModel PriorityModel { get; set; }
         public virtual StatusModel StatusModel { get; set; }
-        public virtual UserModel AssignedUser { get; set; }
         public virtual ChangeModel ChangeModel { get; set; }
         public virtual FileModel Photo { get; set; }
 

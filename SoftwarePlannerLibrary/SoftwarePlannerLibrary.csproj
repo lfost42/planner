@@ -7,10 +7,13 @@
   <ItemGroup>
     <Compile Remove="DataAccess\**" />
     <Compile Remove="Databases\Services\**" />
+    <Compile Remove="Data\Migrations\**" />
     <EmbeddedResource Remove="DataAccess\**" />
     <EmbeddedResource Remove="Databases\Services\**" />
+    <EmbeddedResource Remove="Data\Migrations\**" />
     <None Remove="DataAccess\**" />
     <None Remove="Databases\Services\**" />
+    <None Remove="Data\Migrations\**" />
     <None Remove="Services\" />
     <None Remove="Services\Interfaces\" />
     <None Remove="Models\Enum\" />
@@ -19,6 +22,12 @@
 
   <ItemGroup>
     <None Remove="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Data\Migrations\20220413225902_Initial_001.cs" />
+    <Compile Include="Data\Migrations\20220413225902_Initial_001.Designer.cs" />
+    <Compile Include="Data\Migrations\PlannerContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Brutal.Dev.StrongNameSigner" Version="3.1.0" />
@@ -38,7 +47,6 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Migrations\" />
     <Folder Include="Models\Enum\" />
     <Folder Include="Databases\Interfaces\" />
   </ItemGroup>
