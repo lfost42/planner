@@ -1,8 +1,8 @@
 # Software Planner
 
-A tool that enables developers and teams to design software applications, manage tasks, track progress, and meet deadlines. 
+A tool that enables developers and teams to design software applications, manage requirements and tasks, track progress, and meet deadlines. 
 
-Integrated tracking system make projects and project components trackable and allows users and teams to achieve target metrics. Teams and Role features allow groups of developers to collaborate throughout the software development life cycle.
+Integrated tracking system make projects and project components trackable and allows users and teams to achieve target metrics. Teams and Role features allow groups of developers to collaborate throughout the software development life cycle. Alert system reminds user when items are due or past due. 
 
 Identity and role based access/rendering. Ticket system for tracking progress, requests, issues, and changes.
 
@@ -31,13 +31,13 @@ Other planned features
 - Sort, Search, Filter projects, tasks, notes
 
 DASHBOARD STATISTICS
-- How many TASKs/NOTEs in PROJECT are
+- How many REQUIREMENTs/TASKs/NOTEs in PROJECT are
 	-- complete 
 	-- past due
 	-- on time
 	-- outstanding
 
-Project Export - csv file
+Project Export notes - csv file
 
 ## OPEN REQUIREMENTS
 
@@ -55,9 +55,9 @@ A PROJECT may contain a list of TASKs.
 
 TICKETs can be created under: PROJECT and/or TASK.
 	A TICKET may be modified or deleted by the user within 30 minutes of creation. After 30 minutes the user may only close the TICKET.
-	TICKET types: Inquiry, Issue, REquest, Update, Note
+	TICKET types: Inquiry, Issue, Request, Update, Note
 
-NOTEs may be appended to TICKETs, TASKs, and PROJECTs to update the status, note any progress/delays made since the last note, change due date, or update the status of the TICKET, TASKs, or PROJECT. 
+NOTEs may be appended to TICKETs, TASKs, REQUIREMENTs, and PROJECTs to update the status, note any progress/delays made since the last note, change due date, or update the status of the TICKET, TASKs, or PROJECT. 
 	* notes cannot be modified or deleted after creation
 
 ## USER INTERFACE
@@ -65,7 +65,7 @@ NOTEs may be appended to TICKETs, TASKs, and PROJECTs to update the status, note
 - Landing (login/registration)
 - Dashboard
 
---Profile
+--Profile--
 - Image
 - Role
 - Assigned Projects, Tasks, Tickets
@@ -74,7 +74,7 @@ NOTEs may be appended to TICKETs, TASKs, and PROJECTs to update the status, note
 
 Navigation:
 - USER - list of open TICKETs assigned to USER and associated PROJECT under USER
-- TASK - list TASKs assigned to USER, each TASK item populates a list of TICKETs and associated PROJECT
+- TASK - list TASKs assigned to USER, each TASK item populates a list of TICKETs/NOTEs and associated PROJECT
 - PROJECT - list of TICKETs
 - TEAM - list TEAMs, each TEAM item populates a list of TICKETs and associated PROJECT
 
@@ -100,8 +100,8 @@ NOTE
 - Description
 - Creator
 - Date Created
-- > option to upload/attach a file
-- > option to change due date of ticket or close ticket
+-- option to upload/attach a file
+-- option to change due date of ticket or close ticket
 
 TICKET (Inquiry, Issue, Request, Update, Note)
 - Title
@@ -112,6 +112,7 @@ TICKET (Inquiry, Issue, Request, Update, Note)
 - Assigned Team (limit to teams available)
 - Assigned User (limit to users in system)
 - Status (New, Pending, Stale, Due, Closed)
+- Archived
 - Priority (None, Low, Important, Serious, Urgent)
 - List-Notes>
 
@@ -121,7 +122,9 @@ TASK
 - Creator
 - Date Created
 - Date Closed
+- Date Due
 - Status (New, Pending, Stale, Due, Closed)
+- Archived
 - List-Tickets>
 
 PROJECT
@@ -130,6 +133,9 @@ PROJECT
 - Creator
 - Date Created
 - Date Closed
+- Date Due
 - Status (New, Active, Stale, Closed)
+- Archived
+- List-Requirements>
 - List-Tasks>
 - List-Tickets>
