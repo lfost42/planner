@@ -17,8 +17,7 @@ namespace SoftwarePlannerLibrary.Databases
         private readonly IRolesControl _rolesControl;
 
         public ProjectsControl(PlannerContext context,
-                            IRolesControl rolesControl,
-                            UserManager<UserModel> userManager)
+                            IRolesControl rolesControl)
         {
             _context = context;
             _rolesControl = rolesControl;

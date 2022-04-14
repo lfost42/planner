@@ -8,20 +8,9 @@
             <Node name="SoftwarePlannerLibrary" expanded="True">
               <Node name="Data" expanded="True" />
               <Node name="Databases" expanded="True">
-                <Node name="Interfaces" expanded="True" />
-              </Node>
-              <Node name="Models" expanded="True">
-                <Node name="Enum" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="SoftwarePlannerUI" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Notes" expanded="True" />
-                <Node name="Projects" expanded="True">
-                  <Node name="Delete.cshtml" selected="True" />
+                <Node name="Interfaces" expanded="True">
+                  <Node name="IProjectsControl.cs" selected="True" />
                 </Node>
-                <Node name="Tickets" expanded="True" />
               </Node>
             </Node>
           </Node>
