@@ -8,9 +8,8 @@
             <Node name="SoftwarePlannerLibrary" expanded="True">
               <Node name="Data" expanded="True" />
               <Node name="Databases" expanded="True">
-                <Node name="Interfaces" expanded="True">
-                  <Node name="IProjectsControl.cs" selected="True" />
-                </Node>
+                <Node name="Interfaces" expanded="True" />
+                <Node name="AlertsControl.cs" selected="True" />
               </Node>
             </Node>
           </Node>
