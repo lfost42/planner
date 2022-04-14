@@ -57,7 +57,7 @@ namespace SoftwarePlannerUI.Controllers
         {
             ViewData["CreatorModelId"] = new SelectList(_context.Creators, "Id", "Id");
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id");
-            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "AssignedUserlId");
+            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "Description");
             ViewData["RequirementModelId"] = new SelectList(_context.Requirements, "Id", "AssignedUserlId");
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id");
             ViewData["TaskModelId"] = new SelectList(_context.Tasks, "Id", "AssignedUserlId");
@@ -81,7 +81,7 @@ namespace SoftwarePlannerUI.Controllers
             }
             ViewData["CreatorModelId"] = new SelectList(_context.Creators, "Id", "Id", noteModel.CreatorModelId);
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id", noteModel.PriorityModelId);
-            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "AssignedUserlId", noteModel.ProjectModelId);
+            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "Description", noteModel.ProjectModelId);
             ViewData["RequirementModelId"] = new SelectList(_context.Requirements, "Id", "AssignedUserlId", noteModel.RequirementModelId);
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id", noteModel.StatusModelId);
             ViewData["TaskModelId"] = new SelectList(_context.Tasks, "Id", "AssignedUserlId", noteModel.TaskModelId);
@@ -105,7 +105,7 @@ namespace SoftwarePlannerUI.Controllers
             }
             ViewData["CreatorModelId"] = new SelectList(_context.Creators, "Id", "Id", noteModel.CreatorModelId);
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id", noteModel.PriorityModelId);
-            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "AssignedUserlId", noteModel.ProjectModelId);
+            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "Description", noteModel.ProjectModelId);
             ViewData["RequirementModelId"] = new SelectList(_context.Requirements, "Id", "AssignedUserlId", noteModel.RequirementModelId);
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id", noteModel.StatusModelId);
             ViewData["TaskModelId"] = new SelectList(_context.Tasks, "Id", "AssignedUserlId", noteModel.TaskModelId);
@@ -148,7 +148,7 @@ namespace SoftwarePlannerUI.Controllers
             }
             ViewData["CreatorModelId"] = new SelectList(_context.Creators, "Id", "Id", noteModel.CreatorModelId);
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id", noteModel.PriorityModelId);
-            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "AssignedUserlId", noteModel.ProjectModelId);
+            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "Description", noteModel.ProjectModelId);
             ViewData["RequirementModelId"] = new SelectList(_context.Requirements, "Id", "AssignedUserlId", noteModel.RequirementModelId);
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id", noteModel.StatusModelId);
             ViewData["TaskModelId"] = new SelectList(_context.Tasks, "Id", "AssignedUserlId", noteModel.TaskModelId);

@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using SoftwarePlannerLibrary.DataAccess;
 using SoftwarePlannerLibrary.Models;
 
-
 namespace SoftwarePlannerUI.Controllers
 {
     public class TicketsController : Controller
@@ -57,7 +56,7 @@ namespace SoftwarePlannerUI.Controllers
         {
             ViewData["CreatorModelId"] = new SelectList(_context.Creators, "Id", "Id");
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id");
-            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "AssignedUserlId");
+            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "Description");
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id");
             ViewData["TaskModelId"] = new SelectList(_context.Tasks, "Id", "AssignedUserlId");
             ViewData["TeamModelId"] = new SelectList(_context.Teams, "Id", "Id");
@@ -80,7 +79,7 @@ namespace SoftwarePlannerUI.Controllers
             }
             ViewData["CreatorModelId"] = new SelectList(_context.Creators, "Id", "Id", ticketModel.CreatorModelId);
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id", ticketModel.PriorityModelId);
-            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "AssignedUserlId", ticketModel.ProjectModelId);
+            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "Description", ticketModel.ProjectModelId);
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id", ticketModel.StatusModelId);
             ViewData["TaskModelId"] = new SelectList(_context.Tasks, "Id", "AssignedUserlId", ticketModel.TaskModelId);
             ViewData["TeamModelId"] = new SelectList(_context.Teams, "Id", "Id", ticketModel.TeamModelId);
@@ -103,7 +102,7 @@ namespace SoftwarePlannerUI.Controllers
             }
             ViewData["CreatorModelId"] = new SelectList(_context.Creators, "Id", "Id", ticketModel.CreatorModelId);
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id", ticketModel.PriorityModelId);
-            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "AssignedUserlId", ticketModel.ProjectModelId);
+            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "Description", ticketModel.ProjectModelId);
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id", ticketModel.StatusModelId);
             ViewData["TaskModelId"] = new SelectList(_context.Tasks, "Id", "AssignedUserlId", ticketModel.TaskModelId);
             ViewData["TeamModelId"] = new SelectList(_context.Teams, "Id", "Id", ticketModel.TeamModelId);
@@ -145,7 +144,7 @@ namespace SoftwarePlannerUI.Controllers
             }
             ViewData["CreatorModelId"] = new SelectList(_context.Creators, "Id", "Id", ticketModel.CreatorModelId);
             ViewData["PriorityModelId"] = new SelectList(_context.Priorities, "Id", "Id", ticketModel.PriorityModelId);
-            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "AssignedUserlId", ticketModel.ProjectModelId);
+            ViewData["ProjectModelId"] = new SelectList(_context.Projects, "Id", "Description", ticketModel.ProjectModelId);
             ViewData["StatusModelId"] = new SelectList(_context.Status, "Id", "Id", ticketModel.StatusModelId);
             ViewData["TaskModelId"] = new SelectList(_context.Tasks, "Id", "AssignedUserlId", ticketModel.TaskModelId);
             ViewData["TeamModelId"] = new SelectList(_context.Teams, "Id", "Id", ticketModel.TeamModelId);

@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using SoftwarePlannerLibrary.DataAccess;
 using SoftwarePlannerLibrary.Models;
 
-
 namespace SoftwarePlannerUI.Controllers
 {
     public class ChangesController : Controller

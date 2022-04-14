@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using SoftwarePlannerLibrary.DataAccess;
+using SoftwarePlannerLibrary.Databases.Interfaces;
 using SoftwarePlannerLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SoftwarePlannerLibrary.Datases.Interfaces;
 
-namespace SoftwarePlannerLibrary.Datases
+namespace SoftwarePlannerLibrary.Databases
 {
     public class RolesControl : IRolesControl
     {

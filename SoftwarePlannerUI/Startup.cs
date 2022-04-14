@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SoftwarePlannerUI.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +14,8 @@ using System.Threading.Tasks;
 using Npgsql;
 using SoftwarePlannerLibrary.Models;
 using SoftwarePlannerLibrary.DataAccess;
-using SoftwarePlannerLibrary.Datases;
-using SoftwarePlannerLibrary.Datases.Interfaces;
+using SoftwarePlannerLibrary.Databases;
+using SoftwarePlannerLibrary.Databases.Interfaces;
 
 namespace SoftwarePlannerUI
 {
@@ -47,7 +46,7 @@ namespace SoftwarePlannerUI
                 .AddDefaultTokenProviders();
             services.AddScoped<IProjectsControl, ProjectsControl>();
             services.AddScoped<IRolesControl, RolesControl>();
-            //services.AddScoped<ITeamsControl, TeamsControl>();
+            services.AddScoped<ITeamsControl, TeamsControl>();
 
             services.AddControllersWithViews();
         }

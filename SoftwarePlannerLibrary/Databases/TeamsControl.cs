@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SoftwarePlannerLibrary.DataAccess;
-using SoftwarePlannerLibrary.Datases.Interfaces;
+using SoftwarePlannerLibrary.Databases.Interfaces;
 using SoftwarePlannerLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SoftwarePlannerLibrary.Datases
+namespace SoftwarePlannerLibrary.Databases
 {
-    public class TeamsControl
+    public class TeamsControl : ITeamsControl
     {
 
         private readonly PlannerContext _context;
@@ -29,9 +29,10 @@ namespace SoftwarePlannerLibrary.Datases
             {
                 result = await _context.Teams
                     .Include(t => t.Projects)
-                    .Include(t => t.Requirements)
-                    .Include(t => t.Tasks)
+                    .Include(t => t.Projects).ThenInclude(p => p.Requirements)
+                    .Include(t => t.Projects).ThenInclude(p => p.Requirements).ThenInclude(p => p.Tasks)
                     .Include(t => t.Notes)
+                    .Include(t => t.Tickets)
                     .Include(t => t.Tickets).ThenInclude(t => t.Notes)
                     .FirstOrDefaultAsync(t => t.Id == teamId);
             }
@@ -40,47 +41,41 @@ namespace SoftwarePlannerLibrary.Datases
 
         }
 
+        public async Task<List<ProjectModel>> GetAllTeamProjectsAsync(int teamId)
+        {
+            List<ProjectModel> projects = new();
 
-        //.Include(p => p.ProjectModels).ThenInclude(p => p.Tickets)
-        //    .ThenInclude(t => t.CreatorModel)
-        //.Include(p => p.ProjectModels).ThenInclude(p => p.Tickets)
-        //    .ThenInclude(t => t.TypeModel)
-        //.Include(p => p.ProjectModels).ThenInclude(p => p.Tickets)
-        //    .ThenInclude(t => t.PriorityModel)
-        //.Include(p => p.ProjectModels).ThenInclude(p => p.Tickets)
-        //    .ThenInclude(t => t.StatusModel)
-        //.Include(p => p.ProjectModels).ThenInclude(p => p.Tickets)
-        //    .ThenInclude(t => t.Notes)
-        //.Include(p => p.ProjectModels).ThenInclude(p => p.Tickets)
-        //    .ThenInclude(t => t.Notes).ThenInclude(n => n.StatusModel)
-        //.FirstOrDefaultAsync(u => u.Id == userId)).ProjectModels.ToList();
+            projects = await _context.Projects.Where(p => p.Teams.Equals(teamId) && p.Archived == false)
+                        .Include(p => p.Requirements)
+                        .Include(p => p.Requirements).ThenInclude(p => p.Tasks)
+                        .Include(p => p.Photo)
+                        .Include(p => p.PriorityModel)
+                        .Include(p => p.StatusModel)
+                        .Include(p => p.Notes)
+                        .Include(p => p.Tickets)
+                        .Include(p => p.Tickets).ThenInclude(t => t.Notes)
+                        .ToListAsync();
+            return projects;
 
-        //public async Task<List<ProjectModel>> GetAllTeamProjectsAsync(int teamId)
-        //{
-        //    List<ProjectModel> projects = new();
+        }
 
-            //Projects have a list of teams. Need to get many-to-many relationship working. 
-            //projects = await _context.Projects.Where(p => p.Teams.FirstOrDefault(t => t.Id == teamId);
-            //            .Include(p => p.Users)
-            //            .Include(p => p.Changes)
-            //            .Include(p => p.Tickets).ThenInclude(p => p.CreatorModel)
-            //            .Include(p => p.Tickets).ThenInclude(p => p.Notes)
-            //            .Include(p => p.Tickets).ThenInclude(p => p.TypeModel)
-            //            .Include(p => p.Tickets).ThenInclude(p => p.PriorityModel)
-            //            .Include(p => p.Tickets).ThenInclude(p => p.StatusModel)
-            //            .ToListAsync();
-        //    return projects;
+        public async Task<List<TicketModel>> GetAllTeamTicketsAsync(int teamId)
+        {
+            List<TicketModel> result = new();
+            List<ProjectModel> projects = new();
+            projects = await GetAllTeamProjectsAsync(teamId);
+            return projects.SelectMany(p => p.Tickets).ToList();
 
-        //}
+        }
 
-        //public async Task<List<TicketModel>> GetAllTeamTicketsAsync(int teamId)
-        //{
-        //    List<TicketModel> result = new();
-        //    List<ProjectModel> projects = new();
-        //    projects = await GetAllTeamProjectsAsync(teamId);
-        //    return projects.SelectMany(p => p.Tickets).ToList();
+        public async Task<List<NoteModel>> GetAllTeamNotesAsync(int teamId)
+        {
+            List<NoteModel> result = new();
+            List<ProjectModel> projects = new();
+            projects = await GetAllTeamProjectsAsync(teamId);
+            return projects.SelectMany(p => p.Notes).ToList();
 
-        //}
+        }
 
     }
 }

@@ -19,13 +19,13 @@ namespace SoftwarePlannerUI.Controllers
             _context = context;
         }
 
-        // GET: PriorityModels
+        // GET: Priority
         public async Task<IActionResult> Index()
         {
             return View(await _context.Priorities.ToListAsync());
         }
 
-        // GET: PriorityModels/Details/5
+        // GET: Priority/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,13 +43,13 @@ namespace SoftwarePlannerUI.Controllers
             return View(priorityModel);
         }
 
-        // GET: PriorityModels/Create
+        // GET: Priority/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: PriorityModels/Create
+        // POST: Priority/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +65,7 @@ namespace SoftwarePlannerUI.Controllers
             return View(priorityModel);
         }
 
-        // GET: PriorityModels/Edit/5
+        // GET: Priority/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,7 +81,7 @@ namespace SoftwarePlannerUI.Controllers
             return View(priorityModel);
         }
 
-        // POST: PriorityModels/Edit/5
+        // POST: Priority/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,7 +116,7 @@ namespace SoftwarePlannerUI.Controllers
             return View(priorityModel);
         }
 
-        // GET: PriorityModels/Delete/5
+        // GET: Priority/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace SoftwarePlannerUI.Controllers
             return View(priorityModel);
         }
 
-        // POST: PriorityModels/Delete/5
+        // POST: Priority/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

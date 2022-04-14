@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using SoftwarePlannerLibrary.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using SoftwarePlannerLibrary.Models;
 
-namespace SoftwarePlannerLibrary.Datases.Interfaces
+namespace SoftwarePlannerLibrary.Databases.Interfaces
 {
     public interface IProjectsControl
     {
-        Task AddNewProjectAsync(ProjectModel project);
+        Task AddNProjectAsync(ProjectModel project);
         Task<bool> AddUserToProjectAsync(string userId, int projectId);
         Task ArchiveProjectAsync(ProjectModel project);
         Task<bool> CheckUserOnProjectAsync(string userId, int projectId);
         Task<List<ProjectModel>> GetAllProjectsByPriority(string priorityLevel);
+        Task<List<ProjectModel>> GetAllProjectsByStatus(int status);
         Task<List<ProjectModel>> GetAllProjectsByUser(string userId);
         Task<List<UserModel>> GetAllProjectUsersExceptOwnerAsync(int projectId);
         Task<List<UserModel>> GetContributorsOnProjectAsync(int projectId);
@@ -21,6 +22,7 @@ namespace SoftwarePlannerLibrary.Datases.Interfaces
         Task<List<ProjectModel>> GetUserProjectsAsync(string userId);
         Task<List<UserModel>> GetUsersNotOnProjectAsync(int projectId);
         Task<int> LookupProjectPriorityId(string priorityLevel);
+        Task<int> LookupProjectStatusId(int status);
         Task RemoveUserFromProjectAsync(string userId, int projectId);
         Task RemoveUsersFromProjectByRoleAsync(string role, int projectId);
         Task UpdateProjectAsync(ProjectModel project);

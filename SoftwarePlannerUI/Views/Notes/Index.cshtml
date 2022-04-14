@@ -76,6 +76,15 @@
                 @Html.DisplayFor(modelItem => item.CreatorModel.Id)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.ProjectModel.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequirementModel.AssignedUserlId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskModel.AssignedUserlId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.TicketModel.AssignedUserlId)
             </td>
             <td>

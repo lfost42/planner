@@ -8,25 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using SoftwarePlannerLibrary.DataAccess;
 using SoftwarePlannerLibrary.Models;
 
-
 namespace SoftwarePlannerUI.Controllers
 {
-    public class TypeController : Controller
+    public class TypesController : Controller
     {
         private readonly PlannerContext _context;
 
-        public TypeController(PlannerContext context)
+        public TypesController(PlannerContext context)
         {
             _context = context;
         }
 
-        // GET: Type
+        // GET: Types
         public async Task<IActionResult> Index()
         {
             return View(await _context.Types.ToListAsync());
         }
 
-        // GET: Type/Details/5
+        // GET: Types/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,13 +43,13 @@ namespace SoftwarePlannerUI.Controllers
             return View(typeModel);
         }
 
-        // GET: Type/Create
+        // GET: Types/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Type/Create
+        // POST: Types/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -66,7 +65,7 @@ namespace SoftwarePlannerUI.Controllers
             return View(typeModel);
         }
 
-        // GET: Type/Edit/5
+        // GET: Types/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,7 +81,7 @@ namespace SoftwarePlannerUI.Controllers
             return View(typeModel);
         }
 
-        // POST: Type/Edit/5
+        // POST: Types/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -117,7 +116,7 @@ namespace SoftwarePlannerUI.Controllers
             return View(typeModel);
         }
 
-        // GET: Type/Delete/5
+        // GET: Types/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,7 +134,7 @@ namespace SoftwarePlannerUI.Controllers
             return View(typeModel);
         }
 
-        // POST: Type/Delete/5
+        // POST: Types/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

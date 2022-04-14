@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using SoftwarePlannerLibrary.Models;
 
-namespace SoftwarePlannerLibrary.Datases.Interfaces
+namespace SoftwarePlannerLibrary.Databases.Interfaces
 {
     public interface IRolesControl
     {
