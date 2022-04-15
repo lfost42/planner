@@ -4,12 +4,10 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="SoftwarePlanner" expanded="True">
-            <Node name="SoftwarePlannerLibrary" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="Databases" expanded="True">
-                <Node name="Interfaces" expanded="True" />
-                <Node name="AlertsControl.cs" selected="True" />
+          <Node name="SoftwarePlanner" expanded="True" selected="True">
+            <Node name="SoftwarePlannerUI" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>
