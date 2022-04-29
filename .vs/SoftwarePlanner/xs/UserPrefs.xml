@@ -1,12 +1,16 @@
-﻿<Properties StartupConfiguration="{FC2BD92D-188F-41D5-B9C6-5D2D94A445A5}|Default">
-  <MonoDevelop.Ide.ItemProperties.SoftwarePlannerUI PreferredExecutionTarget="/Applications/Brave Browser.app" />
+﻿<Properties StartupConfiguration="{FC2BD92D-188F-41D5-B9C6-5D2D94A445A5}|SoftwarePlannerUI">
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="SoftwarePlanner" expanded="True" selected="True">
-            <Node name="SoftwarePlannerUI" expanded="True">
+          <Node name="SoftwarePlanner" expanded="True">
+            <Node name="SoftwarePlannerLibrary" expanded="True">
+              <Node name="Data" expanded="True" />
+            </Node>
+            <Node name="SoftwarePlannerUI" expanded="True" selected="True">
+              <Node name="Areas" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
             </Node>
@@ -15,6 +19,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.PlannerUI PreferredExecutionTarget="/Applications/Brave Browser.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
     <String>DataAccessLibrary/DataAccessLibrary.csproj</String>

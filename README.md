@@ -1,4 +1,4 @@
-# Software Planner
+# Planner
 
 A tool that enables developers and teams to design software applications, manage requirements and tasks, track progress, and meet deadlines. 
 
