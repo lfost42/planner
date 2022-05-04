@@ -54,13 +54,11 @@ namespace Planner.Data.Models
         public virtual FileModel Photo { get; set; }
 
         public virtual ICollection<TaskModel> Tasks { get; set; } = new HashSet<TaskModel>();
-
         public virtual ICollection<TicketModel> Tickets { get; set; } = new HashSet<TicketModel>();
-        public virtual ICollection<NoteModel> Notes { get; set; } = new HashSet<NoteModel>();
+
         public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();
         public virtual ICollection<ChangeModel> Changes { get; set; } = new HashSet<ChangeModel>();
 
-
-
+        public virtual ICollection<ListModel> Lists { get; set; } = new HashSet<ListModel>();
     }
 }

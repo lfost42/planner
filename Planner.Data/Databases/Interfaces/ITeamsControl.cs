@@ -6,7 +6,7 @@ namespace Planner.Data.Databases.Interfaces
 {
     public interface ITeamsControl
     {
-        Task<List<NoteModel>> GetAllTeamNotesAsync(int teamId);
+        Task<List<ListModel>> GetAllTeamListsAsync(int teamId);
         Task<List<ProjectModel>> GetAllTeamProjectsAsync(int teamId);
         Task<List<TicketModel>> GetAllTeamTicketsAsync(int teamId);
         Task<TeamModel> GetTeamInfoByIdAsync(int? teamId);

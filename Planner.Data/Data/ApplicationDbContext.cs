@@ -18,6 +18,7 @@ namespace Planner.Data.Data
         public DbSet<ChangeModel> Changes { get; set; }
         public DbSet<CreatorModel> Creators { get; set; }
         public DbSet<FileModel> Files { get; set; }
+        public DbSet<ListModel> Lists { get; set; }
         public DbSet<NoteModel> Notes { get; set; }
         public DbSet<PriorityModel> Priorities { get; set; }
         public DbSet<ProjectModel> Projects { get; set; }

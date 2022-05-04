@@ -54,9 +54,6 @@ namespace Planner.Data.Models
         //Navigation Properties
         public virtual CreatorModel CreatorModel { get; set; }
 
-        public virtual ProjectModel ProjectModel { get; set; }
-        public virtual RequirementModel RequirementModel { get; set; }
-        public virtual TaskModel TaskModel { get; set; }
         public virtual TicketModel TicketModel { get; set; }
 
         public virtual TypeModel TypeModel { get; set; }

@@ -11,27 +11,27 @@ Identity and role based access/rendering. Ticket system for tracking progress, r
 ## WALKTHROUGH
 
 Minimal Viable Product
-- Single project/user app
-- User create TASKs
-- User attach NOTEs to TASKs or PROJECT and assign to self
+- User can create PROJECT, REQUIREMENT, TASK
+- User can create LISTs under PROJECT, REQUIREMENT, TASK
 
 Other planned features
-- PROJECT - allows users to create projects and assign tasks under the project, users may view all tasks and notes by PROJECT. Create TEAMs for PROJECT. 
-	-- each PROJECT VIEW >> option to see list of TASKS or list of NOTEs
-	-- each TASK VIEW >> list of NOTEs
+- PROJECT - Projects can be broken down into separate Requirements and further into Tasks.
+	-- each PROJECT VIEW >> option to see -list of LISTs and TASKS
+	-- each TASK VIEW >> -list of LISTs and TICKETs
 
 - User access - allows users to assign notes and tasks to other users
 - PROJECTs and TASKs assignments: assign to TEAM/TEAM or TEAM/USER (default is SELF). 
-- Roles - project creators can delete or rename their project, other users can append notes and tickets to them
-- CRUD Projects, Task, User
-- Tickets - may be attached under PROJECT or TASK, NOTEs assigned to Tickets. Each Ticket contains a list of NOTEs
-- Attachments - may be attached to PROJECT, TASK, and TICKETs
-- Change history for PROJECT and TASK CRUD history
+- Roles - project creators can delete or rename their project and lists other users can append notes to tickets or file a ticket to a project, requirement, or task
+- CRUD Projects, Requirement, Task, User, Team
+- Lists - used to draft and organize Project, Requirements, and Tasks. Items must be inserted into a Ticket to assign to another user. 
+- Tickets - may be attached under PROJECT, REQUIREMENT, or TASK; NOTEs appended to Tickets. Each Ticket contains a list of NOTEs
+- Attachments - may be attached to PROJECT, REQUIREMENT, TASK, and TICKETs
+- Change history for PROJECT, REQUIREMENT, and TASK CRUD history
 - Notification/Alerts when items are ASSIGNED and DUE
 - Sort, Search, Filter projects, tasks, notes
 
 DASHBOARD STATISTICS
-- How many REQUIREMENTs/TASKs/NOTEs in PROJECT are
+- How many REQUIREMENTs/TASKs/TICKETs in PROJECT are
 	-- complete 
 	-- past due
 	-- on time
@@ -43,17 +43,20 @@ Project Export notes - csv file
 
 - User login / registration
 - Roles (User, Admin, Owner)
-- CRUD Projects, Task, User
+- CRUD Projects, Requirements, Task, User, Lists
 - Notification when items are ASSIGNED and DUE
 - Project statistics (timeline options)
 - Sort / Search / Filtering
 - Option to export project data to a csv file
 
-TEAM is a designation, a descriptive way to segregate types of tasks and tickets. TEAM designation is assigned by the creator of the TICKET. 
+TEAM is a designation, a descriptive way to segregate types of requirements, tasks, and tickets. TEAM designation is assigned by the creator of the TICKET. 
 
-A PROJECT may contain a list of TASKs. 
+A PROJECT may contain a list of REQUIREMENTs.
+A REQUIREMENT may contain a list of TASKs. 
+A PROJECT, REQUIREMENT, and TASK may contain a list of TICKETs.
+A TICKET is a list of NOTEs.
 
-TICKETs can be created under: PROJECT and/or TASK.
+TICKETs can be created under: PROJECT, REQUIREMENT, and/or TASK.
 	A TICKET may be modified or deleted by the user within 30 minutes of creation. After 30 minutes the user may only close the TICKET.
 	TICKET types: Inquiry, Issue, Request, Update, Note
 
@@ -89,6 +92,15 @@ Navigation:
 USER
 - FirstName
 - LastName
+
+LIST
+- Name
+- Description
+- IsComplete
+- fk-User
+- fk-Project
+- fk-Requirement
+- fk-Task
 
 FILE
 - FormFile

@@ -51,7 +51,6 @@ namespace Planner.Data.Databases
                         .Include(p => p.Photo)
                         .Include(p => p.PriorityModel)
                         .Include(p => p.StatusModel)
-                        .Include(p => p.Notes)
                         .Include(p => p.Tickets)
                         .Include(p => p.Tickets).ThenInclude(t => t.Notes)
                         .ToListAsync();
@@ -68,12 +67,12 @@ namespace Planner.Data.Databases
 
         }
 
-        public async Task<List<NoteModel>> GetAllTeamNotesAsync(int teamId)
+        public async Task<List<ListModel>> GetAllTeamListsAsync(int teamId)
         {
-            List<NoteModel> result = new();
+            List<ListModel> result = new();
             List<ProjectModel> projects = new();
             projects = await GetAllTeamProjectsAsync(teamId);
-            return projects.SelectMany(p => p.Notes).ToList();
+            return projects.SelectMany(p => p.Lists).ToList();
 
         }
 

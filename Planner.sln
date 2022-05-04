@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.810.19
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner", "Planner\Planner.csproj", "{FC2BD92D-188F-41D5-B9C6-5D2D94A445A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner.Data", "Planner.Data\Planner.Data.csproj", "{42919444-9179-4EF4-BE86-31B67C790A30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner.Data", "Planner.Data\Planner.Data.csproj", "{F34B5CD9-4CF5-43EA-8C38-3F172B2C0045}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{FC2BD92D-188F-41D5-B9C6-5D2D94A445A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC2BD92D-188F-41D5-B9C6-5D2D94A445A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC2BD92D-188F-41D5-B9C6-5D2D94A445A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42919444-9179-4EF4-BE86-31B67C790A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42919444-9179-4EF4-BE86-31B67C790A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42919444-9179-4EF4-BE86-31B67C790A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42919444-9179-4EF4-BE86-31B67C790A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34B5CD9-4CF5-43EA-8C38-3F172B2C0045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34B5CD9-4CF5-43EA-8C38-3F172B2C0045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34B5CD9-4CF5-43EA-8C38-3F172B2C0045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34B5CD9-4CF5-43EA-8C38-3F172B2C0045}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

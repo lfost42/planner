@@ -32,10 +32,13 @@ namespace Planner.Data.Models
         public int CreatorModelId { get; set; }
 
         [Required, Display(Name = "Project")]
-        public int ProjectModelId { get; set; }
-        
+        public int ProjectId { get; set; }
+
+        [Required, Display(Name = "Requirement")]
+        public int RequirementId { get; set; }
+
         [Display(Name = "Task")]
-        public int TaskModelId { get; set; }
+        public int TaskId { get; set; }
 
         [Required, Display(Name = "Type")]
         public int TypeModelId { get; set; }
@@ -57,13 +60,17 @@ namespace Planner.Data.Models
 
         //Navigation Properties
         public virtual CreatorModel CreatorModel { get; set; }
-        public virtual ProjectModel ProjectModel { get; set; }
-        public virtual TaskModel TaskModel { get; set; }
+
+        public virtual ProjectModel Project { get; set; }
+        public virtual RequirementModel Requirement { get; set; }
+        public virtual TaskModel Task { get; set; }
+
         public virtual TypeModel TypeModel { get; set; }
         public virtual PriorityModel PriorityModel { get; set; }
         public virtual StatusModel StatusModel { get; set; }
         public virtual UserModel AssignedUser { get; set; }
         public virtual TeamModel TeamModel { get; set; }
+
         public virtual ICollection<NoteModel> Notes { get; set; } = new HashSet<NoteModel>();
         public virtual ICollection<FileModel> Attachments { get; set; } = new HashSet<FileModel>();
 
