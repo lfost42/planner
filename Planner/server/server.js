@@ -1,12 +1,16 @@
 const tasks = require("./routes/tasks");
-const connection = require("./db");
+const mongoose = require('mongoose')
 const cors = require("cors");
 const express = require("express");
 const app = express();
-
-connection();
-
 app.use(express.json());
+
+const db='mongodb://localhost:27017/tasks'
+
+mongoose.connect(db, ({ useNewUrlParser: true}))
+	.then(console.log('Connected to MongoDb'))
+	.catch(err => console.log(err))
+
 app.use(cors());
 
 app.use("/api/tasks", tasks);

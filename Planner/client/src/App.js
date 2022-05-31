@@ -15,8 +15,7 @@ class App extends Tasks {
                     <form
                         onSubmit={this.handleSubmit}
                         className="flex"
-                        style={{ margin: "15px 0" }}
-                    >
+                        style={{ margin: "15px 0" }}>
                         <TextField
                             variant="outlined"
                             size="small"
@@ -24,14 +23,12 @@ class App extends Tasks {
                             value={this.state.currentTask}
                             required={true}
                             onChange={this.handleChange}
-                            placeholder="Add New Task"
-                        />
+                            placeholder="Add New Task"/>
                         <Button
                             style={{ height: "40px" }}
                             color="primary"
                             variant="outlined"
-                            type="submit"
-                        >
+                            type="submit">
                             Add task
                         </Button>
                     </form>
@@ -39,26 +36,22 @@ class App extends Tasks {
                         {tasks.map((task) => (
                             <Paper
                                 key={task._id}
-                                className="flex task_container"
-                            >
+                                className="flex task_container">
                                 <Checkbox
                                     checked={task.completed}
                                     onClick={() => this.handleUpdate(task._id)}
-                                    color="primary"
-                                />
+                                    color="primary"/>
                                 <div
                                     className={
                                         task.completed
                                             ? "task line_through"
                                             : "task"
-                                    }
-                                >
+                                    }>
                                     {task.task}
                                 </div>
                                 <Button
                                     onClick={() => this.handleDelete(task._id)}
-                                    color="secondary"
-                                >
+                                    color="secondary">
                                     delete
                                 </Button>
                             </Paper>

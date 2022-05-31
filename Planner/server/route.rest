@@ -1,0 +1,23 @@
+GET http://localhost:8080/api/tasks
+
+###
+GET http://localhost:8080/api/tasks/629686570e01153e3b5fec7f
+
+###
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+	"task": "task 1"
+}
+
+###
+DELETE http://localhost:8080/api/tasks/629686570e01153e3b5fec7f
+
+###
+PATCH http://localhost:8080/api/tasks/629686710e01153e3b5fec82
+Content-Type: application/json
+
+{
+	"task": "Task 22"
+}

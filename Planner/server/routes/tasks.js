@@ -20,6 +20,15 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/:id", async (req, res) => {
+    try {
+        const tasks = await Task.findOne();
+        res.send(tasks);
+    } catch (error) {
+        res.send(error);
+    }
+});
+
 router.put("/:id", async (req, res) => {
     try {
         const task = await Task.findOneAndUpdate(
