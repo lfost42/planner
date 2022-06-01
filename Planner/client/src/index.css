@@ -1,4 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
+
+:root{
+  --primary: rgb(78, 150, 141);
+  --secondary: rgb(0, 112, 110);
+  --light: rgb(236, 251, 248);
+  --light-alt: rgb(227, 244, 241);
+  --hilight: rgb(173, 193, 189);
+  --dark: rgb(21, 29, 28);
+  --dark-alt: rgb(48, 57, 52);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira sans', sans-serif;
+}
+
 body {
+  background-color: var(--light);
+  color: var(--dark);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +31,157 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+ padding: 32px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+h4 {
+  font-size: 18px;
+  font-family: Raleway;
+  color: var(--dark-alt);
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 16px; 
+}
+
+.task {
+ position: relative;
+ background-color: var(--light-alt);
+ padding: 8px; 
+ border-radius: 8px;
+ display: flex;
+ align-items: center;
+ transition: 0.5s;
+ cursor: pointer;
+ margin-bottom: 16px;
+}
+
+.task:hover {
+  opacity: 0.8;
+}
+
+.tasks .task .checkbox {
+  width: 15px;
+  height: 15px;
+  margin-right: 16px;
+  border-radius: 999px;
+  background-color: var(--light);
+  transition: 0.4s;
+}
+
+.completed.task .checkbox {
+  background-color: var(--primary);
+  background-image: linear-gradient(to bottom, var(--hilight), var(--primary));
+}
+
+.task .text {
+  font-size: 20px;
+}
+
+.task.is-complete .text {
+  text-decoration: line-through;
+}
+
+.task .delete-task {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translate(-50%);
+  transform: translateY(-50%);
+  color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task .delete-task:hover {
+  background-color: var(--hilight);
+  opacity: 0.8;
+}
+
+.addPopup {
+	position: fixed;
+	bottom: 32px;
+	right: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 40px;
+	height: 40px;
+	border-radius: 999px;
+	font-size: 28px;
+	font-weight: 900;
+	color: var(--light);
+	background-color: var(--primary);
+	background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+	cursor: pointer;
+}
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 100%;
+	max-width: 400px;
+	background-color: var(--light);
+	padding: 32px;
+	border-radius: 16px;
+	box-shadow: 0px 4px 32px var(--dark);
+}
+
+.closePopup {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	color: var(--dark);
+	cursor: pointer;
+}
+
+.popup h3 {
+	color: var(--dark);
+	margin-bottom: 16px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.add-todo-input {
+	appearance: none;
+	outline: none;
+	border: none;
+	background-color: #FFF;
+	padding: 16px;
+	border-radius: 16px;
+	width: 100%;
+	box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.2);
+	font-size: 20px;
+}
+
+.button {
+	padding: 4px 8px;
+	background-color: var(--hilight);
+	display: inline-block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 18px;
+	margin-top: 16px;
+	text-align: center;
+	cursor: pointer;
+  margin-left: 10px;
 }

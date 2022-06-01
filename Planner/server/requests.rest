@@ -6,7 +6,7 @@ POST http://localhost:3001/task/new
 Content-Type: application/json
 
 {
-"text": "Take two minutes"
+"text": "Take a shower"
 }
 
 ###
