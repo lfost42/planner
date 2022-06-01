@@ -1,0 +1,27 @@
+GET http://localhost:3001/tasks
+
+###
+
+POST http://localhost:3001/task/new
+Content-Type: application/json
+
+{
+"text": "Take two minutes"
+}
+
+###
+
+DELETE http://localhost:3001/task/delete/6296c704b71710751eafa1e1
+
+###
+
+GET http://localhost:3001/task/complete/6296c4b962d45c163bbebef2
+
+###
+
+PUT http://localhost:3001/task/update/6296c56cd9345c53fd5a92cb
+Content-Type: application/json
+
+{
+"text": "Take ten"
+}
