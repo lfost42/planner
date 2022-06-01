@@ -3,8 +3,8 @@
 :root{
   --primary: rgb(78, 150, 141);
   --secondary: rgb(0, 112, 110);
-  --light: rgb(236, 251, 248);
-  --light-alt: rgb(227, 244, 241);
+  --light: rgb(248, 255, 254);
+  --light-alt: rgb(238, 250, 248);
   --hilight: rgb(173, 193, 189);
   --dark: rgb(21, 29, 28);
   --dark-alt: rgb(48, 57, 52);

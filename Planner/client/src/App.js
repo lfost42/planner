@@ -59,7 +59,7 @@ function App() {
 
 	return (
 		<div className='App'>
-			<h1>Task List</h1>
+			<h1>Crudding With React</h1>
 			<h4>Your tasks</h4>
 			<div className='tasks'>
 				{tasks.length > 0 ? tasks.map(task => (
