@@ -8,41 +8,37 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-// NOTE: Do Not Scaffold!!
-
 namespace Planner.Models
 {
     public class AppUser : IdentityUser
     {
-        [Required] // States that the item is required for adding a new record to the Database
-        [Display(Name = "First Name")] // This annotation is for the "View"
+        [Required]
+        [Display(Name = "First Name"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string FirstName { get; set; }
         
         [Required]
-        [Display(Name = "Last Name")]
+        [Display(Name = "Last Name"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string LastName { get; set; }
         
-        [NotMapped] // This particular property will not be added to the Database
+        [NotMapped] 
         [Display(Name = "Full Name")]
         public string FullName { get { return $"{FirstName} {LastName}"; } }
 
-        // Avatar properties
         [NotMapped]
         [DataType(DataType.Upload)]
         public IFormFile AvatarFormFile { get; set; }
 
-        [DisplayName("Avatar")]
+        [DisplayName("Avatar"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string AvatarFileName { get; set; }
 
         public byte[] AvatarFileData { get; set; }
 
-        [DisplayName("File Extension")]
+        [DisplayName("File Extension"), StringLength(5, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string AvatarContentType { get; set; }
 
 
-        public int? CompanyId { get; set; } //Foreign Key
+        public int? CompanyId { get; set; }
 
-        //Naigation properties
         public virtual Company Company { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
     }

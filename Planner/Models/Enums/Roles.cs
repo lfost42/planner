@@ -11,6 +11,6 @@ namespace Planner.Models.Enums
         ProjectManager,
         Developer,
         Submitter,
-        DemoUser
+        AppUser
     }
 }

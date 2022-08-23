@@ -7,9 +7,10 @@ namespace Planner.Models.Enums
 {
     public enum TicketPriority
     {
+        None,
         Low,
-        Medium,
-        High,
+        Important,
+        Serious,
         Urgent
     }
 }

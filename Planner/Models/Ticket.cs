@@ -9,25 +9,22 @@ namespace Planner.Models
 {
     public class Ticket
     {
-        //Primary Key
         public int Id { get; set; }
 
-        [Required] //Makes the property required
-        [StringLength(50)] //Limits the size of the string
-        [DisplayName("Title")]
+        [DisplayName("Title"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Title { get; set; }
 
         [Required]
-        [DisplayName("Description")]
+        [DisplayName("Description"), StringLength(250, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Description { get; set; }
 
-        [DataType(DataType.Date)] //Specifies the DataType
+        [DataType(DataType.Date)]
         [DisplayName("Created")]
         public DateTimeOffset Created { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayName("Updated")]
-        public DateTimeOffset? Updated { get; set; } // "?" == Nullable
+        public DateTimeOffset? Updated { get; set; }
 
         [DisplayName("Archived")]
         public bool Archived { get; set; }
@@ -36,7 +33,6 @@ namespace Planner.Models
         public int ProjectID { get; set; }
 
 
-        // Foreign Keys - Lookup Tables
         [DisplayName("Ticket Type")]
         public int TicketTypeId { get; set; } 
 
@@ -47,7 +43,6 @@ namespace Planner.Models
         public int TicketStatusId { get; set; }
 
 
-        // AppUser Foreign Keys
         [DisplayName("Ticket Owner")]
         public string OwnerUserId { get; set; }
 

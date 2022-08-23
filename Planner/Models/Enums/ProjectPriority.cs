@@ -7,9 +7,10 @@ namespace Planner.Models.Enums
 {
     public enum ProjectPriority
     {
+        None,
         Low,
-        Medium,
-        High,
+        Important,
+        Serious,
         Urgent
     }
 }

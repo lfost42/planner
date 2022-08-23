@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,7 +9,6 @@ namespace Planner.Models
 {
     public class Invite
     {
-        //Primary Key
         public int Id { get; set; }
 
         [DisplayName("Date Sent")]
@@ -16,12 +16,11 @@ namespace Planner.Models
         [DisplayName("Join Date")]
         public DateTimeOffset JoinDate { get; set; }
 
-        [DisplayName("Code")]
+        [DisplayName("Code"), StringLength(50, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public Guid CompanyToken { get; set; }
 
         
         
-        //Foreign Keys
         [DisplayName("Company")]
         public int CompanyId { get; set; }
         
@@ -34,9 +33,11 @@ namespace Planner.Models
         [DisplayName("Invitee")]
         public string InviteeId { get; set; }
 
-
+        [StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string InviteeEmail { get; set; }
+        [StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string InviteeFirstName { get; set; }
+        [StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string InviteeLastName { get; set; }
 
 

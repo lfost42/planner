@@ -18,12 +18,10 @@ namespace Planner.Models
         [DisplayName("Company")]
         public int? CompanyId { get; set; } //Foreign Key
 
-        [Required]
-        [StringLength(50)]
-        [DisplayName("Project Name")]
+        [Required, DisplayName("Project Name"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Name { get; set; }
         
-        [DisplayName("Project Description")]
+        [DisplayName("Project Description"), StringLength(500, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Description { get; set; }
         
         [DataType(DataType.Date)]
@@ -43,7 +41,7 @@ namespace Planner.Models
         [DataType(DataType.Upload)]
         public IFormFile ImageFormFile { get; set; }
         
-        [DisplayName("File Name")]
+        [DisplayName("File Name"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string ImageFileName { get; set; }
         
         public byte[] ImageFileData { get; set; }

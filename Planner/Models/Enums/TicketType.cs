@@ -7,11 +7,10 @@ namespace Planner.Models.Enums
 {
     public enum TicketType
     {
-        NewDevelopment,
-        WorkTask,
-        Defect,
-        ChangeRequest,
-        Enhancement,
-        GeneralTask
+        Inquiry,
+        Issue,
+        Request,
+        Update,
+        Note
     }
 }

@@ -15,10 +15,10 @@ namespace Planner.Models
         public int TicketId { get; set; }
 
         [Required]
-        [DisplayName("Title")]
+        [DisplayName("Title"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Title { get; set; }
 
-        [DisplayName("Message")]
+        [DisplayName("Message"), StringLength(300, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Message { get; set; }
 
         [DataType(DataType.Date)]

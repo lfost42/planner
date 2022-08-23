@@ -22,17 +22,17 @@ namespace Planner.Models
         [DisplayName("Team Member")]
         public string UserId { get; set; } // Foreign Key
 
-        [DisplayName("File Description")]
+        [DisplayName("File Description"), StringLength(300, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Description { get; set; }
 
         [NotMapped]
         [DataType(DataType.Upload)]
         public IFormFile FormFile { get; set; }
-        [DisplayName("File Name")]
+        [DisplayName("File Name"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string FileName { get; set; }
         public byte[] FileData { get; set; }
         
-        [DisplayName("File Extension")]
+        [DisplayName("File Extension"), StringLength(5, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string FileContentType { get; set; }
 
         
