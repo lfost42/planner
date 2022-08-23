@@ -15,8 +15,8 @@ namespace Planner.Models
         public int Id { get; set; }
 
 
-        [DisplayName("Company")]
-        public int? CompanyId { get; set; } //Foreign Key
+        [DisplayName("Team")]
+        public int? TeamId { get; set; } //Foreign Key
 
         [Required, DisplayName("Project Name"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Name { get; set; }
@@ -54,7 +54,7 @@ namespace Planner.Models
 
         
         // Navigation properties
-        public virtual Company Company { get; set; }
+        public virtual Team Team { get; set; }
         public virtual ProjectPriority Priority { get; set; }
         
         // Collection properties

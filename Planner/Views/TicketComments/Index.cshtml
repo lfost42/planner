@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Planner.Models.TicketComment>
+﻿@model IEnumerable<Planner.Models.TicketNote>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Comment)
+                @Html.DisplayNameFor(model => model.Note)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Created)
@@ -32,7 +32,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Comment)
+                    @Html.DisplayFor(modelItem => item.Note)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Created)

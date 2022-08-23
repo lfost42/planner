@@ -6,12 +6,12 @@ using Planner.Models;
 
 namespace Planner.Services.Interfaces
 {
-    public interface ICompanyInfoService
+    public interface ITeamInfoService
     {
-        public Task<Company> GetCompanyInfoByIdAsync(int? companyId);
-        public Task<List<AppUser>> GetAllMembersAsync(int companyId);
-        public Task<List<Project>> GetAllProjectsAsync(int companyId);
-        public Task<List<Ticket>> GetAllTicketsAsync(int companyId);
+        public Task<Team> GetTeamInfoByIdAsync(int? TeamId);
+        public Task<List<AppUser>> GetAllMembersAsync(int TeamId);
+        public Task<List<Project>> GetAllProjectsAsync(int TeamId);
+        public Task<List<Ticket>> GetAllTicketsAsync(int TeamId);
 
     }
 }

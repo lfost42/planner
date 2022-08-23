@@ -110,15 +110,15 @@ namespace Planner.Services
 
         
         // "GET"
-        public async Task<List<Ticket>> GetAllTicketsByCompanyAsync(int companyId)
+        public async Task<List<Ticket>> GetAllTicketsByTeamAsync(int TeamId)
         {
             try
             {
                 List<Ticket> tickets = await _context.Projects
-                                                       .Where(p => p.CompanyId == companyId)
+                                                       .Where(p => p.TeamId == TeamId)
                                                        .SelectMany(p => p.Tickets)
                                                             .Include(t => t.Attachments)
-                                                            .Include(t => t.Comments)
+                                                            .Include(t => t.Notes)
                                                             .Include(t => t.DeveloperUser)
                                                             .Include(t => t.History)
                                                             .Include(t => t.OwnerUser)
@@ -138,16 +138,16 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<Ticket>> GetAllTicketsByPriorityAsync(int companyId, string priorityName)
+        public async Task<List<Ticket>> GetAllTicketsByPriorityAsync(int TeamId, string priorityName)
         {
             int priorityId = (await LookupTicketPriorityIdAsync(priorityName)).Value;
             try
             {
                 List<Ticket> tickets = await _context.Projects
-                                                       .Where(p => p.CompanyId == companyId)
+                                                       .Where(p => p.TeamId == TeamId)
                                                        .SelectMany(p => p.Tickets)
                                                             .Include(t => t.Attachments)
-                                                            .Include(t => t.Comments)
+                                                            .Include(t => t.Notes)
                                                             .Include(t => t.DeveloperUser)
                                                             .Include(t => t.History)
                                                             .Include(t => t.OwnerUser)
@@ -166,16 +166,16 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<Ticket>> GetAllTicketsByStatusAsync(int companyId, string statusName)
+        public async Task<List<Ticket>> GetAllTicketsByStatusAsync(int TeamId, string statusName)
         {
             int statusId = (await LookupTicketStatusIdAsync(statusName)).Value;
             try
             {
                 List<Ticket> tickets = await _context.Projects
-                                                       .Where(p => p.CompanyId == companyId)
+                                                       .Where(p => p.TeamId == TeamId)
                                                        .SelectMany(p => p.Tickets)
                                                             .Include(t => t.Attachments)
-                                                            .Include(t => t.Comments)
+                                                            .Include(t => t.Notes)
                                                             .Include(t => t.DeveloperUser)
                                                             .Include(t => t.History)
                                                             .Include(t => t.OwnerUser)
@@ -194,16 +194,16 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<Ticket>> GetAllTicketsByTypeAsync(int companyId, string typeName)
+        public async Task<List<Ticket>> GetAllTicketsByTypeAsync(int TeamId, string typeName)
         {
             int typeId = (await LookupTicketTypeIdAsync(typeName)).Value;
             try
             {
                 List<Ticket> tickets = await _context.Projects
-                                                       .Where(p => p.CompanyId == companyId)
+                                                       .Where(p => p.TeamId == TeamId)
                                                        .SelectMany(p => p.Tickets)
                                                             .Include(t => t.Attachments)
-                                                            .Include(t => t.Comments)
+                                                            .Include(t => t.Notes)
                                                             .Include(t => t.DeveloperUser)
                                                             .Include(t => t.History)
                                                             .Include(t => t.OwnerUser)
@@ -225,11 +225,11 @@ namespace Planner.Services
 
 
 
-        public async Task<List<Ticket>> GetArchivedTicketsAsync(int companyId)
+        public async Task<List<Ticket>> GetArchivedTicketsAsync(int TeamId)
         {
             try
             {
-                List<Ticket> tickets = (await GetAllTicketsByCompanyAsync(companyId))
+                List<Ticket> tickets = (await GetAllTicketsByTeamAsync(TeamId))
                                                 .Where(t => t.Archived == true)
                                                 .ToList();
                 return tickets;
@@ -243,12 +243,12 @@ namespace Planner.Services
 
 
         //"GET" Project Ticket Methods - COMPLETED!
-        public async Task<List<Ticket>> GetProjectTicketsByPriorityAsync(string priorityName, int companyId, int projectId)
+        public async Task<List<Ticket>> GetProjectTicketsByPriorityAsync(string priorityName, int TeamId, int projectId)
         {
             List<Ticket> tickets = new();
             try
             {
-                tickets = (await GetAllTicketsByPriorityAsync(companyId, priorityName)).Where(t => t.ProjectID == projectId).ToList();
+                tickets = (await GetAllTicketsByPriorityAsync(TeamId, priorityName)).Where(t => t.ProjectID == projectId).ToList();
                 return tickets;
             }
             catch (Exception)
@@ -258,12 +258,12 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<Ticket>> GetProjectTicketsByRoleAsync(string role, string userId, int projectId, int companyId)
+        public async Task<List<Ticket>> GetProjectTicketsByRoleAsync(string role, string userId, int projectId, int TeamId)
         {
             List<Ticket> tickets = new();
             try
             {
-                tickets = (await GetTicketsByRoleAsync(role, userId, companyId)).Where(t => t.ProjectID == projectId).ToList();
+                tickets = (await GetTicketsByRoleAsync(role, userId, TeamId)).Where(t => t.ProjectID == projectId).ToList();
                 return tickets;
             }
             catch (Exception)
@@ -273,12 +273,12 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<Ticket>> GetProjectTicketsByStatusAsync(string statusName, int companyId, int projectId)
+        public async Task<List<Ticket>> GetProjectTicketsByStatusAsync(string statusName, int TeamId, int projectId)
         {
             List<Ticket> tickets = new();
             try
             {
-                tickets = (await GetAllTicketsByStatusAsync(companyId, statusName)).Where(t => t.ProjectID == projectId).ToList();
+                tickets = (await GetAllTicketsByStatusAsync(TeamId, statusName)).Where(t => t.ProjectID == projectId).ToList();
                 return tickets;
             }
             catch (Exception)
@@ -288,12 +288,12 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<Ticket>> GetProjectTicketsByTypeAsync(string typeName, int companyId, int projectId)
+        public async Task<List<Ticket>> GetProjectTicketsByTypeAsync(string typeName, int TeamId, int projectId)
         {
             List<Ticket> tickets = new();
             try
             {
-                tickets = (await GetAllTicketsByTypeAsync(companyId, typeName)).Where(t => t.ProjectID == projectId).ToList();
+                tickets = (await GetAllTicketsByTypeAsync(TeamId, typeName)).Where(t => t.ProjectID == projectId).ToList();
                 return tickets;
             }
             catch (Exception)
@@ -303,12 +303,12 @@ namespace Planner.Services
             }
         }
 
-        public async Task<AppUser> GetTicketDeveloperAsync(int ticketId, int companyId)
+        public async Task<AppUser> GetTicketDeveloperAsync(int ticketId, int TeamId)
         {
             AppUser developer = new();
             try
             {
-                Ticket ticket = (await GetAllTicketsByCompanyAsync(companyId)).FirstOrDefault(t => t.Id == ticketId);
+                Ticket ticket = (await GetAllTicketsByTeamAsync(TeamId)).FirstOrDefault(t => t.Id == ticketId);
                 if(ticket?.DeveloperUserId != null)
                 {
                     developer = ticket.DeveloperUser;
@@ -323,7 +323,7 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<Ticket>> GetTicketsByRoleAsync(string role, string userId, int companyId)
+        public async Task<List<Ticket>> GetTicketsByRoleAsync(string role, string userId, int TeamId)
         {
             List<Ticket> tickets = new();
 
@@ -331,19 +331,19 @@ namespace Planner.Services
             {
                 if (role == Roles.Admin.ToString())
                 {
-                    tickets = await GetAllTicketsByCompanyAsync(companyId);
+                    tickets = await GetAllTicketsByTeamAsync(TeamId);
                 }
                 else if (role == Roles.Developer.ToString())
                 {
-                    tickets = (await GetAllTicketsByCompanyAsync(companyId)).Where(t => t.DeveloperUserId == userId).ToList();
+                    tickets = (await GetAllTicketsByTeamAsync(TeamId)).Where(t => t.DeveloperUserId == userId).ToList();
                 }
                 else if (role == Roles.Submitter.ToString())
                 {
-                    tickets = (await GetAllTicketsByCompanyAsync(companyId)).Where(t => t.OwnerUserId == userId).ToList();
+                    tickets = (await GetAllTicketsByTeamAsync(TeamId)).Where(t => t.OwnerUserId == userId).ToList();
                 }
                 else if (role == Roles.ProjectManager.ToString())
                 {
-                    tickets = await GetTicketsByUserIdAsync(userId, companyId);
+                    tickets = await GetTicketsByUserIdAsync(userId, TeamId);
 
                 }
                 return tickets;
@@ -355,7 +355,7 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<Ticket>> GetTicketsByUserIdAsync(string userId, int companyId)
+        public async Task<List<Ticket>> GetTicketsByUserIdAsync(string userId, int TeamId)
         {
             AppUser user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
             List<Ticket> tickets = new();
@@ -363,14 +363,14 @@ namespace Planner.Services
             {
                 if (await _rolesService.IsUserInRoleAsync(user, Roles.Admin.ToString()))
                 {
-                    tickets = (await _projectService.GetAllProjectsByCompany(companyId))
+                    tickets = (await _projectService.GetAllProjectsByTeam(TeamId))
                                                     .SelectMany(p => p.Tickets)
                                                     .ToList();
                     
                 }
                 else if (await _rolesService.IsUserInRoleAsync(user, Roles.Developer.ToString()))
                 {
-                    tickets = (await _projectService.GetAllProjectsByCompany(companyId))
+                    tickets = (await _projectService.GetAllProjectsByTeam(TeamId))
                                                     .SelectMany(p => p.Tickets)
                                                     .Where(t => t.DeveloperUserId == userId)
                                                     .ToList();
@@ -378,7 +378,7 @@ namespace Planner.Services
                 }
                 else if (await _rolesService.IsUserInRoleAsync(user, Roles.Submitter.ToString()))
                 {
-                    tickets = (await _projectService.GetAllProjectsByCompany(companyId))
+                    tickets = (await _projectService.GetAllProjectsByTeam(TeamId))
                                                     .SelectMany(p => p.Tickets)
                                                     .Where(t => t.OwnerUserId == userId)
                                                     .ToList();

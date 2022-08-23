@@ -56,7 +56,7 @@ A REQUIREMENT may contain a list of TASKs.
 A PROJECT, REQUIREMENT, and TASK may contain a list of TICKETs.
 A TICKET is a list of NOTEs.
 
-TICKETs can be created under: PROJECT, REQUIREMENT, and/or TASK.
+TICKETs (Inquiry, Issue, Request, Update, Project, Requirement, Task).
 	A TICKET may be modified or deleted by the user within 30 minutes of creation. After 30 minutes the user may only close the TICKET.
 	TICKET types: Inquiry, Issue, Request, Update, Note
 
@@ -123,21 +123,10 @@ TICKET (Inquiry, Issue, Request, Update, Note)
 - Date Due (or Closed)
 - Assigned Team (limit to teams available)
 - Assigned User (limit to users in system)
-- Status (New, Pending, Stale, Due, Closed)
+- Status (New, Pending, Inactive, Due, Closed)
 - Archived
 - Priority (None, Low, Important, Serious, Urgent)
 - List-Notes>
-
-TASK
-- Title
-- Description
-- Creator
-- Date Created
-- Date Closed
-- Date Due
-- Status (New, Pending, Stale, Due, Closed)
-- Archived
-- List-Tickets>
 
 PROJECT
 - Title

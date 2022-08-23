@@ -22,7 +22,7 @@ namespace Planner.Controllers
         // GET: Invites
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Invites.Include(b => b.Company).Include(b => b.Invitee).Include(b => b.Invitor).Include(b => b.Project);
+            var applicationDbContext = _context.Invites.Include(b => b.Team).Include(b => b.Invitee).Include(b => b.Invitor).Include(b => b.Project);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,7 @@ namespace Planner.Controllers
             }
 
             var Invite = await _context.Invites
-                .Include(b => b.Company)
+                .Include(b => b.Team)
                 .Include(b => b.Invitee)
                 .Include(b => b.Invitor)
                 .Include(b => b.Project)
@@ -51,7 +51,7 @@ namespace Planner.Controllers
         // GET: Invites/Create
         public IActionResult Create()
         {
-            ViewData["CompanyId"] = new SelectList(_context.Companies, "Id", "Name");
+            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name");
             ViewData["InviteeId"] = new SelectList(_context.Users, "Id", "Id");
             ViewData["InvitorId"] = new SelectList(_context.Users, "Id", "Id");
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name");
@@ -63,7 +63,7 @@ namespace Planner.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,InviteDate,JoinDate,CompanyToken,CompanyId,ProjectId,InvitorId,InviteeId,InviteeEmail,InviteeFirstName,InviteeLastName,IsValid")] Invite Invite)
+        public async Task<IActionResult> Create([Bind("Id,InviteDate,JoinDate,TeamToken,TeamId,ProjectId,InvitorId,InviteeId,InviteeEmail,InviteeFirstName,InviteeLastName,IsValid")] Invite Invite)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace Planner.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CompanyId"] = new SelectList(_context.Companies, "Id", "Name", Invite.CompanyId);
+            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", Invite.TeamId);
             ViewData["InviteeId"] = new SelectList(_context.Users, "Id", "Id", Invite.InviteeId);
             ViewData["InvitorId"] = new SelectList(_context.Users, "Id", "Id", Invite.InvitorId);
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", Invite.ProjectId);
@@ -91,7 +91,7 @@ namespace Planner.Controllers
             {
                 return NotFound();
             }
-            ViewData["CompanyId"] = new SelectList(_context.Companies, "Id", "Name", Invite.CompanyId);
+            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", Invite.TeamId);
             ViewData["InviteeId"] = new SelectList(_context.Users, "Id", "Id", Invite.InviteeId);
             ViewData["InvitorId"] = new SelectList(_context.Users, "Id", "Id", Invite.InvitorId);
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", Invite.ProjectId);
@@ -103,7 +103,7 @@ namespace Planner.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,InviteDate,JoinDate,CompanyToken,CompanyId,ProjectId,InvitorId,InviteeId,InviteeEmail,InviteeFirstName,InviteeLastName,IsValid")] Invite Invite)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,InviteDate,JoinDate,TeamToken,TeamId,ProjectId,InvitorId,InviteeId,InviteeEmail,InviteeFirstName,InviteeLastName,IsValid")] Invite Invite)
         {
             if (id != Invite.Id)
             {
@@ -130,7 +130,7 @@ namespace Planner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CompanyId"] = new SelectList(_context.Companies, "Id", "Name", Invite.CompanyId);
+            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", Invite.TeamId);
             ViewData["InviteeId"] = new SelectList(_context.Users, "Id", "Id", Invite.InviteeId);
             ViewData["InvitorId"] = new SelectList(_context.Users, "Id", "Id", Invite.InvitorId);
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", Invite.ProjectId);
@@ -146,7 +146,7 @@ namespace Planner.Controllers
             }
 
             var Invite = await _context.Invites
-                .Include(b => b.Company)
+                .Include(b => b.Team)
                 .Include(b => b.Invitee)
                 .Include(b => b.Invitor)
                 .Include(b => b.Project)

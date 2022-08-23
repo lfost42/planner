@@ -11,6 +11,8 @@ namespace Planner.Models.Enums
         Issue,
         Request,
         Update,
-        Note
+        Project,
+        Requirement,
+        Task
     }
 }

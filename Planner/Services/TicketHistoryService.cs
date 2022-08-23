@@ -173,16 +173,16 @@ namespace Planner.Services
             
         }
 
-        public async Task<List<TicketHistory>> GetCompanyTicketsHistoriesAsync(int companyId)
+        public async Task<List<TicketHistory>> GetTeamTicketsHistoriesAsync(int TeamId)
         {
             try
             {
-                List<Project> projects = (await _context.Companies
+                List<Project> projects = (await _context.Teams
                                                          .Include(c => c.Projects)
                                                             .ThenInclude(p => p.Tickets)
                                                                 .ThenInclude(t => t.History)
                                                                     .ThenInclude(h => h.User)
-                                                         .FirstOrDefaultAsync(c => c.Id == companyId)).Projects.ToList();
+                                                         .FirstOrDefaultAsync(c => c.Id == TeamId)).Projects.ToList();
                 
                 List<Ticket> tickets = projects.SelectMany(p => p.Tickets).ToList();
 
@@ -198,11 +198,11 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<TicketHistory>> GetProjectChangesAsync(int projectId, int companyId)
+        public async Task<List<TicketHistory>> GetProjectChangesAsync(int projectId, int TeamId)
         {
             try
             {
-                Project project = await _context.Projects.Where(p => p.CompanyId == companyId)
+                Project project = await _context.Projects.Where(p => p.TeamId == TeamId)
                                                            .Include(p => p.Tickets)
                                                             .ThenInclude(t => t.History)
                                                                 .ThenInclude(h => h.User)

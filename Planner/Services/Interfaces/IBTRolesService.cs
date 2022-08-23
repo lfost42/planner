@@ -19,9 +19,9 @@ namespace Planner.Services.Interfaces
         public Task<bool> RemoveUserFromRolesAsync(AppUser user, IEnumerable<string> roles);
 
         
-        public Task<List<AppUser>> GetUsersInRolesAsync(string roleName, int companyId);
+        public Task<List<AppUser>> GetUsersInRolesAsync(string roleName, int TeamId);
 
-        public Task<List<AppUser>> GetUsersNotInRolesAsync(string roleName, int companyId);
+        public Task<List<AppUser>> GetUsersNotInRolesAsync(string roleName, int TeamId);
 
 
         public Task<string> GetRoleNameByIdAsync(string roleId);

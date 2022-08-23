@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Planner.Models
 {
-    public class Company
+    public class Team
     {
         //Primary Key
         public int Id { get; set; }
 
         [Required]
-        [DisplayName("Company Name"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
+        [DisplayName("Team Name"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Name { get; set; }
 
-        [DisplayName("Company Description"), StringLength(300, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
+        [DisplayName("Team Description"), StringLength(300, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
         public string Description { get; set; }
 
         // Navigation properties

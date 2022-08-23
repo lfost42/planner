@@ -6,8 +6,6 @@
 
 <h1>@ViewData["Title"]</h1>
 
-@* This is a for for Registering a user. This is essentially creating the HTML page for the user to interact with *@
-
 <div class="row">
     <div class="col-md-4">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
@@ -19,7 +17,6 @@
                 <input asp-for="Input.Email" class="form-control" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
-            @* Here I am creating the Input Fields for a user to add their First and Last name, since these fields are REQUIRED *@
             <div class="form-group">
                 <label asp-for="Input.FirstName"></label>
                 <input asp-for="Input.FirstName" class="form-control" />

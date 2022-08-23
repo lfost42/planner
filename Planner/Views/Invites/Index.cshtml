@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.JoinDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CompanyToken)
+                @Html.DisplayNameFor(model => model.TeamToken)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.InviteeEmail)
@@ -34,7 +34,7 @@
                 @Html.DisplayNameFor(model => model.IsValid)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Company)
+                @Html.DisplayNameFor(model => model.Team)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Invitor)
@@ -59,7 +59,7 @@
                     @Html.DisplayFor(modelItem => item.JoinDate)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CompanyToken)
+                    @Html.DisplayFor(modelItem => item.TeamToken)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.InviteeEmail)
@@ -74,7 +74,7 @@
                     @Html.DisplayFor(modelItem => item.IsValid)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Company.Name)
+                    @Html.DisplayFor(modelItem => item.Team.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Invitor.Id)

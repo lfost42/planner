@@ -112,13 +112,13 @@ namespace Planner.Services
             return teamMembers;
         }
 
-        public async Task<List<Project>> GetAllProjectsByCompany(int companyId)
+        public async Task<List<Project>> GetAllProjectsByTeam(int TeamId)
         {
             List<Project> projects = new();
-            projects = await _context.Projects.Where(p => p.CompanyId == companyId)
+            projects = await _context.Projects.Where(p => p.TeamId == TeamId)
                                             .Include(p => p.Members)
                                             .Include(p => p.Tickets)
-                                                .ThenInclude(t => t.Comments)
+                                                .ThenInclude(t => t.Notes)
                                             .Include(p => p.Tickets)
                                                 .ThenInclude(t => t.Attachments)
                                             .Include(p => p.Tickets)
@@ -140,17 +140,17 @@ namespace Planner.Services
             return projects;
         }
 
-        public async Task<List<Project>> GetAllProjectsByPriority(int companyId, string priorityName)
+        public async Task<List<Project>> GetAllProjectsByPriority(int TeamId, string priorityName)
         {
-            List<Project> projects = await GetAllProjectsByCompany(companyId);
+            List<Project> projects = await GetAllProjectsByTeam(TeamId);
             int priorityId = await LookupProjectPriorityId(priorityName);
             return projects.Where(p => p.ProjectPriorityId == priorityId).ToList();
 
         }
 
-        public async Task<List<Project>> GetArchivedProjectsByCompany(int companyId)
+        public async Task<List<Project>> GetArchivedProjectsByTeam(int TeamId)
         {
-            List<Project> projects = await GetAllProjectsByCompany(companyId);
+            List<Project> projects = await GetAllProjectsByTeam(TeamId);
             return projects.Where(p => p.Archived == true).ToList();
         }
 
@@ -161,13 +161,13 @@ namespace Planner.Services
         }
 
         // CRUD - Read
-        public async Task<Project> GetProjectByIdAsync(int projectId, int companyId)
+        public async Task<Project> GetProjectByIdAsync(int projectId, int TeamId)
         {
             Project project = await _context.Projects
                                               .Include(p=>p.Tickets)
                                               .Include(p=>p.Members)
                                               .Include(p=>p.Priority)
-                                              .FirstOrDefaultAsync(p=>p.Id == projectId && p.CompanyId == companyId);
+                                              .FirstOrDefaultAsync(p=>p.Id == projectId && p.TeamId == TeamId);
             return project;
         }
 
@@ -216,7 +216,7 @@ namespace Planner.Services
             {
                 List<Project> userProjects = (await _context.Users
                     .Include(u => u.Projects)
-                        .ThenInclude(p => p.Company)
+                        .ThenInclude(p => p.Team)
                     .Include(u => u.Projects)
                         .ThenInclude(p => p.Members)
                     .Include(u => u.Projects)
@@ -247,12 +247,12 @@ namespace Planner.Services
             }
         }
 
-        public async Task<List<AppUser>> GetUsersNotOnProjectAsync(int projectId, int companyId)
+        public async Task<List<AppUser>> GetUsersNotOnProjectAsync(int projectId, int TeamId)
         {
             List<AppUser> users = await _context.Users.Where(u => u.Projects.All(p => p.Id != projectId))
                                                      .ToListAsync();
 
-            return users.Where(u => u.CompanyId == companyId).ToList();
+            return users.Where(u => u.TeamId == TeamId).ToList();
 
         }
 

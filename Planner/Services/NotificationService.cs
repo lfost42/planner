@@ -110,11 +110,11 @@ namespace Planner.Services
             
         }
 
-        public async Task SendEmailNotificationsByRoleAsync(Notification notification, int companyId, string role)
+        public async Task SendEmailNotificationsByRoleAsync(Notification notification, int TeamId, string role)
         {
             try
             {
-                List<AppUser> members = await _rolesService.GetUsersInRolesAsync(role, companyId);
+                List<AppUser> members = await _rolesService.GetUsersInRolesAsync(role, TeamId);
 
                 foreach (AppUser AppUser in members)
                 {

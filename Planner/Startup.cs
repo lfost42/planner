@@ -48,8 +48,8 @@ namespace Planner
             // Registering the BTRoleService and IBTRoleService
             services.AddScoped<IBTRolesService, BTRolesService>();
 
-            // Registering th CompanyInfoService and ICompanyInfoService
-            services.AddScoped<ICompanyInfoService, CompanyInfoService>();
+            // Registering th TeamInfoService and ITeamInfoService
+            services.AddScoped<ITeamInfoService, TeamInfoService>();
 
             // Registering the ProjectService and IProjectService
             services.AddScoped<IProjectService, ProjectService>();

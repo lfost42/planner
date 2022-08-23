@@ -1,4 +1,4 @@
-﻿@model Planner.Models.TicketComment
+﻿@model Planner.Models.TicketNote
 
 @{
     ViewData["Title"] = "Delete";
@@ -8,14 +8,14 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>TicketComment</h4>
+    <h4>TicketNote</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Comment)
+            @Html.DisplayNameFor(model => model.Note)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Comment)
+            @Html.DisplayFor(model => model.Note)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Created)

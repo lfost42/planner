@@ -164,7 +164,7 @@ namespace Planner.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Planner.Models.Company", b =>
+            modelBuilder.Entity("Planner.Models.Team", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -181,7 +181,7 @@ namespace Planner.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Teams");
                 });
 
             modelBuilder.Entity("Planner.Models.Invite", b =>
@@ -191,10 +191,10 @@ namespace Planner.Data.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("CompanyId")
+                    b.Property<int>("TeamId")
                         .HasColumnType("integer");
 
-                    b.Property<Guid>("CompanyToken")
+                    b.Property<Guid>("TeamToken")
                         .HasColumnType("uuid");
 
                     b.Property<DateTimeOffset>("InviteDate")
@@ -226,7 +226,7 @@ namespace Planner.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId");
+                    b.HasIndex("TeamId");
 
                     b.HasIndex("InviteeId");
 
@@ -292,10 +292,10 @@ namespace Planner.Data.Migrations
                     b.Property<int?>("ProjectPriorityId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("CompanyId")
+                    b.Property<string>("TeamId")
                         .HasColumnType("text");
 
-                    b.Property<int?>("CompanyId1")
+                    b.Property<int?>("TeamId1")
                         .HasColumnType("integer");
 
                     b.Property<string>("Description")
@@ -325,7 +325,7 @@ namespace Planner.Data.Migrations
 
                     b.HasIndex("ProjectPriorityId");
 
-                    b.HasIndex("CompanyId1");
+                    b.HasIndex("TeamId1");
 
                     b.ToTable("Projects");
                 });
@@ -442,14 +442,14 @@ namespace Planner.Data.Migrations
                     b.ToTable("Attachments");
                 });
 
-            modelBuilder.Entity("Planner.Models.TicketComment", b =>
+            modelBuilder.Entity("Planner.Models.TicketNote", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Comment")
+                    b.Property<string>("Note")
                         .HasColumnType("text");
 
                     b.Property<DateTimeOffset>("Created")
@@ -467,7 +467,7 @@ namespace Planner.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TicketComments");
+                    b.ToTable("TicketNotes");
                 });
 
             modelBuilder.Entity("Planner.Models.TicketHistory", b =>
@@ -569,7 +569,7 @@ namespace Planner.Data.Migrations
                     b.Property<string>("AvatarFileName")
                         .HasColumnType("text");
 
-                    b.Property<int?>("CompanyId")
+                    b.Property<int?>("TeamId")
                         .HasColumnType("integer");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -626,7 +626,7 @@ namespace Planner.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId");
+                    b.HasIndex("TeamId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -706,9 +706,9 @@ namespace Planner.Data.Migrations
 
             modelBuilder.Entity("Planner.Models.Invite", b =>
                 {
-                    b.HasOne("Planner.Models.Company", "Company")
+                    b.HasOne("Planner.Models.Team", "Team")
                         .WithMany()
-                        .HasForeignKey("CompanyId")
+                        .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -726,7 +726,7 @@ namespace Planner.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Company");
+                    b.Navigation("Team");
 
                     b.Navigation("Invitee");
 
@@ -768,11 +768,11 @@ namespace Planner.Data.Migrations
                         .WithMany()
                         .HasForeignKey("ProjectPriorityId");
 
-                    b.HasOne("Planner.Models.Company", "Company")
+                    b.HasOne("Planner.Models.Team", "Team")
                         .WithMany("Projects")
-                        .HasForeignKey("CompanyId1");
+                        .HasForeignKey("TeamId1");
 
-                    b.Navigation("Company");
+                    b.Navigation("Team");
 
                     b.Navigation("Priority");
                 });
@@ -841,10 +841,10 @@ namespace Planner.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Planner.Models.TicketComment", b =>
+            modelBuilder.Entity("Planner.Models.TicketNote", b =>
                 {
                     b.HasOne("Planner.Models.Ticket", "Ticket")
-                        .WithMany("Comments")
+                        .WithMany("Notes")
                         .HasForeignKey("TicketId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -877,14 +877,14 @@ namespace Planner.Data.Migrations
 
             modelBuilder.Entity("Planner.Models.AppUser", b =>
                 {
-                    b.HasOne("Planner.Models.Company", "Company")
+                    b.HasOne("Planner.Models.Team", "Team")
                         .WithMany("Members")
-                        .HasForeignKey("CompanyId");
+                        .HasForeignKey("TeamId");
 
-                    b.Navigation("Company");
+                    b.Navigation("Team");
                 });
 
-            modelBuilder.Entity("Planner.Models.Company", b =>
+            modelBuilder.Entity("Planner.Models.Team", b =>
                 {
                     b.Navigation("Members");
 
@@ -900,7 +900,7 @@ namespace Planner.Data.Migrations
                 {
                     b.Navigation("Attachments");
 
-                    b.Navigation("Comments");
+                    b.Navigation("Notes");
 
                     b.Navigation("History");
 

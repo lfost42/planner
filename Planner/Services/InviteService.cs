@@ -19,9 +19,9 @@ namespace Planner.Services
             _context = context;
         }
 
-        public async Task<bool> AcceptInviteAsync(Guid? token, string userId, int companyId)
+        public async Task<bool> AcceptInviteAsync(Guid? token, string userId, int TeamId)
         {
-            Invite invite = await _context.Invites.FirstOrDefaultAsync(i => i.CompanyToken == token);
+            Invite invite = await _context.Invites.FirstOrDefaultAsync(i => i.TeamToken == token);
             if (invite == null)
             {
                 return false;
@@ -56,12 +56,12 @@ namespace Planner.Services
             }
         }
 
-        public async Task<bool> AnyInviteAsync(Guid token, string email, int companyId)
+        public async Task<bool> AnyInviteAsync(Guid token, string email, int TeamId)
         {
             try
             {
-                bool result = await _context.Invites.Where(i => i.CompanyId == companyId)
-                                                    .AnyAsync(i => i.CompanyToken == token && i.InviteeEmail == email);
+                bool result = await _context.Invites.Where(i => i.TeamId == TeamId)
+                                                    .AnyAsync(i => i.TeamToken == token && i.InviteeEmail == email);
 
                 return result;
             }
@@ -72,12 +72,12 @@ namespace Planner.Services
             }
         }
 
-        public async Task<Invite> GetInviteAsync(int inviteId, int companyId)
+        public async Task<Invite> GetInviteAsync(int inviteId, int TeamId)
         {
             try
             {
-                Invite invite = await _context.Invites.Where(i => i.CompanyId == companyId)
-                                                        .Include(i => i.Company)
+                Invite invite = await _context.Invites.Where(i => i.TeamId == TeamId)
+                                                        .Include(i => i.Team)
                                                         .Include(i => i.Project)
                                                         .Include(i => i.Invitor)
                                                         .FirstOrDefaultAsync(i => i.Id == inviteId);
@@ -92,15 +92,15 @@ namespace Planner.Services
             }
         }
 
-        public async Task<Invite> GetInviteASync(Guid token, string email, int companyId)
+        public async Task<Invite> GetInviteASync(Guid token, string email, int TeamId)
         {
             try
             {
-                Invite invite = await _context.Invites.Where(i => i.CompanyId == companyId)
-                                                        .Include(i => i.Company)
+                Invite invite = await _context.Invites.Where(i => i.TeamId == TeamId)
+                                                        .Include(i => i.Team)
                                                         .Include(i => i.Project)
                                                         .Include(i => i.Invitor)
-                                                        .FirstOrDefaultAsync(i => i.CompanyToken == token && i.InviteeEmail == email);
+                                                        .FirstOrDefaultAsync(i => i.TeamToken == token && i.InviteeEmail == email);
 
                 return invite;
 
@@ -120,7 +120,7 @@ namespace Planner.Services
             }
             bool result = false;
 
-            Invite invite = await _context.Invites.FirstOrDefaultAsync(i => i.CompanyToken == token);
+            Invite invite = await _context.Invites.FirstOrDefaultAsync(i => i.TeamToken == token);
 
             if (invite != null)
             {

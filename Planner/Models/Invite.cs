@@ -17,12 +17,12 @@ namespace Planner.Models
         public DateTimeOffset JoinDate { get; set; }
 
         [DisplayName("Code"), StringLength(50, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
-        public Guid CompanyToken { get; set; }
+        public Guid TeamToken { get; set; }
 
         
         
-        [DisplayName("Company")]
-        public int CompanyId { get; set; }
+        [DisplayName("Team")]
+        public int TeamId { get; set; }
         
         [DisplayName("Project")]
         public int ProjectId { get; set; }
@@ -46,7 +46,7 @@ namespace Planner.Models
 
         
         // Navigation properties
-        public virtual Company Company { get; set; }
+        public virtual Team Team { get; set; }
         public virtual AppUser Invitor { get; set; }
         public virtual AppUser Invitee { get; set; }
         public virtual Project Project { get; set; }

@@ -9,27 +9,27 @@ using Planner.Services.Interfaces;
 
 namespace Planner.Services
 {
-    public class CompanyInfoService : ICompanyInfoService
+    public class TeamInfoService : ITeamInfoService
     {
         private readonly ApplicationDbContext _context;
-        public CompanyInfoService(ApplicationDbContext context)
+        public TeamInfoService(ApplicationDbContext context)
         {
             _context = context;
         }
-        public async Task<List<AppUser>> GetAllMembersAsync(int companyId)
+        public async Task<List<AppUser>> GetAllMembersAsync(int TeamId)
         {
             List<AppUser> result = new();
-            result = await _context.Users.Where(u => u.CompanyId == companyId).ToListAsync();
+            result = await _context.Users.Where(u => u.TeamId == TeamId).ToListAsync();
             return result;
         }
 
-        public async Task<List<Project>> GetAllProjectsAsync(int companyId)
+        public async Task<List<Project>> GetAllProjectsAsync(int TeamId)
         {
             List<Project> result = new();
-            result = await _context.Projects.Where(p => p.CompanyId == companyId)
+            result = await _context.Projects.Where(p => p.TeamId == TeamId)
                                             .Include(p=>p.Members)
                                             .Include(p=>p.Tickets)
-                                                .ThenInclude(t=>t.Comments)
+                                                .ThenInclude(t=>t.Notes)
                                             .Include(p => p.Tickets)
                                                 .ThenInclude(t => t.Attachments)
                                             .Include(p => p.Tickets)
@@ -51,26 +51,26 @@ namespace Planner.Services
             return result;
         }
 
-        public async Task<List<Ticket>> GetAllTicketsAsync(int companyId)
+        public async Task<List<Ticket>> GetAllTicketsAsync(int TeamId)
         {
             List<Ticket> result = new();
             List<Project> projects = new();
 
-            projects = await GetAllProjectsAsync(companyId);
+            projects = await GetAllProjectsAsync(TeamId);
             result = projects.SelectMany(p => p.Tickets).ToList();
             return result;
         }
 
-        public async Task<Company> GetCompanyInfoByIdAsync(int? companyId)
+        public async Task<Team> GetTeamInfoByIdAsync(int? TeamId)
         {
-            Company result = new();
-            if(companyId != null)
+            Team result = new();
+            if(TeamId != null)
             {
-                result = await _context.Companies
+                result = await _context.Teams
                     .Include(c=>c.Members)
                     .Include(c=>c.Projects)
                     .Include(c=>c.Invites)
-                    .FirstOrDefaultAsync(c => c.Id == companyId);
+                    .FirstOrDefaultAsync(c => c.Id == TeamId);
                 return result;
 
             }

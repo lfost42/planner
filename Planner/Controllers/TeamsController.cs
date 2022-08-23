@@ -10,22 +10,22 @@ using Planner.Models;
 
 namespace Planner.Controllers
 {
-    public class BTCompaniesController : Controller
+    public class TeamsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public BTCompaniesController(ApplicationDbContext context) // Dependency Injection
+        public TeamsController(ApplicationDbContext context) // Dependency Injection
         {
             _context = context;
         }
 
-        // GET: BTCompanies
+        // GET: Teams
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Companies.ToListAsync());
+            return View(await _context.Teams.ToListAsync());
         }
 
-        // GET: BTCompanies/Details/5
+        // GET: Teams/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace Planner.Controllers
                 return NotFound();
             }
 
-            var Company = await _context.Companies
+            var Team = await _context.Teams
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (Company == null)
+            if (Team == null)
             {
                 return NotFound();
             }
 
-            return View(Company);
+            return View(Team);
         }
 
-        // GET: BTCompanies/Create
+        // GET: Teams/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: BTCompanies/Create
+        // POST: Teams/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description")] Company Company)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description")] Team Team)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(Company);
+                _context.Add(Team);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(Company);
+            return View(Team);
         }
 
-        // GET: BTCompanies/Edit/5
+        // GET: Teams/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace Planner.Controllers
                 return NotFound();
             }
 
-            Company Company = await _context.Companies.FindAsync(id); // Switching from "var" to Company makes this more explicit
-            if (Company == null)
+            Team Team = await _context.Teams.FindAsync(id); // Switching from "var" to Team makes this more explicit
+            if (Team == null)
             {
                 return NotFound();
             }
-            return View(Company);
+            return View(Team);
         }
 
-        // POST: BTCompanies/Edit/5
+        // POST: Teams/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] Company Company)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] Team Team)
         {
-            if (id != Company.Id)
+            if (id != Team.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Planner.Controllers
             {
                 try
                 {
-                    _context.Update(Company);
+                    _context.Update(Team);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CompanyExists(Company.Id))
+                    if (!TeamExists(Team.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace Planner.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(Company);
+            return View(Team);
         }
 
-        // GET: BTCompanies/Delete/5
+        // GET: Teams/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace Planner.Controllers
                 return NotFound();
             }
 
-            var Company = await _context.Companies
+            var Team = await _context.Teams
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (Company == null)
+            if (Team == null)
             {
                 return NotFound();
             }
 
-            return View(Company);
+            return View(Team);
         }
 
-        // POST: BTCompanies/Delete/5
+        // POST: Teams/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var Company = await _context.Companies.FindAsync(id);
-            _context.Companies.Remove(Company);
+            var Team = await _context.Teams.FindAsync(id);
+            _context.Teams.Remove(Team);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CompanyExists(int id)
+        private bool TeamExists(int id)
         {
-            return _context.Companies.Any(e => e.Id == id);
+            return _context.Teams.Any(e => e.Id == id);
         }
     }
 }

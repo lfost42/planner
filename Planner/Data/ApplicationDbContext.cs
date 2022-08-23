@@ -14,14 +14,14 @@ namespace Planner.Data
         {
         }
 
-        public DbSet<Company> Companies { get; set; }
+        public DbSet<Team> Teams { get; set; }
         public DbSet<Invite> Invites { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<ProjectPriority> ProjectPriorities { get; set; }
         public DbSet<TicketAttachment> Attachments { get; set; }
-        public DbSet<TicketComment> TicketComments { get; set; }
+        public DbSet<TicketNote> TicketNotes { get; set; }
         public DbSet<TicketHistory> Changes { get; set; }
         public DbSet<TicketPriority> TicketPriorities { get; set; }
         public DbSet<TicketStatus> TicketStatuses { get; set; }

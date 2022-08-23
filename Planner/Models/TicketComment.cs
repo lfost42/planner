@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Planner.Models
 {
-    public class TicketComment
+    public class TicketNote
     {
         public int Id { get; set; }
         
-        [DisplayName("Member Comment"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
-        public string Comment { get; set; }
+        [DisplayName("Member Note"), StringLength(30, ErrorMessage = "The {0} must be atleast {2} and at most {1} characters.", MinimumLength = 2)]
+        public string Note { get; set; }
 
         [DisplayName("Date")]
         public DateTimeOffset Created { get; set; }

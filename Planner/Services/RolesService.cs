@@ -45,19 +45,19 @@ namespace Planner.Services
             return result;
         }
 
-        public async Task<List<AppUser>> GetUsersInRolesAsync(string roleName, int companyId)
+        public async Task<List<AppUser>> GetUsersInRolesAsync(string roleName, int TeamId)
         {
             List<AppUser> users = (await _userManager.GetUsersInRoleAsync(roleName)).ToList();
-            List<AppUser> result = users.Where(u => u.CompanyId == companyId).ToList();
+            List<AppUser> result = users.Where(u => u.TeamId == TeamId).ToList();
             return result;
         }
 
-        public async Task<List<AppUser>> GetUsersNotInRolesAsync(string roleName, int companyId)
+        public async Task<List<AppUser>> GetUsersNotInRolesAsync(string roleName, int TeamId)
         {
             List<string> userIds = (await _userManager.GetUsersInRoleAsync(roleName)).Select(u => u.Id).ToList();
             List<AppUser> roleUsers = _context.Users.Where(x => !userIds.Contains(x.Id)).ToList();
 
-            List<AppUser> result = roleUsers.Where(u => u.CompanyId == companyId).ToList();
+            List<AppUser> result = roleUsers.Where(u => u.TeamId == TeamId).ToList();
             return result;
         }
 

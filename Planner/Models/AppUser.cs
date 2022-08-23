@@ -37,9 +37,8 @@ namespace Planner.Models
         public string AvatarContentType { get; set; }
 
 
-        public int? CompanyId { get; set; }
-
-        public virtual Company Company { get; set; }
+        public int? TeamId { get; set; }
+        public virtual Team Team { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
     }
 }
