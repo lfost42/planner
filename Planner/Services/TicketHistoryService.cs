@@ -11,9 +11,9 @@ namespace Planner.Services
 {
     public class TicketHistoryService : ITicketHistoryService
     {
-        //Fields
+
         private readonly ApplicationDbContext _context;
-        //Constructor
+
         public TicketHistoryService(ApplicationDbContext context)
         {
             _context = context;
@@ -22,10 +22,8 @@ namespace Planner.Services
 
         public async Task AddHistoryAsync(Ticket oldTicket, Ticket newTicket, string userId)
         {
-            //New Ticket has been added
             if(oldTicket == null && newTicket != null)
             {
-                //Creating a TicketHistory Object and assigning values inline
                 TicketHistory history = new()
                 {
                     TicketId = newTicket.Id,
@@ -52,7 +50,6 @@ namespace Planner.Services
             }
             else
             {
-                // Checking Ticket Title
                 if (oldTicket.Title != newTicket.Title)
                 {
                     TicketHistory history = new()
@@ -70,7 +67,6 @@ namespace Planner.Services
                     await _context.Changes.AddAsync(history);
                 }
 
-                // Checking Ticket Description
                 if (oldTicket.Description != newTicket.Description)
                 {
                     TicketHistory history = new()
@@ -88,7 +84,6 @@ namespace Planner.Services
                     await _context.Changes.AddAsync(history);
                 }
 
-                // Checking Ticket Priority
                 if (oldTicket.TicketPriorityId != newTicket.TicketPriorityId)
                 {
                     TicketHistory history = new()
@@ -106,7 +101,6 @@ namespace Planner.Services
                     await _context.Changes.AddAsync(history);
                 }
                 
-                // Checking Ticket Status
                 if (oldTicket.TicketStatusId != newTicket.TicketStatusId)
                 {
                     TicketHistory history = new()
@@ -123,7 +117,6 @@ namespace Planner.Services
                     await _context.Changes.AddAsync(history);
                 }
 
-                // Checking Ticket Type
                 if (oldTicket.TicketTypeId != newTicket.TicketTypeId)
                 {
                     TicketHistory history = new()
@@ -141,7 +134,6 @@ namespace Planner.Services
                     await _context.Changes.AddAsync(history);
                 }
 
-                // Checking Ticket Developer
                 if (oldTicket.DeveloperUserId != newTicket.DeveloperUserId)
                 {
                     TicketHistory history = new()
@@ -161,7 +153,6 @@ namespace Planner.Services
                 
                 try
                 {
-                    // Save changes to the Changes Database
                     await _context.SaveChangesAsync();
                 }
                 catch (Exception)
