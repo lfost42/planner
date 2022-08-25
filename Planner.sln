@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.21
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner", "Planner/Planner.csproj", "{08A8E0A0-DF9B-4F70-B872-2E5763225837}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner", "Planner\Planner.csproj", "{08A8E0A0-DF9B-4F70-B872-2E5763225837}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner.Data", "Planner.Data\Planner.Data.csproj", "{E0227F3D-C5BE-4F3B-9105-0EDF92949E58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{08A8E0A0-DF9B-4F70-B872-2E5763225837}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08A8E0A0-DF9B-4F70-B872-2E5763225837}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08A8E0A0-DF9B-4F70-B872-2E5763225837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0227F3D-C5BE-4F3B-9105-0EDF92949E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0227F3D-C5BE-4F3B-9105-0EDF92949E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0227F3D-C5BE-4F3B-9105-0EDF92949E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0227F3D-C5BE-4F3B-9105-0EDF92949E58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
